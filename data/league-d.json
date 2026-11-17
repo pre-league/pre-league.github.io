@@ -1,0 +1,82 @@
+{
+  "league": {
+    "admin_entry": 50027,
+    "closed": true,
+    "draft_dt": "2026-08-19T19:00:00Z",
+    "draft_pick_time_limit": 90,
+    "draft_status": "pre",
+    "draft_tz_show": "Europe/Lisbon",
+    "id": 10219,
+    "ko_rounds": 0,
+    "make_code_public": false,
+    "max_entries": 5,
+    "min_entries": 2,
+    "name": "PL Draft 26/27 - Liga D",
+    "scoring": "c",
+    "start_event": 1,
+    "stop_event": 38,
+    "trades": "y",
+    "transaction_mode": "waivers",
+    "variety": "x",
+    "drafts": [
+      {
+        "id": 10916,
+        "draft_started": true,
+        "draft_completed": "2026-08-19T19:16:18.941939Z",
+        "draft_dt": "2026-08-19T19:00:00Z",
+        "event": 1,
+        "league": 10219,
+        "order_method": "random"
+      }
+    ],
+    "is_renewed": false
+  },
+  "league_entries": [
+    {
+      "entry_id": 50027,
+      "entry_name": "Grannies FC",
+      "id": 50100,
+      "joined_time": "2026-08-05T17:50:58.732048Z",
+      "player_first_name": "Filipe",
+      "player_last_name": "Pregal",
+      "short_name": "FP",
+      "waiver_pick": 2
+    },
+    {
+      "entry_id": 50751,
+      "entry_name": "SportingCadafais",
+      "id": 50826,
+      "joined_time": "2026-08-05T18:28:41.462865Z",
+      "player_first_name": "Rodrigo",
+      "player_last_name": "Fernandes",
+      "short_name": "RF",
+      "waiver_pick": 1
+    },
+    {
+      "entry_id": 130177,
+      "entry_name": "Imperial FC",
+      "id": 130734,
+      "joined_time": "2026-08-10T20:38:04.927657Z",
+      "player_first_name": "André",
+      "player_last_name": "Neto",
+      "short_name": "AN",
+      "waiver_pick": 4
+    },
+    {
+      "entry_id": 131691,
+      "entry_name": "Boomxhakalaka",
+      "id": 132262,
+      "joined_time": "2026-08-10T22:38:36.329218Z",
+      "player_first_name": "Daniel",
+      "player_last_name": "Becker",
+      "short_name": "DB",
+      "waiver_pick": 3
+    }
+  ],
+  "standings": [
+    { "event_total": 53, "last_rank": 1, "league_entry": 130734, "rank": 1, "rank_sort": 1, "total": 536 },
+    { "event_total": 38, "last_rank": 2, "league_entry": 132262, "rank": 2, "rank_sort": 2, "total": 442 },
+    { "event_total": 62, "last_rank": 3, "league_entry": 50100, "rank": 3, "rank_sort": 3, "total": 441 },
+    { "event_total": 54, "last_rank": 4, "league_entry": 50826, "rank": 4, "rank_sort": 4, "total": 429 }
+  ]
+}

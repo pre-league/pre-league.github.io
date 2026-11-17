@@ -1,0 +1,10 @@
+{
+  "name": "PRE FTW League",
+  "season": "2026/27",
+  "divisions": [
+    { "key": "A", "leagueId": 3887 },
+    { "key": "B", "leagueId": null },
+    { "key": "C", "leagueId": null },
+    { "key": "D", "leagueId": 10219 }
+  ]
+}

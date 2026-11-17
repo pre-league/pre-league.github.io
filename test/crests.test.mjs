@@ -1,0 +1,44 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdir, mkdtemp, readFile, writeFile, readdir, rm } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { join, dirname } from 'node:path';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { generateCrestThumbnails } from '../scripts/crests.mjs';
+
+const run = promisify(execFile);
+test('crest generation preserves transparency, aspect ratio and originals; rebuilds and removes stale thumbnails', async t => {
+  const tempRoot = fileURLToPath(new URL('../.tmp-preview/', import.meta.url));
+  await mkdir(tempRoot, { recursive: true });
+  const directory = await mkdtemp(join(tempRoot, 'crest-test-'));
+  t.after(async () => {
+    assert.equal(dirname(directory), tempRoot.replace(/[\\/]$/, ''));
+    await rm(directory, { recursive: true, force: true });
+  });
+  const source = join(directory, 'originals');
+  const output = join(directory, 'thumbs');
+  await mkdir(source);
+  const original = join(source, '123.png');
+  await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-f', 'lavfi', '-i', 'color=red:s=400x600,format=rgba,colorchannelmixer=aa=0.5', '-frames:v', '1', original], { windowsHide: true });
+  const before = await readFile(original);
+  await writeFile(join(source, 'A.png'), before);
+  await writeFile(join(source, 'crest.png'), before);
+  await writeFile(join(source, 'not-a-team.png'), 'not an image');
+  await generateCrestThumbnails(source, output);
+  const thumbnail = join(output, '123.webp');
+  const { stdout } = await run('ffprobe', ['-v', 'error', '-show_entries', 'stream=width,height', '-of', 'json', thumbnail], { windowsHide: true });
+  const dimensions = JSON.parse(stdout).streams[0];
+  assert.equal(dimensions.height, 192);
+  assert.ok(Math.abs(dimensions.width / dimensions.height - 400 / 600) < 0.01);
+  const rgba = await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-i', thumbnail, '-frames:v', '1', '-f', 'rawvideo', '-pix_fmt', 'rgba', '-'], { encoding: 'buffer', windowsHide: true });
+  assert.ok(rgba.stdout[3] >= 126 && rgba.stdout[3] <= 130, 'Transparent pixels retain their alpha');
+  assert.deepEqual(await readFile(original), before);
+  assert.deepEqual(await readdir(output), ['123.webp', 'A.webp', 'crest.webp']);
+  await writeFile(join(output, '999.webp'), 'obsolete thumbnail');
+  await writeFile(join(output, 'D.webp'), 'removed league emblem');
+  await writeFile(thumbnail, 'outdated thumbnail');
+  await generateCrestThumbnails(source, output);
+  assert.notEqual((await readFile(thumbnail)).toString(), 'outdated thumbnail');
+  assert.deepEqual(await readdir(output), ['123.webp', 'A.webp', 'crest.webp']);
+});
