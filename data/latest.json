@@ -1,6 +1,6 @@
 {
   "season": "2026/27",
-  "lastAttemptAt": "2026-11-17T19:14:21.527Z",
+  "lastAttemptAt": "2026-11-17T23:08:15.241Z",
   "divisions": {
     "A": {
       "leagueId": 3887,
@@ -838,7 +838,7 @@
         }
       ],
       "transactions": null,
-      "updatedAt": "2026-11-17T19:14:21.527Z",
+      "updatedAt": "2026-11-17T23:08:15.241Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -1516,7 +1516,7 @@
         }
       ],
       "transactions": null,
-      "updatedAt": "2026-11-17T19:14:21.527Z",
+      "updatedAt": "2026-11-17T23:08:15.241Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -1531,7 +1531,7 @@
   "weekly": {
     "10": {
       "A": {
-        "updatedAt": "2026-11-17T19:14:21.527Z",
+        "updatedAt": "2026-11-17T23:08:15.241Z",
         "teams": [
           {
             "id": 157661,
@@ -1581,7 +1581,7 @@
         ]
       },
       "D": {
-        "updatedAt": "2026-11-17T19:14:21.527Z",
+        "updatedAt": "2026-11-17T23:08:15.241Z",
         "teams": [
           {
             "id": 130177,
