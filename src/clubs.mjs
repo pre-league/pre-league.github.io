@@ -1,5 +1,5 @@
-import { escapeHtml as e } from './model.mjs';
-import { combinedWeeklyRecords } from './stats.mjs';
+import { escapeHtml as e, sameManager } from './model.mjs';
+import { combinedWeeklyRecords, teamBenchPoints } from './stats.mjs';
 
 const points = value => value == null ? '—' : new Intl.NumberFormat('en-GB', { maximumFractionDigits: 1 }).format(value);
 export const clubRoute = (key, season) => `#${new URLSearchParams({ page: 'club', club: key, season })}`;
@@ -9,16 +9,16 @@ export function clubForTeam(community, team, season) {
   const historical = (community.seasons ?? []).some(row => row.season === season);
   return (community.clubs ?? []).find(club => historical
     ? club.historicalNames[season] && club.historicalNames[season] === team.name
-    : club.manager && club.manager === team.manager);
+    : sameManager(club.manager, team.manager));
 }
 
 export function clubBrandTeam(community, snapshot, team, season) {
   const club = clubForTeam(community, team, season);
   if (!club?.manager) return team;
-  const current = Object.values(snapshot.divisions ?? {}).flatMap(league => league.teams).find(row => row.manager === club.manager);
+  const current = Object.values(snapshot.divisions ?? {}).flatMap(league => league.teams).find(row => sameManager(row.manager, club.manager));
   if (current) return current;
   const week = Math.max(...Object.keys(community.weekly ?? {}).map(Number));
-  return Object.values(community.weekly?.[week] ?? {}).flatMap(league => league.teams).find(row => row.manager === club.manager) ?? team;
+  return Object.values(community.weekly?.[week] ?? {}).flatMap(league => league.teams).find(row => sameManager(row.manager, club.manager)) ?? team;
 }
 
 export function getHistoricalLeague(community, selectedSeason, key, week = 0) {
@@ -36,8 +36,8 @@ export function getHistoricalLeague(community, selectedSeason, key, week = 0) {
 }
 
 export function getClubSeason(community, snapshot, club, season) {
-  const current = Object.entries(snapshot.divisions ?? {}).find(([, league]) => club.manager && league.teams.some(team => team.manager === club.manager));
-  const brandTeam = current?.[1].teams.find(team => team.manager === club.manager);
+  const current = Object.entries(snapshot.divisions ?? {}).find(([, league]) => club.manager && league.teams.some(team => sameManager(team.manager, club.manager)));
+  const brandTeam = current?.[1].teams.find(team => sameManager(team.manager, club.manager));
   let league, key, team, weekly;
   const historical = season !== (snapshot.season ?? community.currentSeason);
   if (!historical) {
@@ -58,7 +58,7 @@ export function getClubSeason(community, snapshot, club, season) {
   }
   const weeks = Object.keys(weekly ?? {}).map(Number).sort((a, b) => a - b).flatMap(gameweek => {
     const teams = weekly[gameweek][key]?.teams ?? [];
-    const row = teams.find(row => historical ? row.name === team.name : row.manager === club.manager);
+    const row = teams.find(row => historical ? row.name === team.name : sameManager(row.manager, club.manager));
     return row ? [{ gameweek, points: row.gameweekPoints, total: row.totalPoints, rank: 1 + teams.filter(other => other.totalPoints > row.totalPoints).length }] : [];
   });
   return { season, historical, league, key, team, brandTeam: brandTeam ?? clubBrandTeam(community, snapshot, team, season), weeks };
@@ -80,6 +80,6 @@ export function renderClubSeason(club, view, seasons, badge) {
 export function renderHistoricalLeague(league, season, week, teamLink) {
   return `<div class="page-heading"><span class="eyebrow">${e(season)} · Standalone league</span><h1>${e(league.name)}</h1><p>These leagues were independent competitions. No promotion or relegation applied.</p></div>
     <div class="stats-toolbar"><label for="historical-week">Standings</label><select id="historical-week"><option value="0"${!week ? ' selected' : ''}>Final table</option>${[...league.weeks].sort((a, b) => b - a).map(value => `<option value="${value}"${value === week ? ' selected' : ''}>GW ${value}</option>`).join('')}</select><span>${league.teams.length} teams</span></div>
-    <section class="panel standings"><div class="panel-heading"><h2>${week ? `Gameweek ${week}` : 'Final standings'}</h2></div><table><caption class="sr-only">${e(league.name)}, ${e(season)}, ${week ? `gameweek ${week}` : 'final standings'}</caption><thead><tr><th scope="col">#</th><th scope="col">Club</th><th scope="col" class="numeric">GW ${week || 38}</th><th scope="col" class="numeric">PTS</th></tr></thead><tbody>${league.teams.map(team => `<tr${!week && team.rank === 1 ? ' class="trophy-row"' : ''}><td>${team.rank}${!week && team.rank === 1 ? '<span class="sr-only">League champion</span>' : ''}</td><td>${teamLink(team, league.key, '', season)}</td><td class="numeric">${points(team.eventPoints)}</td><td class="numeric points-cell">${points(team.total)}</td></tr>`).join('')}</tbody></table>${!week ? '<div class="table-foot"><div class="places-legend"><span class="trophy"><i class="legend-line"></i>League champion</span></div><span>Completed season</span></div>' : ''}${league.teams.length ? '' : '<p class="no-results" role="status">No teams match your search.</p>'}</section>
+    <section class="panel standings"><div class="panel-heading"><h2>${week ? `Gameweek ${week}` : 'Final standings'}</h2></div><div class="standings-scroll" role="region" aria-label="${e(league.name)} standings" tabindex="0"><table><caption class="sr-only">${e(league.name)}, ${e(season)}, ${week ? `gameweek ${week}` : 'final standings'}</caption><thead><tr><th scope="col">#</th><th scope="col">Club</th><th scope="col" class="numeric">GW ${week || 38}</th><th scope="col" class="numeric">Bench<span class="sr-only"> points</span></th><th scope="col" class="numeric">PTS</th></tr></thead><tbody>${league.teams.map(team => `<tr${!week && team.rank === 1 ? ' class="trophy-row"' : ''}><td>${team.rank}${!week && team.rank === 1 ? '<span class="sr-only">League champion</span>' : ''}</td><td>${teamLink(team, league.key, season)}</td><td class="numeric">${points(team.eventPoints)}</td><td class="numeric bench-cell">${points(teamBenchPoints(team, week || 38))}</td><td class="numeric points-cell">${points(team.total)}</td></tr>`).join('')}</tbody></table></div>${!week ? '<div class="table-foot"><div class="places-legend"><span class="trophy"><i class="legend-line"></i>League champion</span></div><span>Completed season</span></div>' : ''}${league.teams.length ? '' : '<p class="no-results" role="status">No teams match your search.</p>'}</section>
     <div class="archive-sources">${league.sources.map(source => `<a class="source-link" href="${e(source.url)}" target="_blank" rel="noopener noreferrer">${e(source.title)} ↗</a>`).join('')}</div>`;
 }

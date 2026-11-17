@@ -3,8 +3,8 @@
   "season": "2026/27",
   "divisions": [
     { "key": "A", "leagueId": 3887 },
-    { "key": "B", "leagueId": null },
-    { "key": "C", "leagueId": null },
+    { "key": "B", "leagueId": 4077 },
+    { "key": "C", "leagueId": 8024 },
     { "key": "D", "leagueId": 10219 }
   ]
 }

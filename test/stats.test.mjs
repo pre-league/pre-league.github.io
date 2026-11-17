@@ -1,12 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { collectWeeklyRecords, combinedWeeklyRecords, documentedDivision, weeklyAwards } from '../src/stats.mjs';
+import { collectWeeklyRecords, combinedWeeklyRecords, documentedDivision, weeklyAwards, teamBenchPoints, leagueGameweek } from '../src/stats.mjs';
 
 const team = (id, points, total, bench = [2, 3, 0, -1]) => ({ id, name: `Team ${id}`, manager: `Manager ${id}`, eventPoints: points, total, squadGameweek: 10, squad: bench.map((points, i) => ({ bench: true, slot: i + 12, points })) });
 const sample = { divisions: {
   A: { gameweek: 10, source: 'api', updatedAt: '2026-11-17', teams: [team(1, 70, 500), team(2, 60, 600)] },
   D: { gameweek: 10, source: 'api', updatedAt: '2026-11-17', teams: [team(3, 70, 450, [10, 0, 2, 1])] }
 } };
+
+test('standings bench points preserve known totals and require four scored substitutes from the same week', () => {
+  assert.equal(teamBenchPoints(team(1, 50, 500), 10), 4);
+  assert.equal(teamBenchPoints(team(1, 50, 500, [0, 0, 0, 0]), 10), 0);
+  assert.equal(teamBenchPoints(team(1, 50, 500, [-1, 0, 0, 0]), 10), -1);
+  assert.equal(teamBenchPoints(team(1, 50, 500), 9), null);
+  assert.equal(teamBenchPoints(team(1, 50, 500, [1, 2, 3]), 10), null);
+  assert.equal(teamBenchPoints(team(1, 50, 500, [1, 2, 3, null]), 10), null);
+  assert.equal(teamBenchPoints({ benchPoints: 13 }, 10), 13);
+  assert.equal(teamBenchPoints({ benchPoints: 0 }, 10), 0);
+  assert.equal(teamBenchPoints({}, 10), null);
+});
 
 test('weekly awards compare divisions, preserve ties and use team scores rather than player MVPs', () => {
   const awards = weeklyAwards(collectWeeklyRecords(sample), 10);
@@ -17,6 +29,35 @@ test('weekly awards compare divisions, preserve ties and use team scores rather 
   assert.deepEqual(awards.divisions, ['A', 'D']);
 });
 
+test('league gameweek history ranks cumulative totals, preserves ties and uses API scores before published scores', () => {
+  const community = { currentSeason: '2026/27', weekly: {
+    1: { D: { teams: [{ id: 3, name: 'Team 3', manager: 'Manager 3', totalPoints: 10, gameweekPoints: 10 }] } },
+    9: { D: { source: 'documentation', sourceUrl: 'https://example.com/gw9', teams: [
+      { id: 3, name: 'Team 3', manager: 'Manager 3', totalPoints: 400, gameweekPoints: 80, benchPoints: 0 },
+      { id: 4, name: 'Team 4', manager: 'Manager 4', totalPoints: 410, gameweekPoints: 20, benchPoints: null },
+      { id: 5, name: 'Team 5', manager: 'Manager 5', totalPoints: 410, gameweekPoints: 10, benchPoints: -1 }
+    ] } },
+    10: { D: { teams: [{ id: 3, totalPoints: 9999, gameweekPoints: 9999 }] } }
+  } };
+  const before = structuredClone({ sample, community });
+  const latest = leagueGameweek(sample, community, 'D', '2026/27');
+  assert.deepEqual(latest.weeks, [10, 9, 1]);
+  assert.equal(latest.gameweek, 10);
+  assert.equal(latest.league.teams[0].total, 450);
+  assert.equal(latest.league.teams[0].eventPoints, 70);
+  const past = leagueGameweek(sample, community, 'D', '2026/27', 9);
+  assert.deepEqual(past.league.teams.map(row => [row.id, row.rank]), [[4, 1], [5, 1], [3, 3]]);
+  assert.equal(past.league.teams.find(row => row.id === 3).benchPoints, 0);
+  assert.equal(past.league.teams[0].benchPoints, null);
+  assert.equal(past.league.teams[0].squad, null);
+  assert.equal(past.league.sourceUrl, 'https://example.com/gw9');
+  assert.equal(leagueGameweek(sample, community, 'D', '2026/27', 2).league, null);
+  assert.equal(leagueGameweek(sample, community, 'D', '2026/27', 99).league, null);
+  assert.equal(leagueGameweek(sample, community, 'D', '2026/27', NaN).league, null);
+  assert.deepEqual(leagueGameweek({}, {}, 'B', '2026/27').weeks, []);
+  assert.deepEqual({ sample, community }, before);
+});
+
 test('missing bench scores remain unknown; scores from different weeks never mix', () => {
   const data = structuredClone(sample);
   data.divisions.D.gameweek = 9;
@@ -25,6 +66,18 @@ test('missing bench scores remain unknown; scores from different weeks never mix
   assert.deepEqual(awards.divisions, ['A']);
   assert.equal(awards.unlucky.knownTeams, 1);
   assert.equal(awards.unlucky.winners[0].id, 2);
+});
+
+test('league History movement compares ranks with the previous gameweek, matching managers when published IDs are missing', () => {
+  const community = { currentSeason: '2026/27', weekly: {
+    1: { D: { teams: [{ id: null, manager: 'Fírst', name: 'Old name', totalPoints: 100 }, { id: 2, manager: 'Second', name: 'Second', totalPoints: 90 }, { id: 3, manager: 'Third', name: 'Third', totalPoints: 80 }] } },
+    2: { D: { teams: [{ id: 1, manager: 'first', name: 'New name', totalPoints: 110 }, { id: 2, manager: 'Second', name: 'Second', totalPoints: 120 }, { id: 3, manager: 'Third', name: 'Second', totalPoints: 105 }] } },
+    4: { D: { teams: [{ id: 1, manager: 'First', name: 'New name', totalPoints: 200 }] } }
+  } };
+  const week = leagueGameweek({}, community, 'D', '2026/27', 2);
+  assert.deepEqual(week.league.teams.map(team => [team.manager, team.lastRank, team.rank]), [['Second', 2, 1], ['first', 1, 2], ['Third', 3, 3]]);
+  assert.ok(leagueGameweek({}, community, 'D', '2026/27', 1).league.teams.every(team => team.lastRank === null));
+  assert.equal(leagueGameweek({}, community, 'D', '2026/27', 4).league.teams[0].lastRank, null);
 });
 
 test('daily updates preserve earlier weeks and stale divisions do not overwrite verified records', () => {

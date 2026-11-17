@@ -37,6 +37,26 @@ test('clubs with missing API IDs have profiles; unmatched past clubs never acqui
   assert.equal(getClubSeason(community, current, newcomer, '2025/26'), null);
 });
 
+test('API manager capitalization and accent differences retain confirmed club identities and both seasons', () => {
+  const snapshot = structuredClone(current);
+  snapshot.divisions.C.teams.find(team => team.name === 'Fredddd').manager = 'frederico belchior';
+  snapshot.divisions.C.teams.find(team => team.name === 'Jotinha FC').manager = 'Joao Martins';
+  for (const [manager, key] of [['frederico belchior', 'frederico-belchior'], ['Joao Martins', 'joao-martins']]) {
+    const club = clubForTeam(community, { manager }, '2026/27');
+    assert.equal(club?.key, key);
+    const view = getClubSeason(community, snapshot, club, '2026/27');
+    assert.equal(view.key, 'C');
+    assert.equal(view.weeks.length, 10);
+    assert.equal(view.brandTeam.manager, manager);
+    if (key === 'joao-martins') {
+      const past = getClubSeason(community, snapshot, club, '2025/26');
+      assert.equal(past.brandTeam.name, 'Jotinha FC');
+      assert.equal(clubBrandTeam(community, snapshot, past.team, '2025/26').name, 'Jotinha FC');
+    }
+  }
+  assert.equal(clubForTeam(community, { manager: '' }, '2026/27'), undefined);
+});
+
 test('historical league pages use numeric names and contain no modern division rules or emblems', () => {
   const final = getHistoricalLeague(community, '2025/26', '3');
   assert.equal(final.name, 'League 3');
@@ -48,8 +68,12 @@ test('historical league pages use numeric names and contain no modern division r
   assert.equal(getHistoricalLeague(community, '2025/26', '1', 39), null);
   const week = getHistoricalLeague(community, '2025/26', '3', 33);
   assert.equal(week.teams.find(team => team.name === 'Mikes').eventPoints, 114);
+  week.teams[0].benchPoints = 0;
+  assert.match(renderHistoricalLeague(week, '2025/26', 33, team => team.name), /class="numeric bench-cell">0<\/td>/);
   const html = renderHistoricalLeague(final, '2025/26', 0, team => team.name);
   assert.match(html, /Standalone league/);
+  assert.match(html, />Bench<span class="sr-only"> points<\/span><\/th>/);
+  assert.match(html, /class="numeric bench-cell">—<\/td>/);
   assert.match(html, /League 3/);
   assert.ok(html.indexOf('value="38"') < html.indexOf('value="1"'));
   assert.doesNotMatch(html, /journal-report|<article|Gameweek results/);

@@ -89,6 +89,11 @@ export function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 }
 
+export function sameManager(first, second) {
+  const a = first?.trim(), b = second?.trim();
+  return Boolean(a && b) && a.localeCompare(b, 'pt', { sensitivity: 'base' }) === 0;
+}
+
 export function standingPlace(division, position, teamCount) {
   if (division === 'A' && position === 1) return 'trophy';
   if (division !== 'A' && position <= 2) return 'promotion';

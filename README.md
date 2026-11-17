@@ -40,6 +40,18 @@ the preview's public assets and saved league data, not the repository files.
 
 ## Included
 
+Below 768px, the app has a compact search bar and fixed Home / Leagues / Stats /
+Records navigation with safe-area padding. Only league pages show the A–D
+switcher. Desktop keeps the sidebar and weekly highlights rail. League tabs are
+Table / Teams / Transfers / History; old `overview` and numeric team URLs still
+work. Search finds clubs and managers across all divisions without selecting a
+league; clearing it restores the current page. Historical-only clubs are also
+searchable. Standings show GW, Bench and total points, place strips and legends.
+Bench is the gameweek substitute total; unavailable scores show a dash.
+Phone club summaries use a 2 × 2 layout, with a compact pitch and unchanged
+portrait fallbacks, bench, Head Coach and full player list. No new data fetches,
+frameworks, fonts or dependencies were added for this redesign.
+
 - A simple welcome homepage, with links to the divisions, stats and record book.
 - Gameweek stats across connected leagues: Week's MVP (most GW team points),
   Absolute Leader (most season points), and Unlucky (most bench points).
@@ -61,7 +73,10 @@ the preview's public assets and saved league data, not the repository files.
   later scheduled syncs include them automatically. Images load from
   `resources.premierleague.com`; missing or failed images show the fallback.
 - Completed public waivers/free-agent moves when accessible without login.
-- Daily snapshot selector, update timestamps and stale-data indicators.
+- League History by gameweek, newest first, with cumulative positions, GW and
+  Bench points. Movement arrows compare positions with the previous GW; GW1
+  or missing previous-week data has no movement arrow. Update timestamps and
+  stale-data indicators remain visible.
 - Phone and desktop layouts, keyboard controls and reduced-motion support.
 - GitHub Actions testing, daily refresh and GitHub Pages deployment workflow.
 
@@ -130,13 +145,14 @@ Add the remaining numeric IDs in **`data/config.json`** and refresh. Do not use
 invitation codes or add passwords, cookies or tokens.
 
 `data/latest.json` stores display data. Successful refreshes save one daily
-snapshot in `data/history/YYYY-MM-DD.json` (UTC). League fetch failures preserve
+snapshot in `data/history/YYYY-MM-DD.json` (UTC) for internal retention. These
+daily files are not presented in the app. League fetch failures preserve
 previous standings and return a failing exit code; optional squad/transaction
 failures are reported separately. Each division retains its own update time.
 Player points are not summed to replace official team totals.
 
 The `weekly` field also retains one score record per team/division/gameweek
-for the stats selector. It starts with the verified current snapshot, and daily
+for league History and the stats selector. It starts with the verified current snapshot, and daily
 syncs preserve previous weeks. Old gameweeks that were never captured are not
 fabricated. Bench scores use the official value when supplied, otherwise the
 sum of four known bench player scores; incomplete benches remain unavailable.
@@ -167,9 +183,10 @@ by the league (including Rodrigo's GW1 18 and André's GW2 13).
 Missing bench totals remain unknown, and tied scores retain joint winners.
 
 API scores take priority for the same division and gameweek. Published weeks
-fill gaps only when their season matches the configured season. B/C currently
-show published GW10 standings while their API IDs are pending. Their clubs have
-profiles and historical results, while squads await API access. No team IDs
+fill gaps only when their season matches the configured season. League C is
+configured with ID 8024; its published scores remain a fallback when API data
+is unavailable. League B still awaits its ID. Their clubs have profiles
+and historical results, while squads await API access. No team IDs
 are invented. New gameweeks never mix scores from earlier weeks.
 The journal's original prose is preserved; promotion markings follow the
 user-confirmed two-up/two-down rules, even where old articles differ.
@@ -215,6 +232,8 @@ Root and `#page=home` open the welcome screen; `#page=stats` opens weekly awards
 and `#page=archive` opens the record book. Club links use
 `#page=club&club=miguel-fernandes&season=2025%2F26`; historical competitions use
 `#page=competition&league=1&season=2025%2F26`, with optional `gw=1` through `38`.
+League History uses `#league=A&tab=history&gw=2`; omitting `gw` selects the
+latest recorded gameweek. Legacy `snapshot` parameters are ignored.
 Existing `#league=A` and numeric team links remain supported. Restart the preview
 after this update to serve the new club module and community data file.
 
@@ -252,13 +271,15 @@ the save step fails; adjust those rules or use an allowed update branch.
 To roll back, revert the relevant source/data commit and push again.
 
 Hash routes and relative assets support `<owner>.github.io/<repository>/`.
-No remote repository or public deployment has been created here.
+This redesign is a local change and has not been deployed.
 
 ## Still to confirm
 
-- League B/C IDs.
+- League B ID.
 - Public squad/transaction access, including any season API changes.
-- GitHub owner/repository name for publication.
 
 See `SPEC.md` for design and implementation decisions. PRE FTW has its own
 crest, initials badges and copy; no FotMob assets are included.
+
+Mobile redesign acceptance and local screenshot evidence are tracked in
+`tasks/todo.md` and `tasks/results.md`.
