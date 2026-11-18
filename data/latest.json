@@ -1,6 +1,6 @@
 {
   "season": "2026/27",
-  "lastAttemptAt": "2026-11-17T23:27:46.380Z",
+  "lastAttemptAt": "2026-11-18T15:46:48.280Z",
   "divisions": {
     "A": {
       "leagueId": 3887,
@@ -838,7 +838,7 @@
         }
       ],
       "transactions": null,
-      "updatedAt": "2026-11-17T23:27:46.380Z",
+      "updatedAt": "2026-11-18T15:46:48.280Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -1682,7 +1682,7 @@
         }
       ],
       "transactions": null,
-      "updatedAt": "2026-11-17T23:27:46.380Z",
+      "updatedAt": "2026-11-18T15:46:48.280Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -2526,7 +2526,7 @@
         }
       ],
       "transactions": null,
-      "updatedAt": "2026-11-17T23:27:46.380Z",
+      "updatedAt": "2026-11-18T15:46:48.280Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -3204,7 +3204,7 @@
         }
       ],
       "transactions": null,
-      "updatedAt": "2026-11-17T23:27:46.380Z",
+      "updatedAt": "2026-11-18T15:46:48.280Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -3214,12 +3214,13 @@
     }
   },
   "history": [
+    "2026-11-18",
     "2026-11-17"
   ],
   "weekly": {
     "10": {
       "A": {
-        "updatedAt": "2026-11-17T23:27:46.380Z",
+        "updatedAt": "2026-11-18T15:46:48.280Z",
         "teams": [
           {
             "id": 157661,
@@ -3269,7 +3270,7 @@
         ]
       },
       "D": {
-        "updatedAt": "2026-11-17T23:27:46.380Z",
+        "updatedAt": "2026-11-18T15:46:48.280Z",
         "teams": [
           {
             "id": 130177,
@@ -3310,7 +3311,7 @@
         ]
       },
       "C": {
-        "updatedAt": "2026-11-17T23:27:46.380Z",
+        "updatedAt": "2026-11-18T15:46:48.280Z",
         "teams": [
           {
             "id": 334163,
@@ -3360,7 +3361,7 @@
         ]
       },
       "B": {
-        "updatedAt": "2026-11-17T23:27:46.380Z",
+        "updatedAt": "2026-11-18T15:46:48.280Z",
         "teams": [
           {
             "id": 16602,
