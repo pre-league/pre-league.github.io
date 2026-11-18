@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { weeklyAwards } from '../src/stats.mjs';
+import { combinedWeeklyRecords, weeklyAwards } from '../src/stats.mjs';
 
 const community = JSON.parse(await readFile(new URL('../data/community.json', import.meta.url), 'utf8'));
+const latest = JSON.parse(await readFile(new URL('../data/latest.json', import.meta.url), 'utf8'));
 
 test('imported GW1 to GW10 scores cover all 19 teams and retain report sources', () => {
   for (let week = 1; week <= 10; week++) {
@@ -32,6 +33,13 @@ test('imported GW10 matches published awards and leaves unreported bench totals 
   assert.equal(awards.unlucky.winners[0].name, 'Jotinha FC');
   assert.equal(awards.unlucky.knownTeams, 1);
   assert.equal(community.weekly[10].B.teams[0].id, null);
+});
+
+test('the app has bench points for all 19 teams in each 2026/27 gameweek through GW10', () => {
+  const weekly = combinedWeeklyRecords(latest, community, '2026/27');
+  for (let week = 1; week <= 10; week++) {
+    assert.equal(weeklyAwards(weekly, week).unlucky.knownTeams, 19, `GW${week}`);
+  }
 });
 
 test('2025/26 workbook import has three full final tables and 38 weeks whose sums match every final total', () => {

@@ -178,9 +178,10 @@ ten 2026/27 reports, 190 team/gameweek score records across all four divisions,
 the three 2025/26 league champions, the separate Liga Fantasia podium, six
 records and three season stories. Each report and historical record retains
 its source link. GW points are differences between consecutive published
-cumulative totals; bench scores are included only where published or confirmed
-by the league (including Rodrigo's GW1 18 and André's GW2 13).
-Missing bench totals remain unknown, and tied scores retain joint winners.
+cumulative totals. Bench scores for all 19 teams in GW1–9 use the four
+substitutes' scores from the Premier League Draft API's historical lineups and
+gameweek player scores. GW10 bench scores come from the saved Draft snapshot.
+Tied scores retain joint winners.
 
 API scores take priority for the same division and gameweek. Published weeks
 fill gaps only when their season matches the configured season. League C is
