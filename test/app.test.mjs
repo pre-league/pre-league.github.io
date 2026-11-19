@@ -8,6 +8,11 @@ const sample = JSON.parse(await readFile(new URL('../data/league-d.json', import
 const community = JSON.parse(await readFile(new URL('../data/community.json', import.meta.url), 'utf8'));
 const leagueD = normalizeLeague(sample, 10219);
 leagueD.teams[0].benchPoints = 0;
+leagueD.transactions = [
+  { id: 3, gameweek: 10, teamId: 130177, kind: 'Free agent', playerIn: 'Newest player', playerOut: 'Legacy player' },
+  { id: 2, gameweek: 9, teamId: 50027, kind: 'Waiver', playerIn: 'Top draft pick', playerOut: 'Former player', playerInDraftRank: 1, playerInPoints: 36 },
+  { id: 1, gameweek: 8, teamId: 130177, kind: 'Waiver', playerIn: 'Another player', playerOut: 'Top scorer', playerOutDraftRank: 5, playerOutPoints: 95, playerInPhotoCode: 154561, playerOutPhotoCode: 118748 }
+];
 const latest = {
   divisions: { D: leagueD, A: { ...structuredClone(leagueD), leagueId: 3887, name: 'League A' } },
   history: ['2026-11-17'], errors: []
@@ -16,20 +21,25 @@ const latest = {
 for (const division of ['A', 'D']) {
   test(`League ${division} starts and rerenders standings with the correct season rules`, async t => {
     const testCommunity = structuredClone(community);
-    const elements = Object.fromEntries(['#app', '#search', '#divisions', '#pages', '#main', '#retry', '#stats-season', '#gameweek', '#club-season', '#historical-week', '#league-gameweek'].map(selector => [selector, {
+    const testLatest = structuredClone(latest);
+    const elements = Object.fromEntries(['#app', '#search', '#search-toggle', '#search-cancel', '#language-toggle', '#language-flag', '#language-indicator', '#divisions', '#pages', '#main', '#retry', '#stats-season', '#gameweek', '#club-season', '#historical-week', '#league-division', '#league-gameweek', '#transfer-order', '#transfer-week', '#transfer-club', '#transfer-heading', '#transfer-shortcut', '#transfer-count', '#transfer-results', '#transfer-metric', '#transfer-active', '#transfer-active-label', '#transfer-reset'].map(selector => [selector, {
       innerHTML: '', value: '', attributes: {}, listeners: {},
-      addEventListener(name, handler) { this.listeners[name] = handler; }, focus() {},
-      setAttribute(name, value) { this.attributes[name] = value; }
+      addEventListener(name, handler) { this.listeners[name] = handler; }, focus() { this.focused = true; }, scrollIntoView() {}, getClientRects() { return [{}]; },
+      getAttribute(name) { return this.attributes[name]; }, setAttribute(name, value) { this.attributes[name] = value; }
     }]));
+    elements['#search'].dataset = { i18n: 'placeholder aria-label' };
+    elements['#search'].attributes = { placeholder: 'Find a club', 'aria-label': 'Search teams and managers' };
+    const preferences = new Map();
     const listeners = {};
     const globals = {
-      document: { querySelector: selector => elements[selector] ?? null, title: '' },
+      document: { querySelector: selector => elements[selector] ?? null, querySelectorAll: () => [elements['#search']], documentElement: {}, title: '' },
       window: { addEventListener: (name, handler) => { listeners[name] = handler; } },
       location: { hash: `#league=${division}`, reload() {} },
       history: { replaceState(_state, _title, hash) { globalThis.location.hash = hash; } },
+      localStorage: { getItem: key => preferences.get(key), setItem: (key, value) => preferences.set(key, value) },
       fetch: async path => {
         assert.ok(!path.includes('/data/history/'), 'Daily snapshots are not loaded by the UI');
-        return { ok: true, json: async () => path.endsWith('config.json') ? config : path.endsWith('community.json') ? testCommunity : latest };
+        return { ok: true, json: async () => path.endsWith('config.json') ? config : path.endsWith('community.json') ? testCommunity : testLatest };
       }
     };
     const previous = Object.getOwnPropertyDescriptors(globalThis);
@@ -75,6 +85,77 @@ for (const division of ['A', 'D']) {
     await listeners.hashchange();
     assert.match(elements['#app'].innerHTML, /team-badge color-\d large/);
     assert.match(elements['#app'].innerHTML, /assets\/crest\/thumbs\/130177.webp/);
+    assert.match(elements['#app'].innerHTML, /id="transfer-shortcut"[^>]*season=2026%2F27&section=transfers">Transfers \(2\)/);
+    assert.match(elements['#app'].innerHTML, /Gameweek 10[\s\S]*Newest player[\s\S]*Gameweek 8[\s\S]*Top scorer/);
+    assert.doesNotMatch(elements['#app'].innerHTML, /Top draft pick/);
+    globalThis.location.hash = `#league=${division}&tab=transactions`;
+    await listeners.hashchange();
+    assert.match(elements['#app'].innerHTML, /id="transfer-heading" tabindex="-1">League transfers<\/h2>[\s\S]*Gameweek 10[\s\S]*Newest player[\s\S]*Gameweek 9[\s\S]*Top draft pick[\s\S]*Gameweek 8[\s\S]*Top scorer/);
+    assert.doesNotMatch(elements['#app'].innerHTML, /transfer-controls-club/);
+    assert.match(elements['#app'].innerHTML, /id="transfer-week"[\s\S]*<details id="transfer-filters"[^>]*><summary>Filters<\/summary>[\s\S]*id="transfer-club"[\s\S]*id="transfer-order"[\s\S]*<\/details>/);
+    assert.match(elements['#app'].innerHTML, /class="transfer-club"[^>]*href="[^"]*club=andre-neto&season=2026%2F27&section=transfers"[^>]*>[\s\S]*?thumbs\/130177\.webp[^>]*><\/span><span>Imperial FC<\/span>/);
+    assert.deepEqual([...elements['#app'].innerHTML.matchAll(/class="player-headshot" src="[^"]*\/250x250\/(\d+)\.png"/g)].map(match => match[1]), ['154561', '118748']);
+    assert.equal((elements['#app'].innerHTML.match(/class="player-avatar"/g) ?? []).length, 6);
+    elements['#transfer-order'].listeners.change({ target: { value: 'rank' } });
+    assert.match(elements['#transfer-results'].innerHTML, /<ol[\s\S]*Top draft pick[\s\S]*Top scorer[\s\S]*Newest player/);
+    assert.match(elements['#transfer-results'].innerHTML, /transfer-value accent">#1/);
+    assert.match(elements['#transfer-results'].innerHTML, /<summary>Player details<\/summary>[\s\S]*36 pts/);
+    elements['#transfer-week'].listeners.change({ target: { value: '9' } });
+    assert.equal(elements['#transfer-count'].textContent, '1 of 3 moves');
+    elements['#transfer-club'].listeners.change({ target: { value: '130177' } });
+    assert.equal(elements['#transfer-count'].textContent, '0 of 3 moves');
+    assert.match(elements['#transfer-results'].innerHTML, /No transfers match[\s\S]*Clear filters/);
+    await listeners.hashchange();
+    assert.match(elements['#app'].innerHTML, /<option value="9" selected>GW 9/);
+    assert.match(elements['#app'].innerHTML, /<option value="130177" selected>Imperial FC/);
+    assert.match(elements['#app'].innerHTML, /<option value="#league=B&amp;tab=transactions">League B<\/option>/);
+    assert.match(elements['#app'].innerHTML, /id="transfer-active-label">Imperial FC · Best draft rank/);
+    elements['#transfer-reset'].listeners.click();
+    assert.equal(elements['#transfer-count'].textContent, '3 of 3 moves');
+    assert.equal(elements['#transfer-week'].focused, true);
+    assert.equal(globalThis.location.hash, `#league=${division}&tab=transactions`);
+    elements['#league-division'].listeners.change({ target: { value: '#league=B&tab=transactions' } });
+    assert.equal(globalThis.location.hash, '#league=B&tab=transactions');
+    await listeners.hashchange();
+    assert.equal(elements['#league-division'].focused, true);
+    globalThis.location.hash = `#league=${division}&tab=transactions&gw=38&club=123&sort=points`;
+    await listeners.hashchange();
+    assert.match(elements['#app'].innerHTML, /3 of 3 moves[\s\S]*<ol[\s\S]*Top scorer[\s\S]*Top draft pick[\s\S]*Newest player/);
+    for (const hash of ['#page=club&club=andre-neto&season=2026%2F27&section=transfers', '#league=D&team=130177&season=2026%2F27&section=transfers']) {
+      elements['#transfer-heading'].focused = false;
+      globalThis.location.hash = hash;
+      await listeners.hashchange();
+      assert.equal(elements['#transfer-heading'].focused, true);
+      assert.match(elements['#app'].innerHTML, /<h1>Imperial FC<\/h1>[\s\S]*id="transfer-heading" tabindex="-1">Imperial FC transfers<\/h2>/);
+      assert.match(elements['#app'].innerHTML, /class="history-control transfer-controls transfer-controls-club"/);
+      assert.match(elements['#app'].innerHTML, /id="transfer-filters"[\s\S]*id="transfer-order"/);
+      const clubDivision = hash.startsWith('#page=') ? 'A' : 'D';
+      assert.ok(elements['#app'].innerHTML.includes(`href="#league=${clubDivision}&tab=transactions">League ${clubDivision} transfers`));
+      assert.doesNotMatch(elements['#app'].innerHTML, /id="transfer-club"/);
+    }
+    const fallbackTeam = testLatest.divisions.D.teams.find(team => team.id === 130177);
+    const originalTeam = { ...fallbackTeam };
+    Object.assign(fallbackTeam, { name: 'Imperial <FC> & Friends', manager: 'Unlisted manager' });
+    await listeners.hashchange();
+    assert.match(elements['#app'].innerHTML, /<h1>Imperial &lt;FC&gt; &amp; Friends<\/h1>[\s\S]*id="transfer-heading" tabindex="-1">Imperial &lt;FC&gt; &amp; Friends transfers<\/h2>/);
+    Object.assign(fallbackTeam, originalTeam);
+    const savedMoves = testLatest.divisions[division].transactions;
+    globalThis.location.hash = `#league=${division}&tab=transactions`;
+    testLatest.divisions[division].transactions = null;
+    await listeners.hashchange();
+    assert.match(elements['#app'].innerHTML, /Transfers unavailable/);
+    globalThis.location.hash = `#league=${division}&team=130177&section=transfers`;
+    await listeners.hashchange();
+    assert.match(elements['#app'].innerHTML, /id="transfer-shortcut"[^>]*>Transfers<\/a>/);
+    assert.match(elements['#app'].innerHTML, /Transfers unavailable/);
+    testLatest.divisions[division].transactions = [];
+    globalThis.location.hash = `#league=${division}&tab=transactions`;
+    await listeners.hashchange();
+    assert.match(elements['#app'].innerHTML, /0 of 0 moves[\s\S]*No completed transfers/);
+    testLatest.divisions[division].transactions = savedMoves;
+    testLatest.divisions[division].transactionsStale = true;
+    await listeners.hashchange();
+    assert.match(elements['#app'].innerHTML, /Showing saved transfers/);
     let removed = false;
     elements['#app'].listeners.error({ target: { matches: selector => selector === 'img.team-crest', remove: () => { removed = true; } } });
     assert.equal(removed, true, 'Missing crests reveal the initials fallback');
@@ -136,7 +217,7 @@ for (const division of ['A', 'D']) {
     globalThis.location.hash = '#league=B&tab=teams';
     await listeners.hashchange();
     assert.match(elements['#app'].innerHTML, /page=club/);
-    assert.match(elements['#app'].innerHTML, /View club/);
+    assert.match(elements['#app'].innerHTML, /class="identity-row"/);
     globalThis.location.hash = '#page=stats&season=2025%2F26&gw=38';
     await listeners.hashchange();
     assert.match(elements['#app'].innerHTML, /1,931/);
@@ -171,6 +252,8 @@ for (const division of ['A', 'D']) {
     assert.match(elements['#app'].innerHTML, /League 2/);
     assert.match(elements['#app'].innerHTML, /1,639/);
     assert.doesNotMatch(elements['#app'].innerHTML, /promotion-row|relegation-row|Starting XI/);
+    assert.match(elements['#app'].innerHTML, /Historical lineups, transfers and bench scores were not supplied/);
+    assert.doesNotMatch(elements['#app'].innerHTML, /id="transfer-shortcut"/);
     globalThis.location.hash = elements['#app'].innerHTML.match(/href="([^"]*page=competition[^"]*)"/)[1];
     await listeners.hashchange();
     assert.match(elements['#app'].innerHTML, /<h1>League 2<\/h1>/);
@@ -237,5 +320,48 @@ for (const division of ['A', 'D']) {
     elements['#search'].listeners.input();
     assert.match(elements['#app'].innerHTML, /page=club&club=micas&season=2025%2F26/);
     assert.match(elements['#app'].innerHTML, /League 3 &middot; 2025\/26/);
+
+    const searchRoute = location.hash;
+    elements['#search-toggle'].listeners.click();
+    assert.equal(elements['#search-toggle'].getAttribute('aria-expanded'), 'true');
+    assert.equal(elements['#search'].focused, true);
+    elements['#search-cancel'].listeners.click();
+    assert.equal(elements['#search-toggle'].getAttribute('aria-expanded'), 'false');
+    assert.equal(elements['#search-toggle'].focused, true);
+    assert.equal(elements['#search'].value, '');
+    assert.equal(location.hash, searchRoute);
+    elements['#search-toggle'].listeners.click();
+    elements['#search'].listeners.keydown({ key: 'Escape', preventDefault() {} });
+    assert.equal(elements['#search-toggle'].getAttribute('aria-expanded'), 'false');
+
+    const transferUrl = '#league=D&tab=transactions&club=130177&gw=8';
+    globalThis.location.hash = transferUrl;
+    await listeners.hashchange();
+    elements['#language-toggle'].listeners.click();
+    assert.equal(document.documentElement.lang, 'pt-PT');
+    assert.equal(preferences.get('pre-ftw-language'), 'pt-PT');
+    assert.equal(elements['#language-indicator'].textContent, 'PT');
+    assert.equal(location.hash, transferUrl);
+    assert.equal(elements['#language-flag'].getAttribute('src'), './assets/flag-gb.svg');
+    assert.equal(elements['#search'].getAttribute('placeholder'), 'Procurar clube');
+    assert.match(elements['#pages'].innerHTML, />Início<\/span>/);
+    assert.match(elements['#app'].innerHTML, /Transferências da liga[\s\S]*1 de 3 transferências[\s\S]*Jornada 8[\s\S]*Imperial FC[\s\S]*Pedido prioritário/);
+    for (const [hash, expected] of [
+      ['#page=home', /Bem-vindo à PRE FTW League/],
+      ['#league=D&tab=standings', /<h2>Classificação<\/h2>/],
+      ['#league=D&tab=history', /Histórico de jornadas/],
+      ['#league=D&team=130177&section=transfers', /Transferências de Imperial FC[\s\S]*<dt>Divisão<\/dt><dd>Liga D<\/dd>/],
+      ['#page=stats', /Líder absoluto/],
+      ['#page=archive', /Campeão da Liga 1/],
+      ['#page=competition&league=1&season=2025%2F26', /<h1>Liga 1<\/h1>[\s\S]*aria-label="Classificação da Liga 1"/]
+    ]) {
+      globalThis.location.hash = hash;
+      await listeners.hashchange();
+      assert.match(elements['#app'].innerHTML, expected);
+    }
+    elements['#language-toggle'].listeners.click();
+    assert.equal(preferences.get('pre-ftw-language'), 'en');
+    assert.equal(document.documentElement.lang, 'en');
+    assert.match(elements['#app'].innerHTML, /<h1>League 1<\/h1>/);
   });
 }

@@ -28,7 +28,7 @@ async function copyDirectory(path) {
     else throw new Error(`Unsupported public asset: ${child}`);
   }
 }
-for (const path of ['index.html', 'styles.css', 'src/app.mjs', 'src/model.mjs', 'src/lineup.mjs', 'src/pages.mjs', 'src/stats.mjs', 'src/clubs.mjs']) {
+for (const path of ['index.html', 'styles.css', 'src/app.mjs', 'src/model.mjs', 'src/lineup.mjs', 'src/pages.mjs', 'src/stats.mjs', 'src/clubs.mjs', 'src/locale.mjs']) {
   await copyFile(new URL(path, root), new URL(path, output));
 }
 for (const path of ['assets/', 'data/']) await copyDirectory(path);
@@ -40,7 +40,7 @@ assert.ok(latest.divisions && Array.isArray(latest.history));
 for (const path of ['assets/crest/', 'assets/league/']) {
   assert.ok(!(await readdir(new URL(path, output))).some(filename => /\.png$/i.test(filename)), 'Original emblem PNGs must not be deployed');
 }
-for (const path of ['index.html', 'styles.css', 'src/app.mjs', 'src/model.mjs', 'src/lineup.mjs', 'src/pages.mjs', 'src/stats.mjs', 'src/clubs.mjs', 'data/community.json', 'assets/crest.webp']) {
+for (const path of ['index.html', 'styles.css', 'src/app.mjs', 'src/model.mjs', 'src/lineup.mjs', 'src/pages.mjs', 'src/stats.mjs', 'src/clubs.mjs', 'src/locale.mjs', 'data/community.json', 'assets/crest.webp', 'assets/flag-pt.svg', 'assets/flag-gb.svg']) {
   await access(new URL(path, output));
 }
 console.log('Static site built in dist/');

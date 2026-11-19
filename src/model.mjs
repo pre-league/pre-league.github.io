@@ -6,6 +6,7 @@ const text = (value, label) => {
   if (typeof value !== 'string' || value.length > 500) throw new Error(`Invalid ${label}`);
   return value;
 };
+const playerPhotoCode = player => Number.isSafeInteger(player?.code) && player.code > 0 ? player.code : null;
 
 export function normalizeLeague(data, expectedId) {
   if (data?.league?.id !== expectedId || !Array.isArray(data.league_entries) || !Array.isArray(data.standings)) {
@@ -58,7 +59,7 @@ export function normalizeSquad(data, bootstrap, live) {
     const points = livePlayers[player.id]?.stats?.total_points;
     return {
       id: player.id, name: text(player.web_name, 'player name'),
-      photoCode: Number.isSafeInteger(player.code) && player.code > 0 ? player.code : null,
+      photoCode: playerPhotoCode(player),
       position: ({ 1: 'GK', 2: 'DEF', 3: 'MID', 4: 'FWD' })[player.element_type] ?? '—',
       club: text(clubs.get(player.team) ?? '—', 'club'),
       slot: pick.position, bench: pick.position > 11,
@@ -67,22 +68,31 @@ export function normalizeSquad(data, bootstrap, live) {
   }).sort((a, b) => a.slot - b.slot);
 }
 
+export const newestTransactionFirst = (a, b) => b.gameweek - a.gameweek || b.id - a.id;
+
 export function normalizeTransactions(data, teams, bootstrap) {
   const rows = Array.isArray(data) ? data : data?.transactions;
   if (!Array.isArray(rows)) throw new Error('Invalid transaction response');
-  const players = new Map((bootstrap?.elements ?? []).map(player => [player.id, player.web_name]));
-  const owners = new Map(teams.map(team => [team.id, team]));
+  const players = new Map((Array.isArray(bootstrap?.elements) ? bootstrap.elements : []).map(player => [player.id, player]));
+  const owners = new Set(teams.map(team => team.id));
+  const draftRank = player => Number.isSafeInteger(player?.draft_rank) && player.draft_rank > 0 ? player.draft_rank : null;
+  const points = player => Number.isSafeInteger(player?.total_points) ? player.total_points : null;
   return rows.filter(row => row.result === 'a').map(row => {
-    const owner = owners.get(row.entry);
-    if (!owner) throw new Error('Unknown transaction owner');
+    if (!owners.has(row.entry)) throw new Error('Unknown transaction owner');
+    const inId = integer(row.element_in, 'incoming player', 1);
+    const outId = integer(row.element_out, 'outgoing player', 1);
+    const incoming = players.get(inId), outgoing = players.get(outId);
     return {
-      id: integer(row.id, 'transaction ID', 1), teamId: owner.id,
+      id: integer(row.id, 'transaction ID', 1), teamId: row.entry,
       gameweek: integer(row.event, 'transaction gameweek', 1),
-      playerIn: text(players.get(row.element_in) ?? `Player ${integer(row.element_in, 'incoming player', 1)}`, 'incoming name'),
-      playerOut: text(players.get(row.element_out) ?? `Player ${integer(row.element_out, 'outgoing player', 1)}`, 'outgoing name'),
+      playerIn: text(incoming?.web_name ?? `Player ${inId}`, 'incoming name'),
+      playerOut: text(outgoing?.web_name ?? `Player ${outId}`, 'outgoing name'),
+      playerInPhotoCode: playerPhotoCode(incoming), playerOutPhotoCode: playerPhotoCode(outgoing),
+      playerInDraftRank: draftRank(incoming), playerOutDraftRank: draftRank(outgoing),
+      playerInPoints: points(incoming), playerOutPoints: points(outgoing),
       kind: row.kind === 'w' ? 'Waiver' : row.kind === 'f' ? 'Free agent' : 'Transfer'
     };
-  }).sort((a, b) => b.gameweek - a.gameweek || b.id - a.id);
+  }).sort(newestTransactionFirst);
 }
 
 export function escapeHtml(value) {

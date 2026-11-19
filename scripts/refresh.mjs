@@ -42,13 +42,13 @@ export async function refreshData(config, previous, getJson, now) {
     } else {
       league.warnings.push('Squads await a valid gameweek and player catalog.');
     }
-    const transactionResults = await Promise.allSettled(league.teams.map(async team =>
-      normalizeTransactions(await getJson(`draft/entry/${team.id}/transactions`), league.teams, catalog)
-    ));
-    if (transactionResults.every(item => item.status === 'fulfilled')) {
-      const unique = new Map(transactionResults.flatMap(item => item.value).map(row => [row.id, row]));
-      league.transactions = [...unique.values()].sort((a, b) => b.gameweek - a.gameweek || b.id - a.id);
-    } else {
+    try {
+      league.transactions = normalizeTransactions(await getJson(`draft/league/${division.leagueId}/transactions`), league.teams, catalog);
+    } catch {
+      if (previous.season === config.season && old?.leagueId === league.leagueId && Array.isArray(old.transactions)) {
+        league.transactions = old.transactions;
+        league.transactionsStale = true;
+      }
       league.warnings.push('Published transactions are unavailable from the public API.');
     }
     result.divisions[division.key] = league;

@@ -85,6 +85,7 @@ test('club season selector and competition link keep the selected season; histor
   const view = getClubSeason(community, current, club, '2025/26');
   const html = renderClubSeason(club, view, ['2026/27', '2025/26'], () => 'Crest');
   assert.match(html, /id="club-season"/);
+  assert.match(html, /class="club-identity"[\s\S]*<h1>Pigui FC<\/h1>[\s\S]*id="club-season"[\s\S]*class="club-links"[\s\S]*class="team-summary"[\s\S]*class="panel club-gameweeks quiet-disclosure"/);
   assert.match(html, /page=competition/);
   assert.match(html, /league=1/);
   assert.match(html, /season=2025%2F26/);

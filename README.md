@@ -40,19 +40,19 @@ the preview's public assets and saved league data, not the repository files.
 
 ## Included
 
-Below 768px, the app has a compact search bar and fixed Home / Leagues / Stats /
-Records navigation with safe-area padding. Only league pages show the A–D
-switcher. Desktop keeps the sidebar and weekly highlights rail. League tabs are
-Table / Teams / Transfers / History; old `overview` and numeric team URLs still
-work. Search finds clubs and managers across all divisions without selecting a
-league; clearing it restores the current page. Historical-only clubs are also
-searchable. Standings show GW, Bench and total points, place strips and legends.
-Bench is the gameweek substitute total; unavailable scores show a dash.
-Phone club summaries use a 2 × 2 layout, with a compact pitch and unchanged
-portrait fallbacks, bench, Head Coach and full player list. No new data fetches,
-frameworks, fonts or dependencies were added for this redesign.
+Below 768px, the search button expands the header field. Cancel and Escape
+restore the current page. The fixed Home / Leagues / Stats / Records bar has
+safe-area padding. The league title opens the A–D selector on phones. Desktop
+keeps the sidebar and weekly highlights rail. League tabs are Table / Teams /
+Transfers / History. Existing `overview` and numeric team URLs still work.
+Search finds clubs and managers across current and historical leagues.
+The header’s EN/PT indicator names the current language. The flag switches
+between English and European Portuguese, with the preference saved locally.
+Standings show GW, Bench and total points, place strips and legends. Bench is
+the gameweek substitute total. Unavailable scores show a dash.
 
-- A simple welcome homepage, with links to the divisions, stats and record book.
+- A grouped Home list with each division’s leader, season points and saved
+  gameweek context, plus links to Stats, Records and community documentation.
 - Gameweek stats across connected leagues: Week's MVP (most GW team points),
   Absolute Leader (most season points), and Unlucky (most bench points).
   Joint winners are retained, and missing league/bench data is labelled.
@@ -60,9 +60,12 @@ frameworks, fonts or dependencies were added for this redesign.
 - Promotion places in green, relegation places in red, and League A's trophy
   place in gold. Top two go up (except A), bottom two go down (except D).
   Status text stays in the legend, with no repeated badges beneath team names.
-- Search by team or manager, team cards and shareable team pages.
+- Shared identity rows for search results and the Teams tab. Club URLs can be
+  shared directly.
 - Club profiles with season selectors, confirmed cross-season identities,
-  weekly results, league position and links to that season's competition.
+  weekly results, league position and links to that season’s competition.
+  Current club headers link straight to the Transfers section with its move
+  count. On current clubs the weekly results sit below the lineup.
 - A pitch lineup with formation, player positions and gameweek point badges;
   substitutes sit below the pitch and the full player list can be expanded.
 - A Head Coach section under each lineup using the team's manager name.
@@ -72,7 +75,11 @@ frameworks, fonts or dependencies were added for this redesign.
   Run `npm run update-data` once to add photo codes to older saved squads;
   later scheduled syncs include them automatically. Images load from
   `resources.premierleague.com`; missing or failed images show the fallback.
-- Completed public waivers/free-agent moves when accessible without login.
+- The league and club Transfers views group completed moves by gameweek,
+  newest first. Gameweek stays visible, and Filters contains sort and, for
+  league transfers, club. Active selections and reset are visible when Filters
+  is closed. Either player can determine the order when sorting by season FPL
+  points or draft rank. League rows link directly to the club’s Transfers section.
 - League History by gameweek, newest first, with cumulative positions, GW and
   Bench points. Movement arrows compare positions with the previous GW; GW1
   or missing previous-week data has no movement arrow. Update timestamps and
@@ -135,11 +142,12 @@ The updater makes read-only, unauthenticated requests to
 - `game`, `bootstrap-static` and `event/{gw}/live`
 - `league/{leagueId}/details`
 - `entry/{entryId}/event/{gw}`
-- `draft/entry/{entryId}/transactions` (completed results only)
+- `draft/league/{leagueId}/transactions` (completed results only)
 
 Browsers read saved same-origin JSON instead of contacting FPL directly.
-Standings join `standings[].league_entry` to `league_entries[].id`; squad and
-transaction requests use the separate `league_entries[].entry_id`.
+Standings join `standings[].league_entry` to `league_entries[].id`. Squad
+requests and transaction owners use the separate `league_entries[].entry_id`.
+Draft Rank and season FPL points come from the Draft player catalog.
 
 Add the remaining numeric IDs in **`data/config.json`** and refresh. Do not use
 invitation codes or add passwords, cookies or tokens.

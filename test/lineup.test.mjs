@@ -34,8 +34,7 @@ test('renders the pitch, bench and full list with escaped names and actual point
   const changed = structuredClone(squad);
   changed[0].name = '<img src=x onerror="alert(1)">';
   const html = renderLineup({ squad: changed, squadGameweek: 10 });
-  assert.match(html, /lineup-pitch/);
-  assert.match(html, /3-4-3/);
+  assert.match(html, /<div class="panel-heading">[\s\S]*3-4-3[\s\S]*GW 10<\/span><\/div>\s*<div class="lineup-pitch"/);
   assert.match(html, /Bench/);
   assert.match(html, /View player list/);
   assert.match(html, /&lt;img src=x/);

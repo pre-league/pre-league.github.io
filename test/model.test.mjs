@@ -43,10 +43,19 @@ test('keeps only completed public transactions and resolves owner using entry ID
   const rows = normalizeTransactions({ transactions: [
     { id: 1, entry: 50027, element_in: 2, element_out: 3, event: 10, kind: 'w', result: 'a' },
     { id: 2, entry: 50027, element_in: 3, element_out: 2, event: 11, kind: 'w', result: 'r' }
-  ] }, league.teams, { elements: [{ id: 2, web_name: 'Incoming' }, { id: 3, web_name: 'Outgoing' }] });
+  ] }, league.teams, { elements: [
+    { id: 2, web_name: 'Incoming', draft_rank: 4, total_points: 0, code: 118748 },
+    { id: 3, web_name: 'Outgoing', draft_rank: 0, total_points: -1, code: 'invalid' }
+  ] });
   assert.equal(rows.length, 1);
   assert.equal(rows[0].teamId, 50027);
   assert.equal(rows[0].playerIn, 'Incoming');
+  assert.equal(rows[0].playerInPhotoCode, 118748);
+  assert.equal(rows[0].playerOutPhotoCode, null);
+  assert.equal(rows[0].playerInDraftRank, 4);
+  assert.equal(rows[0].playerInPoints, 0);
+  assert.equal(rows[0].playerOutDraftRank, null);
+  assert.equal(rows[0].playerOutPoints, -1);
 });
 
 test('API names are escaped before HTML rendering', () => {

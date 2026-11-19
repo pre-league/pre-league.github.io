@@ -4,11 +4,12 @@ import { renderWelcome, renderStats, renderArchive } from '../src/pages.mjs';
 
 const config = { season: '2026/27', divisions: ['A', 'B', 'C', 'D'].map(key => ({ key, leagueId: key === 'A' ? 3887 : null })) };
 test('welcome is a simple landing page linking to divisions and stats', () => {
-  const html = renderWelcome(config, { divisions: {} });
+  const html = renderWelcome(config, { divisions: { A: { gameweek: 10, teams: [{ name: '<Leader>', total: 536 }] } } });
   assert.match(html, /Welcome to PRE FTW League/);
   assert.match(html, /#page=stats/);
   assert.match(html, /#league=A/);
   assert.doesNotMatch(html, /<table/);
+  assert.match(html, /class="panel identity-list welcome-divisions"[\s\S]*&lt;Leader&gt;[\s\S]*536 pts[\s\S]*GW 10 · Saved standings[\s\S]*Coming soon/);
   for (const key of ['A', 'B', 'C', 'D']) assert.ok(html.includes(`./assets/league/thumbs/${key}.webp`));
 });
 test('stats names all three confirmed awards and explains unavailable coverage', () => {
@@ -31,6 +32,8 @@ test('stats include published scores and the selected report without mixing seas
   assert.match(html, /Chelas City/);
   assert.match(html, /&lt;News&gt;/);
   assert.match(html, /Published totals/);
+  assert.match(html, /class="panel weekly-awards"[\s\S]*Chelas City[\s\S]*<details class="quiet-disclosure award-details"/);
+  assert.ok(html.indexOf('Gameweek leaderboard') < html.indexOf('journal-report'));
   assert.doesNotMatch(renderStats({ ...config, season: '2027/28' }, { divisions: {} }, 10, team => team.name, community), /Chelas City|&lt;News&gt;/);
 });
 

@@ -30,15 +30,19 @@ test('standings refresh independently of unavailable player and transaction endp
   assert.ok(result.divisions.D.warnings.length > 0);
 });
 
-test('successful refresh enriches squads using the Draft gameweek and entry IDs', async () => {
+test('refreshes squads by entry ID and completed transfers by league ID', async () => {
   const paths = [];
   const result = await refreshData({ ...config, divisions: [config.divisions[1]] }, previous, async path => {
     paths.push(path);
     if (path === 'game') return { current_event: 10 };
-    if (path === 'bootstrap-static') return { elements: [{ id: 7, web_name: 'A player', element_type: 1, team: 1 }], teams: [{ id: 1, short_name: 'ARS' }] };
+    if (path === 'bootstrap-static') return { elements: [{ id: 7, web_name: 'A player', element_type: 1, team: 1, draft_rank: 5, total_points: 34 }], teams: [{ id: 1, short_name: 'ARS' }] };
     if (path === 'event/10/live') return { elements: { 7: { stats: { total_points: 6 } } } };
     if (path === 'league/10219/details') return sample;
-    if (path.endsWith('/transactions')) return { transactions: [] };
+    if (path === 'draft/league/10219/transactions') return { transactions: [
+      { id: 1, entry: 50027, element_in: 7, element_out: 8, event: 10, kind: 'w', result: 'a' },
+      { id: 2, entry: 50751, element_in: 8, element_out: 9, event: 10, kind: 'f', result: 'a' },
+      { id: 3, entry: 50027, element_in: 9, element_out: 7, event: 10, kind: 'w', result: 'r' }
+    ] };
     if (/^entry\/\d+\/event\/10$/.test(path)) return { picks: [{ element: 7, position: 1 }] };
     throw new Error(`Unexpected path ${path}`);
   }, now);
@@ -46,8 +50,24 @@ test('successful refresh enriches squads using the Draft gameweek and entry IDs'
   assert.ok(!paths.includes('entry/50100/event/10'));
   assert.equal(result.divisions.D.teams[0].squad[0].points, 6);
   assert.equal(result.divisions.D.teams[0].squadGameweek, 10);
-  assert.deepEqual(result.divisions.D.transactions, []);
+  assert.deepEqual(paths.filter(path => path.endsWith('/transactions')), ['draft/league/10219/transactions']);
+  const moves = result.divisions.D.transactions;
+  assert.deepEqual(moves.map(move => move.teamId), [50751, 50027]);
+  assert.equal(moves[1].playerInDraftRank, 5);
+  assert.equal(moves[1].playerInPoints, 34);
+  assert.equal(moves[1].playerOut, 'Player 8');
   assert.deepEqual(result.errors, []);
+});
+
+test('retains saved transfers when only their endpoint fails in the same season', async () => {
+  const transactions = [{ id: 1, teamId: 50027 }];
+  const saved = { ...previous, season: config.season, divisions: { D: { ...previous.divisions.D, transactions } } };
+  const result = await refreshData(config, saved, async path => {
+    if (path === 'league/10219/details') return sample;
+    throw new Error('Unavailable');
+  }, now);
+  assert.deepEqual(result.divisions.D.transactions, transactions);
+  assert.equal(result.divisions.D.transactionsStale, true);
 });
 
 test('rejects nonnumeric configured IDs before forming endpoint URLs', async () => {
