@@ -1,9 +1,11 @@
-import { escapeHtml as e, newestTransactionFirst, standingPlace } from './model.mjs';
+import { renderPlayer, renderPlayers } from './players.mjs';
+import { bindWeekButtons, weekControl } from './gameweek.mjs';
+import { escapeHtml as e, newestTransactionFirst, playerRoute, standingPlace } from './model.mjs';
 import { renderLineup, renderPlayerAvatar, handleHeadshotError } from './lineup.mjs';
 import { renderWelcome, renderStats, renderArchive, leagueEmblem } from './pages.mjs';
 import { t, language, setLanguage, number, formatDate, leagueLabel, gameweekLabel, teamCount } from './locale.mjs';
-import { documentedDivision, teamBenchPoints, leagueGameweek } from './stats.mjs';
-import { clubForTeam, clubBrandTeam, clubRoute, historicalLeagueRoute, getClubSeason, getHistoricalLeague, renderClubGameweeks, renderClubIdentity, renderClubSeason, renderHistoricalLeague } from './clubs.mjs';
+import { combinedWeeklyRecords, documentedDivision, teamBenchPoints, leagueGameweek } from './stats.mjs';
+import { bindScorePlot, clubTabs, clubWeeks, renderClubStats, clubForTeam, clubBrandTeam, clubRoute, historicalLeagueRoute, getClubSeason, getHistoricalLeague, renderClubGameweeks, renderClubIdentity, renderClubSeason, renderHistoricalLeague } from './clubs.mjs';
 
 const app = document.querySelector('#app');
 const handleImageError = event => {
@@ -35,7 +37,7 @@ function applyLanguage() {
   const label = t(english ? 'Switch to Portuguese (Portugal)' : 'Switch to English');
   languageButton?.setAttribute('aria-label', label);
   languageButton?.setAttribute('title', label);
-  languageFlag?.setAttribute('src', `./assets/flag-${english ? 'pt' : 'gb'}.svg`);
+  languageFlag?.setAttribute('src', `./assets/flag-${english ? 'gb' : 'pt'}.svg`);
   if (languageIndicator) languageIndicator.textContent = english ? 'EN' : 'PT';
 }
 
@@ -47,6 +49,7 @@ languageButton?.addEventListener('click', () => {
   redraw();
 });
 
+let playerData, loadingPlayers;
 let config, latest, documented = {}, community = { seasons: [], documents: [] }, query = '', lastLeague = 'A', nextRouteFocus;
 
 function setSearchOpen(open) {
@@ -67,6 +70,7 @@ const navIcons = {
   home: 'M3 10 12 3l9 7v10H15v-6H9v6H3Z',
   leagues: 'M8 3h8v5a4 4 0 0 1-8 0Zm0 2H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4m-4 1v7m-4 2h8',
   stats: 'M4 20V10h4v10m4 0V4h4v16m4 0v-7M2 20h20',
+  players: 'M16 21v-2a6 6 0 0 0-12 0v2m10-14a4 4 0 1 1-8 0 4 4 0 0 1 8 0m3-2a4 4 0 0 1 0 7m2 3a5 5 0 0 1 2 4v2',
   archive: 'M4 4h7a3 3 0 0 1 3 3v14a4 4 0 0 0-4-2H4Zm10 3a3 3 0 0 1 3-3h3v15h-2a4 4 0 0 0-4 2'
 };
 const tabs = [['standings', 'Table'], ['teams', 'Teams'], ['transactions', 'Transfers'], ['history', 'History']];
@@ -84,17 +88,18 @@ const hashParams = () => new URLSearchParams(location.hash.slice(1));
 const clubSnapshot = () => ({ ...latest, divisions: { ...documented, ...latest.divisions } });
 const clubSeasons = club => [config.season, ...(community.seasons ?? []).map(row => row.season)].filter(season => getClubSeason(community, clubSnapshot(), club, season));
 function bindRouteSelect(id, href) {
+  bindWeekButtons(id);
   document.querySelector(`#${id}`)?.addEventListener('change', event => {
     nextRouteFocus = id;
     location.hash = href(event.target.value);
   });
 }
 function bindClubSeason(club) {
-  if (club) bindRouteSelect('club-season', season => clubRoute(club.key, season));
+  if (club) bindRouteSelect('club-season', season => clubRoute(club.key, season) + (state().section === 'stats' ? '&section=stats' : ''));
 }
 function state() {
   const params = hashParams();
-  const page = ['home', 'stats', 'archive', 'club', 'competition'].includes(params.get('page')) ? params.get('page') : params.has('league') ? 'league' : 'home';
+  const page = ['home', 'stats', 'archive', 'club', 'competition', 'player', 'players'].includes(params.get('page')) ? params.get('page') : params.has('league') ? 'league' : 'home';
   return { page, clubKey: params.get('club'), competitionKey: params.get('league'), season: [config.season, ...(community.seasons ?? []).map(row => row.season)].includes(params.get('season')) ? params.get('season') : config.season, week: Number(params.get('gw')), key: /^[A-D]$/.test(params.get('league')) ? params.get('league') : 'D', teamId: Number(params.get('team')), tab: tabs.some(([key]) => key === params.get('tab')) ? params.get('tab') : 'standings', section: params.get('section') };
 }
 const movement = team => {
@@ -113,12 +118,12 @@ function clubTransfersRoute(href) {
   params.set('section', 'transfers');
   return `#${params}`;
 }
-function teamLink(team, key, season = config.season) {
+function teamLink(team, key, season = config.season, detail) {
   const href = teamHref(team, key, season);
   const brand = clubBrandTeam(community, clubSnapshot(), team, season);
-  return `<${href ? `a href="${href}"` : 'span'} class="team-link">${teamIdentity(brand)}</${href ? 'a' : 'span'}>`;
+  return `<${href ? `a href="${href}"` : 'span'} class="team-link">${teamIdentity(brand, detail)}</${href ? 'a' : 'span'}>`;
 }
-const teamIdentity = team => `${badge(team)}<span><strong>${e(team.name)}</strong><small>${e(team.manager)}</small></span>`;
+const teamIdentity = (team, detail = team.manager) => `${badge(team)}<span><strong>${e(team.name)}</strong><small>${e(detail)}</small></span>`;
 const filtered = (teams, season = config.season) => teams.filter(team => `${team.name} ${team.manager} ${clubBrandTeam(community, clubSnapshot(), team, season).name}`.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
 const places = {
   trophy: { label: 'PRE FTW trophy' },
@@ -176,16 +181,21 @@ function transferRow(row, owner, key, order) {
   const rank = order === 'rank';
   const href = owner && teamHref(owner, key);
   const players = [
-    { direction: 'In', name: row.playerIn, photo: row.playerInPhotoCode, points: row.playerInPoints, rank: row.playerInDraftRank },
-    { direction: 'Out', name: row.playerOut, photo: row.playerOutPhotoCode, points: row.playerOutPoints, rank: row.playerOutDraftRank }
+    { direction: 'In', id: row.playerInId, name: row.playerIn, photo: row.playerInPhotoCode, points: row.playerInPoints, rank: row.playerInDraftRank },
+    { direction: 'Out', id: row.playerOutId, name: row.playerOut, photo: row.playerOutPhotoCode, points: row.playerOutPoints, rank: row.playerOutDraftRank }
   ];
   const playerLines = players.map(player => {
     const value = rank ? player.rank : player.points;
     const best = score && value != null && (rank ? value : -value) === score(row);
     const metric = value == null ? '—' : rank ? `#${number(value)}` : t("{0} pts", number(value));
-    return `<div class="transfer-player"><b class="${player.direction === 'In' ? 'accent' : 'muted'}">${t(player.direction)}</b>${renderPlayerAvatar(player.photo)}<strong>${e(player.name)}</strong><span class="transfer-value${best ? ' accent' : ''}">${metric}</span></div>`;
+    const link = playerRoute(player.id, player.photo, key);
+    const tag = link ? 'a' : 'div';
+    return `<${tag} class="transfer-player"${link ? ` href="${link}"` : ''}><b class="${player.direction === 'In' ? 'accent' : 'muted'}">${t(player.direction)}</b>${renderPlayerAvatar(player.photo)}<strong>${e(player.name)}</strong><span class="transfer-value${best ? ' accent' : ''}">${metric}</span></${tag}>`;
   }).join('');
-  const details = players.map(player => `<div><strong>${e(player.name)}</strong><span>${t("Season FPL points {0} · Draft rank {1}", player.points == null ? '—' : t("{0} pts", number(player.points)), player.rank == null ? '—' : `#${number(player.rank)}`)}</span></div>`).join('');
+  const details = players.map(player => {
+    const link = playerRoute(player.id, player.photo, key);
+    return `<div><strong>${link ? `<a href="${link}">${e(player.name)}</a>` : e(player.name)}</strong><span>${t("Season FPL points {0} · Draft rank {1}", player.points == null ? '—' : t("{0} pts", number(player.points)), player.rank == null ? '—' : `#${number(player.rank)}`)}</span></div>`;
+  }).join('');
   return `<li class="transfer-row"><div class="transfer-move">
     <div class="transfer-meta">${href ? `<a class="transfer-club" href="${clubTransfersRoute(href)}">${badge(owner)}<span>${e(owner.name)}</span></a>` : ''}<p class="transfer-kind">${score ? `${gameweekLabel(row.gameweek)} · ` : ''}${e(t(row.kind))}</p></div>
     ${playerLines}</div><details class="transfer-details quiet-disclosure"><summary>${t("Player details")}</summary><div>${details}</div></details></li>`;
@@ -219,7 +229,7 @@ function transactions(league, key, team = null, clubName = team?.name) {
   const view = Array.isArray(league?.transactions) ? transferView(league, team, params) : null;
   const active = view ? activeTransferFilters(view) : '';
   const controls = view?.total ? `<div class="history-control transfer-controls${team ? ' transfer-controls-club' : ''}">
-    ${transferSelect('transfer-week', t("Gameweek"), [['', t("All weeks")], ...view.weeks.map(week => [week, gameweekLabel(week)])], view.week)}
+     ${weekControl('transfer-week', 'Gameweek', view.weeks, view.week, `<option value="">${t("All weeks")}</option>`)}
     <details id="transfer-filters" class="transfer-filters quiet-disclosure"><summary>${t("Filters")}</summary><div class="transfer-filter-fields">
       ${team ? '' : transferSelect('transfer-club', t("Club"), [['', t("All clubs")], ...view.clubs.map(club => [String(club.id), club.name])], String(view.club?.id ?? ''))}
       ${transferSelect('transfer-order', t("Sort by"), Object.entries(transferOrders).map(([value, { label }]) => [value, t(label)]), view.order)}
@@ -235,14 +245,15 @@ function teamPage(league, team, current) {
   const club = clubForTeam(community, team, config.season);
   const view = club && getClubSeason(community, clubSnapshot(), club, config.season);
   const clubName = view?.brandTeam.name ?? team.name;
-  const href = current.page === 'club' ? clubRoute(current.clubKey, config.season) : route(current.key, team.id);
+  const href = current.page === 'club' ? clubRoute(current.clubKey, config.season) : route(current.key, team.id) + "&season=" + encodeURIComponent(config.season);
   const count = Array.isArray(league.transactions) ? league.transactions.filter(row => row.teamId === team.id).length : null;
-  const transfers = `<a id="transfer-shortcut" class="transfer-link transfer-shortcut" href="${clubTransfersRoute(href)}">${t("Transfers")}${count == null ? '' : ` (${count})`}</a>`;
   const competition = route(current.key, '', 'standings');
-  const header = view ? renderClubSeason(club, { ...view, league, team }, clubSeasons(club), badge, transfers) : `${renderClubIdentity(team, current.key, competition, badge, `<span class="club-fixed-season">${e(config.season)}</span>`)}<div class="club-links"><a class="club-competition" href="${competition}">${leagueLabel(current.key)} <span aria-hidden="true">↗</span></a>${transfers}</div>
-    <div class="team-summary"><div><span>${t("League position")}</span><strong>${team.rank}<small> / ${league.teams.length}</small></strong></div><div><span>${t("Season points")}</span><strong>${number(team.total)}</strong></div><div><span>${league.gameweek ? t("Gameweek {0}", league.gameweek) : t("Latest gameweek")}</span><strong class="accent">${number(team.eventPoints)}</strong></div><div><span>${t("Waiver priority")}</span><strong>${number(team.waiverPick)}</strong></div></div>`;
+  const header = view ? renderClubSeason(club, { ...view, league, team }, clubSeasons(club), badge, current.section, href, count) : `${renderClubIdentity(team, current.key, competition, badge, `<span class="club-fixed-season">${e(config.season)}</span>`)}<div class="club-links"><a class="club-competition" href="${competition}">${leagueLabel(current.key)} <span aria-hidden="true">↗</span></a></div>${clubTabs(href, current.section, false, count)}${['transfers', 'stats'].includes(current.section) ? '' : `
+    <div class="team-summary"><div><span>${t("League position")}</span><strong>${team.rank}<small> / ${league.teams.length}</small></strong></div><div><span>${t("Season points")}</span><strong>${number(team.total)}</strong></div><div><span>${league.gameweek ? t("Gameweek {0}", league.gameweek) : t("Latest gameweek")}</span><strong class="accent">${number(team.eventPoints)}</strong></div><div><span>${t("Waiver priority")}</span><strong>${number(team.waiverPick)}</strong></div></div>`}`;
+  if (current.section === 'transfers') return header + transactions(league, current.key, team, clubName);
+  if (current.section === 'stats') return view ? header : header + renderClubStats(clubWeeks(combinedWeeklyRecords(latest, community, config.season), current.key, team));
   return `${header}
-    <div class="content-grid team-content"><div>${renderLineup(team)}${view ? renderClubGameweeks(view) : ''}<div class="section-spacer">${transactions(league, current.key, team, clubName)}</div></div><aside class="insights"><section class="panel"><div class="panel-heading"><h2>${t("Team info")}</h2></div><dl class="info-list"><div><dt>${t("Manager")}</dt><dd>${e(team.manager)}</dd></div><div><dt>${t("Division")}</dt><dd>${leagueLabel(current.key)}</dd></div>${hasTeamId(team) ? `<div><dt>${t("Team ID")}</dt><dd>${team.id}</dd></div>` : ''}<div><dt>${t("Waiver priority")}</dt><dd>${number(team.waiverPick)}</dd></div><div><dt>${t("Movement")}</dt><dd>${movement(team)}</dd></div></dl></section><div class="context-note"><strong>${t("Points that count")}</strong><p>${t("Standings use official team totals. Individual player points include the bench and are shown separately.")}</p></div></aside></div>`;
+    <div class="content-grid team-content"><div>${renderLineup(team, current.key)}${view ? renderClubGameweeks(view) : ''}</div><aside class="insights"><section class="panel"><div class="panel-heading"><h2>${t("Team info")}</h2></div><dl class="info-list"><div><dt>${t("Manager")}</dt><dd>${e(team.manager)}</dd></div><div><dt>${t("Division")}</dt><dd>${leagueLabel(current.key)}</dd></div>${hasTeamId(team) ? `<div><dt>${t("Team ID")}</dt><dd>${team.id}</dd></div>` : ''}<div><dt>${t("Waiver priority")}</dt><dd>${number(team.waiverPick)}</dd></div><div><dt>${t("Movement")}</dt><dd>${movement(team)}</dd></div></dl></section><details class="quiet-disclosure score-notes"><summary>${t("Points that count")}</summary><p>${t("Standings use official team totals. Individual player points include the bench and are shown separately.")}</p></details></aside></div>`;
 }
 
 function focusTeamTransfers() {
@@ -251,7 +262,7 @@ function focusTeamTransfers() {
   const heading = document.querySelector('#transfer-heading');
   if (!heading) return false;
   heading.focus({ preventScroll: true });
-  heading.scrollIntoView({ block: 'start' });
+  window.scrollTo?.(0, 0);
   return true;
 }
 
@@ -260,6 +271,7 @@ function bindTransferControls(league, key, team) {
     if (focusTeamTransfers()) event.preventDefault();
   });
   if (!league?.transactions?.length) return;
+  const syncWeekButtons = bindWeekButtons('transfer-week');
   const fields = [['transfer-week', 'gw'], ...(!team ? [['transfer-club', 'club']] : []), ['transfer-order', 'sort']];
   function update(params) {
     const view = transferView(league, team, params);
@@ -286,13 +298,14 @@ function bindTransferControls(league, key, team) {
       document.querySelector(`#${id}`).value = param === 'sort' ? 'latest' : '';
     }
     update(params);
+    syncWeekButtons?.();
     document.querySelector('#transfer-week').focus();
   });
 }
 
 function historyView(history, key, status, notice) {
   const { weeks, gameweek, league } = history;
-  const selector = weeks.length ? `<div class="control-field"><label for="league-gameweek">${t("Gameweek")}</label><select id="league-gameweek">${league ? '' : `<option value="" selected disabled>${t("Choose a gameweek")}</option>`}${weeks.map(week => `<option value="${week}"${week === gameweek ? ' selected' : ''}>${gameweekLabel(week)}</option>`).join('')}</select></div>` : '';
+  const selector = weeks.length ? weekControl('league-gameweek', 'Gameweek', weeks, gameweek, league ? '' : `<option value="" selected disabled>${t("Choose a gameweek")}</option>`) : '';
   const toolbar = `<h2 class="sr-only">${t("Gameweek history")}</h2><div class="history-control table-toolbar">${selector}<p><span>${e(config.season)} · ${status}</span>${league?.source === 'documentation' ? ` · <a href="${e(league.sourceUrl)}" target="_blank" rel="noopener noreferrer">${t("community journal")} ↗</a>` : ''}</p></div>${notice}`;
   return league ? `${table(league, key, t("Standings at GW {0}", gameweek), toolbar)}<p class="panel-copy">${t("Positions use cumulative points at the selected gameweek. GW and Bench show points for that week; unavailable scores remain a dash.")}</p>` : `<section class="panel">${toolbar}${empty(weeks.length ? t("Gameweek unavailable") : t("No gameweeks saved yet"), weeks.length ? t("No scores were recorded for this gameweek. Choose an available gameweek above.") : t("Gameweek standings will appear after scores are saved."))}</section>`;
 }
@@ -329,19 +342,59 @@ function render() {
   const leagueTransfers = current.page === 'league' && !current.teamId && current.tab === 'transactions';
   const divisionHref = key => leagueTransfers ? leagueTransfersRoute(key) : route(key);
   document.querySelector('#main').setAttribute('data-page', current.page === 'league' && current.teamId ? 'club' : current.page);
-  if (current.page === 'league') lastLeague = current.key;
+  if (['league', 'player', 'players'].includes(current.page)) lastLeague = current.key;
   else if (current.page === 'club') {
     const club = (community.clubs ?? []).find(club => club.key === current.clubKey);
     const view = club && getClubSeason(community, clubSnapshot(), club, config.season);
     if (view) lastLeague = view.key;
   }
-  const selectedPage = ['league', 'club', 'competition'].includes(current.page) ? 'leagues' : current.page;
-  document.querySelector('#pages').innerHTML = [['home', 'Home'], ['leagues', 'Leagues'], ['stats', 'Stats'], ['archive', 'Records']].map(([page, label]) => `<a data-nav="${page}" href="${page === 'leagues' ? route(lastLeague) : `#page=${page}`}"${selectedPage === page ? ' aria-current="page"' : ''}><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${navIcons[page]}"></path></svg><span>${t(label)}</span></a>`).join('');
-  document.querySelector('#divisions').innerHTML = config.divisions.map(d => `<a class="division-link${current.page === 'league' && d.key === current.key ? ' selected' : ''}" href="${divisionHref(d.key)}"${current.page === 'league' && d.key === current.key ? ' aria-current="page"' : ''}>${leagueEmblem(d.key)}<span>${leagueLabel(d.key)}<small>${(latest.divisions[d.key] ?? documented[d.key]) ? teamCount((latest.divisions[d.key] ?? documented[d.key]).teams.length) : d.leagueId ? t("Awaiting first sync") : t("Awaiting league ID")}</small></span><span class="division-chevron" aria-hidden="true">›</span></a>`).join('');
+  const selectedPage = current.page === 'player' ? 'players' : ['league', 'club', 'competition'].includes(current.page) ? 'leagues' : current.page;
+  document.querySelector('#pages').innerHTML = [['home', 'Home'], ['leagues', 'Leagues'], ['players', 'Players'], ['stats', 'Stats'], ['archive', 'Records']].map(([page, label]) => `<a data-nav="${page}" href="${page === 'leagues' ? route(lastLeague) : page === 'players' ? `#page=players&league=${lastLeague}` : `#page=${page}`}"${selectedPage === page ? ' aria-current="page"' : ''}><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${navIcons[page]}"></path></svg><span>${t(label)}</span></a>`).join('');
+  document.querySelector('#divisions').innerHTML = config.divisions.map(d => `<a class="division-link${current.page === 'league' && d.key === current.key ? ' selected' : ''}" href="${divisionHref(d.key)}"${current.page === 'league' && d.key === current.key ? ' aria-current="page"' : ''}>${leagueEmblem(d.key)}<span>${leagueLabel(d.key)}</span><span class="division-chevron" aria-hidden="true">›</span></a>`).join('');
   if (query) {
     app.innerHTML = searchResults();
     document.title = `${t("Search clubs")} · PRE FTW League`;
     app.setAttribute('aria-busy', 'false');
+    return;
+  }
+  if (current.page === 'player' || current.page === 'players') {
+    if (!playerData) {
+      app.innerHTML = `<p class="loading" role="status">${t("Loading player…")}</p>`;
+      app.setAttribute('aria-busy', 'true');
+      if (!loadingPlayers) loadingPlayers = fetch('./data/players.json', { cache: 'no-cache' }).then(async response => {
+        if (!response.ok) throw new Error('Player data unavailable');
+        const data = await response.json();
+        if (data.season !== config.season) throw new Error('Player season mismatch');
+        playerData = data;
+        if (['player', 'players'].includes(state().page)) render();
+      }).catch(() => {
+        if (!['player', 'players'].includes(state().page) || query) return;
+        app.innerHTML = `<p class="no-results">${t("Player data unavailable")}</p><button class="retry-button" id="retry">${t("Try again")}</button>`;
+        app.setAttribute('aria-busy', 'false');
+        document.querySelector('#retry').addEventListener('click', render);
+      }).finally(() => { loadingPlayers = null; });
+      return;
+    }
+    const params = hashParams();
+    const profile = current.page === 'players' ? renderPlayers(playerData, latest, config, params, current.key, badge) : renderPlayer(playerData, latest, config, params, current.key, teamLink);
+    app.innerHTML = profile.html;
+    document.title = `${profile.name} · PRE FTW League`;
+    app.setAttribute('aria-busy', 'false');
+    for (const [id, field] of [['player-league', 'league'], ['player-metric', 'metric']]) {
+      bindRouteSelect(id, value => {
+        params.set(field, value);
+        params.delete('p');
+        if (field === 'league') params.delete('team');
+        return `#${params}`;
+      });
+    }
+    document.querySelector('#find-player')?.addEventListener('submit', event => {
+      event.preventDefault();
+      const term = new FormData(event.currentTarget).get('q').trim();
+      if (term) params.set('q', term); else params.delete('q');
+      params.delete('p');
+      location.hash = `#${params}`;
+    });
     return;
   }
   if (current.page === 'club' || current.page === 'competition') {
@@ -350,13 +403,14 @@ function render() {
       const view = club && getClubSeason(community, clubSnapshot(), club, current.season);
       let content;
       if (!view) content = `<section class="panel">${empty(t("Club season not found"), t("This club has no recorded participation in the selected season."))}</section>`;
-      else if (view.historical) content = renderClubSeason(club, view, clubSeasons(club), badge);
+      else if (view.historical) content = renderClubSeason(club, view, clubSeasons(club), badge, current.section);
       else {
         const source = view.league.source === 'provided' ? t("League-provided sample") : view.league.updatedAt ? t("Standings updated {0}", date(view.league.updatedAt)) : t("Published GW {0} standings", view.league.gameweek);
         content = teamPage(view.league, view.team, { ...current, key: view.key }) + `<p class="archive-note">${source}${view.league.stale ? t(" · Last refresh failed") : ''}</p>`;
       }
       app.innerHTML = content;
       bindClubSeason(club);
+      if (current.section === 'stats') bindScorePlot();
       if (view && !view.historical) bindTransferControls(view.league, view.key, view.team);
       document.title = `${view?.brandTeam.name ?? t("Club season")} · PRE FTW League`;
     } else {
@@ -400,6 +454,7 @@ function render() {
   app.innerHTML = `${team ? '' : top + nav}${metadata}${history ? '' : notice}${content}<div class="update-footer"><span>${history ? (league ? t("Saved scores for GW {0}", league.gameweek) : t("No scores for this gameweek")) : league?.source === 'documentation' ? t("Source: community journal GW {0}", league.gameweek) : league?.updatedAt ? t("Standings updated {0}", date(league.updatedAt)) : league ? t("Source: league-provided sample · Sync pending") : t("No standings received yet")}</span><span>${history ? t("Gameweek history") : league?.source === 'documentation' ? t("Published report") : t("Daily updates")} · ${e(config.season)}</span></div>${league?.warnings?.length ? `<details class="sync-notes quiet-disclosure"><summary>${t("Data availability ({0})", league.warnings.length)}</summary><ul>${league.warnings.map(w => `<li>${e(translateWarning(w))}</li>`).join('')}</ul></details>` : ''}`;
   document.title = `${team ? team.name : leagueLabel(current.key)} · PRE FTW League`;
   app.setAttribute('aria-busy', 'false');
+  if (team && current.section === 'stats') bindScorePlot();
   if (team) bindClubSeason(clubForTeam(community, team, config.season));
   if (team || leagueTransfers) bindTransferControls(league, current.key, team);
   bindRouteSelect('league-division', href => href);

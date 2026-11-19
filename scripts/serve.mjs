@@ -16,7 +16,7 @@ export function resolvePublicPath(rawPath) {
   try { path = decodeURIComponent(rawPath); } catch { return null; }
   if (path === '/') path = '/index.html';
   if (path.includes('\\') || path.includes('\0') || path.split('/').includes('..')) return null;
-  const allowed = /^\/(index\.html|styles\.css|src\/(app|model|lineup|pages|stats|clubs|locale)\.mjs|assets\/(?:[a-z0-9-]+\.svg|crest\.webp|crest\/thumbs\/[1-9]\d*\.webp|league\/thumbs\/[A-D]\.webp)|data\/(config|latest|community)\.json|data\/history\/\d{4}-\d{2}-\d{2}\.json)$/.test(path);
+  const allowed = /^\/(index\.html|styles\.css|src\/(app|model|lineup|pages|stats|clubs|gameweek|players|locale)\.mjs|assets\/(?:[a-z0-9-]+\.svg|crest\.webp|crest\/thumbs\/[1-9]\d*\.webp|league\/thumbs\/[A-D]\.webp)|data\/(config|latest|community|players)\.json|data\/history\/\d{4}-\d{2}-\d{2}\.json)$/.test(path);
   if (!allowed) return null;
   const target = resolve(root, `.${path}`);
   const rel = relative(root, target);

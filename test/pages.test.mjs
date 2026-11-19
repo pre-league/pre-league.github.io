@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { renderWelcome, renderStats, renderArchive } from '../src/pages.mjs';
 
 const config = { season: '2026/27', divisions: ['A', 'B', 'C', 'D'].map(key => ({ key, leagueId: key === 'A' ? 3887 : null })) };
-test('welcome is a simple landing page linking to divisions and stats', () => {
+test('welcome is a simple landing page linking to each division', () => {
   const html = renderWelcome(config, { divisions: { A: { gameweek: 10, teams: [{ name: '<Leader>', total: 536 }] } } });
-  assert.match(html, /Welcome to PRE FTW League/);
-  assert.match(html, /#page=stats/);
+  assert.match(html, /<h1>Divisions<\/h1>/);
+  assert.equal((html.match(/class="identity-row"/g) ?? []).length, 4);
   assert.match(html, /#league=A/);
   assert.doesNotMatch(html, /<table/);
   assert.match(html, /class="panel identity-list welcome-divisions"[\s\S]*&lt;Leader&gt;[\s\S]*536 pts[\s\S]*GW 10 · Saved standings[\s\S]*Coming soon/);
@@ -51,4 +51,10 @@ test('stats can select a previous season with its own divisions, scores and sour
   assert.match(html, /1\/3 leagues/);
   assert.match(html, /Imported workbook/);
   assert.doesNotMatch(html, /API scores take priority/);
+});
+
+test('gameweek positions share ties, skip places and leave missing scores unranked', () => {
+  const teams = [null, -2, 0, 0].map((gameweekPoints, id) => ({ id, name: String(id), division: 'D', gameweekPoints }));
+  const html = renderStats(config, { weekly: { 1: { D: { teams } } } }, 1, team => team.name);
+  assert.deepEqual([...html.matchAll(/<td class="rank-col">([^<]+)<\/td>/g)].map(match => match[1]), ['1', '1', '3', '\u2014']);
 });

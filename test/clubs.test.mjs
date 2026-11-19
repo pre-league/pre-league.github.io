@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { clubForTeam, clubBrandTeam, clubRoute, getClubSeason, getHistoricalLeague, renderClubSeason, renderHistoricalLeague } from '../src/clubs.mjs';
+import { clubForTeam, clubBrandTeam, clubRoute, clubWeeks, renderClubStats, getClubSeason, getHistoricalLeague, renderClubSeason, renderHistoricalLeague } from '../src/clubs.mjs';
 import { documentedDivision } from '../src/stats.mjs';
 
 const community = JSON.parse(await readFile(new URL('../data/community.json', import.meta.url), 'utf8'));
@@ -123,4 +123,35 @@ test('club identities are unique and link exactly the 14 confirmed returning man
     assert.ok(getClubSeason(community, current, club, '2026/27'));
   }
   assert.equal(clubForTeam(community, {}, '2025/26'), undefined);
+});
+
+test('club stats use saved scores, count tied leads, and omit incomplete comparisons', () => {
+  const team = { id: 4, manager: 'M' };
+  const weekly = Object.fromEntries([[1, 0, 4], [3, 12, 12], [4, 6, null]].map(([gw, points, rival]) =>
+    [gw, { D: { teams: [{ ...team, gameweekPoints: points, benchPoints: gw === 1 ? 0 : null }, { id: 9, gameweekPoints: rival }] } }]));
+  const html = renderClubStats(clubWeeks(weekly, 'D', team));
+  for (const [label, value] of [['Median score', 6], ['Score variation (SD)', 4.9], ['Weeks above average', 0],
+    ['Weekly top scores (incl. ties)', 1], ['Avg points above division', -1], ['Total bench points', 0]]) {
+    assert.ok(html.includes(`<dt>${label}</dt><dd>${value}</dd>`), label);
+  }
+  assert.match(renderClubStats([]), /No weekly scores/);
+});
+
+test('position chart shows saved ranks without weekly scores and breaks at missing gameweeks', () => {
+  const html = renderClubStats([1, 2, 4].map((gameweek, i) => ({ gameweek, rank: [3, 1, 1][i], leagueSize: 4 })));
+  assert.match(html, /GW 1: #3, GW 2: #1, GW 4: #1/);
+  assert.equal((html.match(/class="chart-segment"/g) ?? []).length, 1);
+  for (const rank of [1, 2, 3, 4]) assert.ok(html.includes(`text-anchor="end">${rank}</text>`));
+  assert.match(renderClubStats([{ gameweek: 4, rank: 1, leagueSize: 1 }]), /cx="50%" cy="0%"/);
+});
+
+test('weekly points chart plots zero and negative scores, skips missing scores, and uses distinct chart labels', () => {
+  const html = renderClubStats([0, -5, null, 10].map((points, index) => ({ gameweek: index + 1, points, rank: 1 })));
+  assert.match(html, /id="rank-title"/);
+  const chart = html.slice(html.indexOf('id="points-title"'), html.indexOf('class="club-stat-grid"'));
+  assert.match(chart, /GW 1: 0 pts, GW 2: -5 pts, GW 4: 10 pts/);
+  assert.equal((chart.match(/class="chart-segment"/g) ?? []).length, 1);
+  assert.match(chart, /cy="100%" r="3" data-score="GW 2/);
+  assert.match(chart, /cy="0%" r="3" data-score="GW 4/);
+  assert.doesNotMatch(renderClubStats([{ gameweek: 3, points: 0 }]), /NaN|Infinity/);
 });

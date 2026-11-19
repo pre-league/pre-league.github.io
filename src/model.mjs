@@ -85,6 +85,7 @@ export function normalizeTransactions(data, teams, bootstrap) {
     return {
       id: integer(row.id, 'transaction ID', 1), teamId: row.entry,
       gameweek: integer(row.event, 'transaction gameweek', 1),
+      playerInId: inId, playerOutId: outId,
       playerIn: text(incoming?.web_name ?? `Player ${inId}`, 'incoming name'),
       playerOut: text(outgoing?.web_name ?? `Player ${outId}`, 'outgoing name'),
       playerInPhotoCode: playerPhotoCode(incoming), playerOutPhotoCode: playerPhotoCode(outgoing),
@@ -109,4 +110,9 @@ export function standingPlace(division, position, teamCount) {
   if (division !== 'A' && position <= 2) return 'promotion';
   if (division !== 'D' && position > teamCount - 2) return 'relegation';
   return null;
+}
+
+export function playerRoute(id, photo, league) {
+  const identity = Number.isSafeInteger(id) && id > 0 ? { id } : Number.isSafeInteger(photo) && photo > 0 ? { photo } : null;
+  return identity ? `#${new URLSearchParams({ page: 'player', ...identity, league })}` : '';
 }

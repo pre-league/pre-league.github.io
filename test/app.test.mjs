@@ -86,6 +86,13 @@ for (const division of ['A', 'D']) {
     assert.match(elements['#app'].innerHTML, /team-badge color-\d large/);
     assert.match(elements['#app'].innerHTML, /assets\/crest\/thumbs\/130177.webp/);
     assert.match(elements['#app'].innerHTML, /id="transfer-shortcut"[^>]*season=2026%2F27&section=transfers">Transfers \(2\)/);
+    assert.doesNotMatch(elements['#app'].innerHTML, /id="transfer-panel"/);
+    globalThis.location.hash += '&section=stats';
+    await listeners.hashchange();
+    assert.match(elements['#app'].innerHTML, /aria-current="page" href="[^"]*&section=stats">Stats/);
+    assert.doesNotMatch(elements['#app'].innerHTML, /id="transfer-panel"|class="lineup-pitch"/);
+    globalThis.location.hash = `#league=${division}&team=130177&section=transfers`;
+    await listeners.hashchange();
     assert.match(elements['#app'].innerHTML, /Gameweek 10[\s\S]*Newest player[\s\S]*Gameweek 8[\s\S]*Top scorer/);
     assert.doesNotMatch(elements['#app'].innerHTML, /Top draft pick/);
     globalThis.location.hash = `#league=${division}&tab=transactions`;
@@ -165,7 +172,7 @@ for (const division of ['A', 'D']) {
     globalThis.location.hash = '';
     await listeners.hashchange();
     assert.match(elements['#pages'].innerHTML, /data-nav="home"[^>]*aria-current="page"/);
-    assert.match(elements['#app'].innerHTML, /Welcome to PRE FTW League/);
+    assert.match(elements['#app'].innerHTML, /<h1>Divisions<\/h1>/);
     assert.doesNotMatch(elements['#app'].innerHTML, /<table/);
     globalThis.location.hash = '#page=stats';
     await listeners.hashchange();
@@ -334,6 +341,7 @@ for (const division of ['A', 'D']) {
     elements['#search'].listeners.keydown({ key: 'Escape', preventDefault() {} });
     assert.equal(elements['#search-toggle'].getAttribute('aria-expanded'), 'false');
 
+    assert.equal(elements['#language-flag'].getAttribute('src'), './assets/flag-gb.svg');
     const transferUrl = '#league=D&tab=transactions&club=130177&gw=8';
     globalThis.location.hash = transferUrl;
     await listeners.hashchange();
@@ -342,15 +350,15 @@ for (const division of ['A', 'D']) {
     assert.equal(preferences.get('pre-ftw-language'), 'pt-PT');
     assert.equal(elements['#language-indicator'].textContent, 'PT');
     assert.equal(location.hash, transferUrl);
-    assert.equal(elements['#language-flag'].getAttribute('src'), './assets/flag-gb.svg');
+    assert.equal(elements['#language-flag'].getAttribute('src'), './assets/flag-pt.svg');
     assert.equal(elements['#search'].getAttribute('placeholder'), 'Procurar clube');
     assert.match(elements['#pages'].innerHTML, />Início<\/span>/);
     assert.match(elements['#app'].innerHTML, /Transferências da liga[\s\S]*1 de 3 transferências[\s\S]*Jornada 8[\s\S]*Imperial FC[\s\S]*Pedido prioritário/);
     for (const [hash, expected] of [
-      ['#page=home', /Bem-vindo à PRE FTW League/],
+      ['#page=home', /<h1>Divisões<\/h1>/],
       ['#league=D&tab=standings', /<h2>Classificação<\/h2>/],
       ['#league=D&tab=history', /Histórico de jornadas/],
-      ['#league=D&team=130177&section=transfers', /Transferências de Imperial FC[\s\S]*<dt>Divisão<\/dt><dd>Liga D<\/dd>/],
+      ['#league=D&team=130177&section=transfers', /Transferências de Imperial FC[\s\S]*Liga D/],
       ['#page=stats', /Líder absoluto/],
       ['#page=archive', /Campeão da Liga 1/],
       ['#page=competition&league=1&season=2025%2F26', /<h1>Liga 1<\/h1>[\s\S]*aria-label="Classificação da Liga 1"/]

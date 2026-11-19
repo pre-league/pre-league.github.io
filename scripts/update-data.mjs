@@ -33,3 +33,5 @@ for (const division of Object.values(result.divisions)) {
 }
 for (const error of result.errors) console.error(error);
 if (result.errors.length) process.exitCode = 1;
+
+await import('./update-players.mjs');
