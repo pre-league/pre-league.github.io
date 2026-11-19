@@ -342,14 +342,14 @@ function render() {
   const leagueTransfers = current.page === 'league' && !current.teamId && current.tab === 'transactions';
   const divisionHref = key => leagueTransfers ? leagueTransfersRoute(key) : route(key);
   document.querySelector('#main').setAttribute('data-page', current.page === 'league' && current.teamId ? 'club' : current.page);
-  if (['league', 'player', 'players'].includes(current.page)) lastLeague = current.key;
+  if (['league', 'player'].includes(current.page) || (current.page === 'players' && current.key === hashParams().get('league'))) lastLeague = current.key;
   else if (current.page === 'club') {
     const club = (community.clubs ?? []).find(club => club.key === current.clubKey);
     const view = club && getClubSeason(community, clubSnapshot(), club, config.season);
     if (view) lastLeague = view.key;
   }
   const selectedPage = current.page === 'player' ? 'players' : ['league', 'club', 'competition'].includes(current.page) ? 'leagues' : current.page;
-  document.querySelector('#pages').innerHTML = [['home', 'Home'], ['leagues', 'Leagues'], ['players', 'Players'], ['stats', 'Stats'], ['archive', 'Records']].map(([page, label]) => `<a data-nav="${page}" href="${page === 'leagues' ? route(lastLeague) : page === 'players' ? `#page=players&league=${lastLeague}` : `#page=${page}`}"${selectedPage === page ? ' aria-current="page"' : ''}><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${navIcons[page]}"></path></svg><span>${t(label)}</span></a>`).join('');
+  document.querySelector('#pages').innerHTML = [['home', 'Home'], ['leagues', 'Leagues'], ['players', 'Players'], ['stats', 'Stats'], ['archive', 'Records']].map(([page, label]) => `<a data-nav="${page}" href="${page === 'leagues' ? route(lastLeague) : `#page=${page}`}"${selectedPage === page ? ' aria-current="page"' : ''}><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${navIcons[page]}"></path></svg><span>${t(label)}</span></a>`).join('');
   document.querySelector('#divisions').innerHTML = config.divisions.map(d => `<a class="division-link${current.page === 'league' && d.key === current.key ? ' selected' : ''}" href="${divisionHref(d.key)}"${current.page === 'league' && d.key === current.key ? ' aria-current="page"' : ''}>${leagueEmblem(d.key)}<span>${leagueLabel(d.key)}</span><span class="division-chevron" aria-hidden="true">›</span></a>`).join('');
   if (query) {
     app.innerHTML = searchResults();

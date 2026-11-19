@@ -56,13 +56,17 @@ export function normalizeSquad(data, bootstrap, live) {
     const player = players.get(pick.element);
     if (!player || pick.position > 15 || seen.has(player.id) || slots.has(pick.position)) throw new Error('Invalid squad player');
     seen.add(player.id); slots.add(pick.position);
-    const points = livePlayers[player.id]?.stats?.total_points;
+    const stats = livePlayers[player.id]?.stats;
+    const points = stats?.total_points;
     return {
       id: player.id, name: text(player.web_name, 'player name'),
       photoCode: playerPhotoCode(player),
       position: ({ 1: 'GK', 2: 'DEF', 3: 'MID', 4: 'FWD' })[player.element_type] ?? '—',
       club: text(clubs.get(player.team) ?? '—', 'club'),
       slot: pick.position, bench: pick.position > 11,
+      ...(stats?.goals_scored > 0 && { goals: integer(stats.goals_scored, 'goals', 1) }),
+      ...(stats?.assists > 0 && { assists: integer(stats.assists, 'assists', 1) }),
+      ...(stats?.clean_sheets > 0 && { cleanSheets: integer(stats.clean_sheets, 'clean sheets', 1) }),
       points: points == null ? null : integer(points, 'player points')
     };
   }).sort((a, b) => a.slot - b.slot);

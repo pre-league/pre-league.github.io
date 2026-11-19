@@ -26,7 +26,7 @@ export function playerSeason(weeks, id, key, teams) {
   });
   const clubs = [...totals.values()].map(row => {
     const complete = row.known === row.weeks;
-    return { ...row, points: complete ? row.points : null, average: complete ? row.points / row.weeks : null };
+    return { ...row, points: complete ? row.points : null, average: complete && row.starts > 0 ? row.points / row.starts : null };
   }).sort((a, b) => (b.points ?? -Infinity) - (a.points ?? -Infinity) || b.average - a.average);
   return { clubs, history };
 }
@@ -64,13 +64,13 @@ export function renderPlayer(data, snapshot, config, params, key, teamLink) {
       table("Points by club", ["Club","Points","Avg / GW","Bench"], clubs.map(row => [
         clubCell(row.teamId, t(row.weeks === 1 ? "1 GW · {1} in XI" : "{0} GWs · {1} in XI", number(row.weeks), number(row.starts))),
         `<strong>${number(row.points)}</strong>`, number(row.average, {maximumFractionDigits: 1}), number(row.bench)
-      ])) + `<p class="panel-copy">${t("Ranked by points credited to each club. The average includes every recorded week owned, including bench weeks.")}</p>`;
+      ])) + `<p class="panel-copy">${t("Weekly average counts each gameweek in the scoring XI after automatic substitutions.")}</p>`;
   } else {
     const moves = (league?.transactions ?? []).flatMap(move => {
       const side = ['In','Out'].find(side => move['player' + side + 'Id'] === id || (player.photoCode > 0 && move['player' + side + 'PhotoCode'] === player.photoCode));
       return side ? [{ ...move, side }] : [];
     }).sort(newestTransactionFirst);
-    content = select + table("Gameweek history", ["GW","Club","Selection","Player pts","Credited pts"], history.map(w => [
+    content = select + table("Gameweek history", ["GW","Club","Selection","Player pts","Points for club"], history.map(w => [
       number(Number(w.gw)), w.teamId ? clubCell(w.teamId) : w.complete ? t("Free agent") : t("Unavailable"),
       w.teamId ? t(w.used ? "Scoring XI" : "Bench") : number(null), number(w.points), number(w.credited)
     ])) + (Array.isArray(league?.transactions) ? table("Transfers", ["GW","Club","Move"], moves.map(m => [
@@ -80,12 +80,12 @@ export function renderPlayer(data, snapshot, config, params, key, teamLink) {
   return { name: player.fullName || player.name, html: header + `<div class="player-content">${content}</div>` };
 }
 
-function leagueSelect(config, key) {
-  return `<div class="control-field"><label for="player-league">${t("League")}</label><select id="player-league">${config.divisions.map(d => `<option value="${e(d.key)}"${d.key === key ? ' selected' : ''}>${leagueLabel(e(d.key))}</option>`).join('')}</select></div>`;
+function leagueSelect(config, key, includeAll = false) {
+  return `<div class="control-field"><label for="player-league">${t("League")}</label><select id="player-league">${includeAll ? `<option value="all"${key == null ? ' selected' : ''}>${t("All leagues")}</option>` : ''}${config.divisions.map(d => `<option value="${e(d.key)}"${d.key === key ? ' selected' : ''}>${leagueLabel(e(d.key))}</option>`).join('')}</select></div>`;
 }
 
 const seasonMetrics = { points: 'Season points', goals: 'Goals', assists: 'Assists', bonus: 'Bonus points', cleanSheets: 'Clean sheets', minutes: 'Minutes' };
-const clubMetrics = { points: 'Credited pts', average: 'Pts / owned GW', peak: 'Best scoring GW' };
+const clubMetrics = { average: 'Weekly average', points: 'Points for club', peak: 'Best week' };
 
 export function superstarRows(data, league, teams) {
   const ids = new Set(Object.values(data.weeks).flatMap(week =>
@@ -96,17 +96,18 @@ export function superstarRows(data, league, teams) {
     const { clubs, history } = playerSeason(data.weeks, id, league, teams);
     return clubs.filter(club => club.starts > 0).map(club => {
       const scores = history.filter(w => w.teamId === club.teamId && w.used && w.credited != null);
-      return { ...club, id, player, peak: scores.length ? Math.max(...scores.map(w => w.credited)) : null };
+      return { ...club, league, id, player, peak: scores.length ? Math.max(...scores.map(w => w.credited)) : null };
     });
   });
 }
 
 export function renderPlayers(data, snapshot, config, params, league, badge) {
-  const stars = params.get('section') === 'superstars';
-  const teams = snapshot.divisions[league]?.teams ?? [];
+  const stars = params.get('section') !== 'season';
+  const selectedLeague = config.divisions.find(d => d.key === params.get('league'))?.key;
   const metrics = stars ? clubMetrics : seasonMetrics;
-  const metric = Object.hasOwn(metrics, params.get('metric')) ? params.get('metric') : 'points';
-  const rows = stars ? superstarRows(data, league, teams) :
+  const metric = Object.hasOwn(metrics, params.get('metric')) ? params.get('metric') : (stars ? 'average' : 'points');
+  const divisions = config.divisions.filter(d => !selectedLeague || d.key === selectedLeague);
+  const rows = stars ? divisions.flatMap(d => superstarRows(data, d.key, snapshot.divisions[d.key]?.teams ?? [])) :
     Object.entries(data.players).map(([id, player]) => ({ id: Number(id), player, ...player }));
   rows.sort((a, b) => (b[metric] ?? -Infinity) - (a[metric] ?? -Infinity) || a.player.name.localeCompare(b.player.name));
   const term = params.get('q')?.trim() ?? '';
@@ -119,25 +120,25 @@ export function renderPlayers(data, snapshot, config, params, league, badge) {
   const pageSize = 25;
   const pages = Math.max(1, Math.ceil(ranked.length / pageSize));
   const page = Math.min(pages, Math.max(1, Math.floor(Number(params.get('p'))) || 1));
-  const route = values => '#' + new URLSearchParams({ page: 'players', league, ...values });
+  const route = values => '#' + new URLSearchParams({ page: 'players', ...(selectedLeague && { league: selectedLeague }), ...values });
   const pageHref = p => {
     const next = new URLSearchParams(params);
     next.set('p', p);
     return '#' + next;
   };
-  const filters = `<div class="stats-toolbar player-filters">${stars ? leagueSelect(config, league) : ''}
+  const filters = `<div class="stats-toolbar player-filters">${stars ? leagueSelect(config, selectedLeague, true) : ''}
     <div class="control-field"><label for="player-metric">${t("Sort by")}</label><select id="player-metric">${Object.entries(metrics).map(([key, label]) => `<option value="${key}"${metric === key ? ' selected' : ''}>${t(label)}</option>`).join('')}</select></div>
     ${stars ? '' : `<form id="find-player"><input type="search" name="q" aria-label="${t("Find a player")}" placeholder="${t("Find a player")}" value="${e(term)}"><button type="submit">${t("Search")}</button></form>`}</div>`;
   const columns = stars && metric !== 'average' ? [metric, 'average'] : stars ? ['average', 'points'] : [metric];
   const body = ranked.slice((page - 1) * pageSize, page * pageSize).map(row => {
     const { player } = row;
-    const detail = stars ? t(row.weeks === 1 ? '1 GW · {1} in XI' : '{0} GWs · {1} in XI', number(row.weeks), number(row.starts)) : [player.club, t(player.position)].filter(Boolean).map(e).join(' · ');
-    const club = stars && teams.find(team => team.id === row.teamId);
+    const detail = stars ? t(row.starts === 1 ? '1 match played' : '{0} matches played', number(row.starts)) : [player.club, t(player.position)].filter(Boolean).map(e).join(' · ');
+    const club = stars && snapshot.divisions[row.league]?.teams?.find(team => team.id === row.teamId);
     const clubCell = stars ? `<td><span class="star-club">${club ? badge(club) + '<span>' + e(club.name) + '</span>' : t("Entry {0}", row.teamId)}</span></td>` : '';
-    return `<tr><td>${number(row.rank)}</td><td><a class="team-link" href="${playerRoute(row.id, null, league)}">${renderPlayerAvatar(player.photoCode, player.position === 'GK')}<span><strong>${e(player.name)}</strong><small>${detail}</small></span></a></td>${clubCell}${columns.map(key => `<td class="numeric">${number(row[key], { maximumFractionDigits: 1 })}</td>`).join('')}</tr>`;
+    return `<tr><td>${number(row.rank)}</td><td><a class="team-link" href="${playerRoute(row.id, null, row.league ?? league)}">${renderPlayerAvatar(player.photoCode, player.position === 'GK')}<span><strong>${e(player.name)}</strong><small>${detail}</small></span></a></td>${clubCell}${columns.map(key => `<td class="numeric">${number(row[key], { maximumFractionDigits: 1 })}</td>`).join('')}</tr>`;
   }).join('');
-  const html = `<div class="page-heading"><h1>${t("Players")}</h1></div><nav class="section-nav" aria-label="${t("Player sections")}"><a href="${route({})}"${stars ? '' : ' aria-current="page"'}>${t("Season stats")}</a><a href="${route({ section: 'superstars' })}"${stars ? ' aria-current="page"' : ''}>${t("Superstars")}</a></nav>
-    ${filters}<section class="panel player-board${stars ? ' superstar-board' : ''}">${body ? `<table><caption class="sr-only">${stars ? leagueLabel(e(league)) : t("Players")} · ${t(metrics[metric])}</caption><thead><tr><th scope="col" aria-label="${t("Rank")}">#</th><th scope="col">${t("Player")}</th>${stars ? `<th scope="col">${t("Club")}</th>` : ''}${columns.map(key => `<th scope="col" class="numeric">${t(metrics[key])}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table>` : `<p class="no-results">${t(stars ? "No records in this league." : "No players found.")}</p>`}</section>
+  const html = `<div class="page-heading"><h1>${t("Players")}</h1></div><nav class="section-nav" aria-label="${t("Player sections")}"><a href="${route({ section: 'superstars' })}"${stars ? ' aria-current="page"' : ''}>${t("Superstars")}</a><a href="${route({ section: 'season' })}"${stars ? '' : ' aria-current="page"'}>${t("Season stats")}</a></nav>
+    ${filters}<section class="panel player-board${stars ? ' superstar-board' : ''}">${body ? `<table><caption class="sr-only">${stars ? (selectedLeague ? leagueLabel(e(selectedLeague)) : t("All leagues")) : t("Players")} · ${t(metrics[metric])}</caption><thead><tr><th scope="col" aria-label="${t("Rank")}">#</th><th scope="col">${t("Player")}</th>${stars ? `<th scope="col">${t("Club")}</th>` : ''}${columns.map(key => `<th scope="col" class="numeric">${t(metrics[key])}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table>` : `<p class="no-results">${t(stars ? "No records in this league." : "No players found.")}</p>`}</section>
     ${pages > 1 ? `<nav class="board-pages" aria-label="${t("Leaderboard pages")}">${page > 1 ? `<a href="${e(pageHref(page - 1))}">${t("Previous")}</a>` : ''}<span>${number(page)} / ${number(pages)}</span>${page < pages ? `<a href="${e(pageHref(page + 1))}">${t("Next")}</a>` : ''}</nav>` : ''}`;
   return { name: t("Players"), html };
 }

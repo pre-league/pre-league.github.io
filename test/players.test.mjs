@@ -10,7 +10,7 @@ test('a player who changes clubs credits each scoring XI, including repeat spell
   }
   const { clubs, history } = playerSeason(weeks, 4, 'A', []);
   assert.deepEqual(clubs.map(row => [row.teamId, row.weeks, row.starts, row.points, row.average, row.bench]), [
-    [22, 2, 1, 10, 5, 7], [11, 2, 1, 5, 2.5, 3], [33, 1, 1, -1, -1, 0]
+    [22, 2, 1, 10, 10, 7], [11, 2, 1, 5, 5, 3], [33, 1, 1, -1, -1, 0]
   ]);
   assert.deepEqual(history.map(w => w.credited), [10, 0, -1, 0, 5]);
   delete weeks[5].points[4];
@@ -40,13 +40,24 @@ test('Superstars ranks separate player-club spells league-wide and season rankin
   data.weeks[1].points[3] = 100;
   const rows = superstarRows(data, 'C', teams);
   assert.ok(!rows.some(row => row.id === 3));
+  assert.equal(playerSeason(data.weeks, 3, 'C', teams).clubs[0].average, null);
   const star = rows.find(row => row.id === 1 && row.teamId === 11);
   assert.equal(rows.find(row => row.id === 1 && row.teamId === 22).points, 8);
   const board = renderPlayers(data, { divisions: { C: { teams } } }, { divisions: [{ key: 'C' }] }, new URLSearchParams('section=superstars&metric=bench&team=11'), 'C', () => '');
   assert.match(board.html, /<th scope="col">Club<\/th>/);
   assert.ok(board.html.includes('First') && board.html.includes('Second'));
   assert.doesNotMatch(board.html, /superstar-team|Bench only|value="bench"/);
-  assert.deepEqual([star.weeks, star.starts, star.points, star.average, star.peak, star.bench], [2, 1, 5, 2.5, 5, 7]);
-  const { html } = renderPlayers(data, { divisions: { C: {teams} } }, { divisions: [{ key: 'C' }] }, new URLSearchParams(), 'C', () => '');
+  assert.deepEqual([star.weeks, star.starts, star.points, star.average, star.peak, star.bench], [2, 1, 5, 5, 5, 7]);
+  data.weeks[1].squads.D = { 11: [[1, 1]] };
+  const divisions = { C: { teams }, D: { teams: [{ id: 11, name: 'Other league club' }] } };
+  const renderTab = query => renderPlayers(data, { divisions }, { divisions: [{ key: 'C' }, { key: 'D' }] }, new URLSearchParams(query), 'C', () => '').html;
+  const firstTab = renderTab('');
+  assert.match(firstTab, /value="all" selected>All leagues/);
+  assert.match(firstTab, /Other league club/);
+  assert.match(firstTab, /First/);
+  assert.doesNotMatch(renderTab('league=C'), /Other league club/);
+  assert.match(firstTab, /aria-current="page">Superstars<\/a><a [^>]*>Season stats<\/a>/);
+  assert.match(firstTab, /value="average" selected>Weekly average/);
+  const html = renderTab('section=season');
   assert.equal((html.match(/<tr><td>1<\/td>/g) ?? []).length, 2);
 });

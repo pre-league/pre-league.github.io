@@ -52,13 +52,43 @@ test('unsynced squads show an empty pitch with no invented players', () => {
   }
 });
 
+test('forwards show attacking returns and never display a clean-sheet badge', () => {
+  const player = { ...squad[8], goals: 1, assists: 1, cleanSheets: 1 };
+  const html = renderLineup({ squad: [player] });
+  assert.match(html, /class="pitch-event goals"/);
+  assert.match(html, /class="pitch-event assists"/);
+  assert.doesNotMatch(html, /class="pitch-event cleanSheets"/);
+});
+
+test('the top scorer star follows the best known starting score, including ties', () => {
+  const players = squad.map(player => ({ ...player, points: null }));
+  const view = () => renderLineup({ squad: players });
+  assert.doesNotMatch(view(), /class="pitch-star"/);
+  players[11].points = 10;
+  players[0].points = -1;
+  assert.equal(view().match(/class="pitch-star"/g)?.length, 1);
+  players[1].points = -1;
+  assert.equal(view().match(/class="pitch-star"/g)?.length, 2);
+  assert.doesNotMatch(view().split('class="bench-heading"')[1], /class="pitch-star"/);
+});
+
+test('pitch badges use inclusive score bands and only show recorded events', () => {
+  for (const [points, color] of [[null, 'unknown'], [-1, 'red'], [2, 'red'], [3, 'yellow'], [5, 'yellow'], [6, 'green'], [9, 'green'], [10, 'blue']]) {
+    const html = renderLineup({ squad: [{ ...squad[0], points, goals: 2, assists: 0, cleanSheets: 1 }] });
+    assert.ok(html.includes(`class="pitch-score ${color}"`));
+    assert.match(html, /aria-label="Goals: 2"/);
+    assert.match(html, /aria-label="Clean sheets: 1"/);
+    assert.doesNotMatch(html, /class="pitch-event assists"/);
+  }
+});
+
 test('headshots use a fixed official image host and keep a fallback for missing photos', () => {
   const players = structuredClone(squad);
   players[0].photoCode = 118748;
   players[1].photoCode = '1" onerror="bad()';
   const html = renderLineup({ squad: players, squadGameweek: 10 });
-  assert.match(html, /src="https:\/\/resources.premierleague.com\/premierleague25\/photos\/players\/250x250\/118748.png"/);
-  assert.match(html, /data-fallback-src="https:\/\/resources.premierleague.com\/premierleague25\/photos\/players\/110x140\/118748.png"/);
+  assert.match(html, /src="https:\/\/resources.premierleague.com\/premierleague25\/photos\/players\/110x140\/118748.png"/);
+  assert.match(html, /data-fallback-src="https:\/\/resources.premierleague.com\/premierleague\/photos\/players\/250x250\/p118748.png"/);
   assert.equal((html.match(/class="player-headshot"/g) ?? []).length, 1);
   assert.doesNotMatch(html, / onerror=/);
   assert.match(html, /<svg/);
@@ -75,12 +105,12 @@ test('missing large portraits try the original image once before showing the shi
   let removed = 0;
   const image = {
     matches: () => true,
-    dataset: { fallbackSrc: 'https://resources.premierleague.com/premierleague25/photos/players/110x140/118748.png' },
+    dataset: { fallbackSrc: 'https://resources.premierleague.com/premierleague/photos/players/250x250/p118748.png' },
     src: '',
     remove: () => removed++
   };
   handleHeadshotError({ target: image });
-  assert.match(image.src, /110x140\/118748.png$/);
+  assert.match(image.src, /250x250\/p118748.png$/);
   assert.equal(image.dataset.fallbackSrc, undefined);
   assert.equal(removed, 0);
   handleHeadshotError({ target: image });

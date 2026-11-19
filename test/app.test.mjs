@@ -101,7 +101,7 @@ for (const division of ['A', 'D']) {
     assert.doesNotMatch(elements['#app'].innerHTML, /transfer-controls-club/);
     assert.match(elements['#app'].innerHTML, /id="transfer-week"[\s\S]*<details id="transfer-filters"[^>]*><summary>Filters<\/summary>[\s\S]*id="transfer-club"[\s\S]*id="transfer-order"[\s\S]*<\/details>/);
     assert.match(elements['#app'].innerHTML, /class="transfer-club"[^>]*href="[^"]*club=andre-neto&season=2026%2F27&section=transfers"[^>]*>[\s\S]*?thumbs\/130177\.webp[^>]*><\/span><span>Imperial FC<\/span>/);
-    assert.deepEqual([...elements['#app'].innerHTML.matchAll(/class="player-headshot" src="[^"]*\/250x250\/(\d+)\.png"/g)].map(match => match[1]), ['154561', '118748']);
+    assert.deepEqual([...elements['#app'].innerHTML.matchAll(/class="player-headshot" src="[^"]*\/110x140\/(\d+)\.png"/g)].map(match => match[1]), ['154561', '118748']);
     assert.equal((elements['#app'].innerHTML.match(/class="player-avatar"/g) ?? []).length, 6);
     elements['#transfer-order'].listeners.change({ target: { value: 'rank' } });
     assert.match(elements['#transfer-results'].innerHTML, /<ol[\s\S]*Top draft pick[\s\S]*Top scorer[\s\S]*Newest player/);
