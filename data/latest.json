@@ -1,6 +1,6 @@
 {
   "season": "2026/27",
-  "lastAttemptAt": "2026-11-19T15:52:04.241Z",
+  "lastAttemptAt": "2026-11-20T15:35:36.301Z",
   "divisions": {
     "A": {
       "leagueId": 3887,
@@ -46,8 +46,8 @@
               "club": "ARS",
               "slot": 3,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 334,
@@ -57,8 +57,8 @@
               "club": "LEE",
               "slot": 4,
               "bench": false,
-              "points": 10,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 10
             },
             {
               "id": 391,
@@ -78,8 +78,8 @@
               "club": "NFO",
               "slot": 6,
               "bench": false,
-              "points": 5,
-              "assists": 1
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 13,
@@ -89,8 +89,8 @@
               "club": "ARS",
               "slot": 7,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 400,
@@ -110,9 +110,9 @@
               "club": "LIV",
               "slot": 9,
               "bench": false,
-              "points": 8,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 346,
@@ -122,8 +122,8 @@
               "club": "LEE",
               "slot": 10,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 79,
@@ -133,8 +133,8 @@
               "club": "BOU",
               "slot": 11,
               "bench": false,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             },
             {
               "id": 566,
@@ -164,8 +164,8 @@
               "club": "TOT",
               "slot": 14,
               "bench": true,
-              "points": 5,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 5
             },
             {
               "id": 12,
@@ -201,8 +201,8 @@
               "club": "ARS",
               "slot": 1,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 4,
@@ -212,8 +212,8 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "points": 8,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 580,
@@ -223,8 +223,8 @@
               "club": "LIV",
               "slot": 3,
               "bench": false,
-              "points": 7,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 362,
@@ -244,8 +244,8 @@
               "club": "ARS",
               "slot": 5,
               "bench": false,
-              "points": 8,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 554,
@@ -255,8 +255,8 @@
               "club": "ARS",
               "slot": 6,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 367,
@@ -266,8 +266,8 @@
               "club": "LIV",
               "slot": 7,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 426,
@@ -277,9 +277,9 @@
               "club": "MUN",
               "slot": 8,
               "bench": false,
-              "points": 10,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 10
             },
             {
               "id": 15,
@@ -289,9 +289,9 @@
               "club": "ARS",
               "slot": 9,
               "bench": false,
-              "points": 11,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 11
             },
             {
               "id": 366,
@@ -301,9 +301,9 @@
               "club": "LIV",
               "slot": 10,
               "bench": false,
-              "points": 13,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 13
             },
             {
               "id": 401,
@@ -313,8 +313,8 @@
               "club": "TOT",
               "slot": 11,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 82,
@@ -390,8 +390,8 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 229,
@@ -451,9 +451,9 @@
               "club": "BHA",
               "slot": 8,
               "bench": false,
-              "points": 10,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 10
             },
             {
               "id": 67,
@@ -473,8 +473,8 @@
               "club": "ARS",
               "slot": 10,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 106,
@@ -590,9 +590,9 @@
               "club": "LIV",
               "slot": 5,
               "bench": false,
-              "points": 7,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 154,
@@ -612,8 +612,8 @@
               "club": "MCI",
               "slot": 7,
               "bench": false,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             },
             {
               "id": 628,
@@ -623,9 +623,9 @@
               "club": "LIV",
               "slot": 8,
               "bench": false,
-              "points": 5,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 5
             },
             {
               "id": 166,
@@ -635,9 +635,9 @@
               "club": "AVL",
               "slot": 9,
               "bench": false,
-              "points": 11,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 11
             },
             {
               "id": 249,
@@ -647,9 +647,9 @@
               "club": "EVE",
               "slot": 10,
               "bench": false,
-              "points": 16,
               "goals": 2,
-              "assists": 1
+              "assists": 1,
+              "points": 16
             },
             {
               "id": 138,
@@ -659,8 +659,8 @@
               "club": "BHA",
               "slot": 11,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 109,
@@ -670,8 +670,8 @@
               "club": "BHA",
               "slot": 12,
               "bench": true,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 330,
@@ -681,8 +681,8 @@
               "club": "LEE",
               "slot": 13,
               "bench": true,
-              "points": 7,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 503,
@@ -748,8 +748,8 @@
               "club": "BHA",
               "slot": 3,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 504,
@@ -759,9 +759,9 @@
               "club": "BHA",
               "slot": 4,
               "bench": false,
-              "points": 12,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 12
             },
             {
               "id": 183,
@@ -811,8 +811,8 @@
               "club": "BHA",
               "slot": 9,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 526,
@@ -880,6 +880,22 @@
         }
       ],
       "transactions": [
+        {
+          "id": 21716761,
+          "teamId": 17374,
+          "gameweek": 11,
+          "playerInId": 167,
+          "playerOutId": 582,
+          "playerIn": "Delap",
+          "playerOut": "Madjo",
+          "playerInPhotoCode": 463034,
+          "playerOutPhotoCode": 690838,
+          "playerInDraftRank": 185,
+          "playerOutDraftRank": 236,
+          "playerInPoints": 30,
+          "playerOutPoints": 1,
+          "kind": "Waiver"
+        },
         {
           "id": 21426259,
           "teamId": 157661,
@@ -2577,7 +2593,7 @@
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-19T15:52:04.241Z",
+      "updatedAt": "2026-11-20T15:35:36.301Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -2607,8 +2623,8 @@
               "club": "ARS",
               "slot": 1,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 8,
@@ -2618,8 +2634,8 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 391,
@@ -2649,9 +2665,9 @@
               "club": "BHA",
               "slot": 5,
               "bench": false,
-              "points": 10,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 10
             },
             {
               "id": 13,
@@ -2661,8 +2677,8 @@
               "club": "ARS",
               "slot": 6,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 40,
@@ -2702,8 +2718,8 @@
               "club": "ARS",
               "slot": 10,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 411,
@@ -2723,8 +2739,8 @@
               "club": "SUN",
               "slot": 12,
               "bench": true,
-              "points": 9,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 9
             },
             {
               "id": 277,
@@ -2810,8 +2826,8 @@
               "club": "ARS",
               "slot": 4,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 362,
@@ -2831,9 +2847,9 @@
               "club": "MUN",
               "slot": 6,
               "bench": false,
-              "points": 10,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 10
             },
             {
               "id": 15,
@@ -2843,9 +2859,9 @@
               "club": "ARS",
               "slot": 7,
               "bench": false,
-              "points": 11,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 11
             },
             {
               "id": 452,
@@ -2855,8 +2871,8 @@
               "club": "ARS",
               "slot": 8,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 379,
@@ -2866,9 +2882,9 @@
               "club": "LIV",
               "slot": 9,
               "bench": false,
-              "points": 8,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 166,
@@ -2878,9 +2894,9 @@
               "club": "AVL",
               "slot": 10,
               "bench": false,
-              "points": 11,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 11
             },
             {
               "id": 249,
@@ -2890,9 +2906,9 @@
               "club": "EVE",
               "slot": 11,
               "bench": false,
-              "points": 16,
               "goals": 2,
-              "assists": 1
+              "assists": 1,
+              "points": 16
             },
             {
               "id": 28,
@@ -2932,8 +2948,8 @@
               "club": "LIV",
               "slot": 15,
               "bench": true,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             }
           ],
           "squadGameweek": 10,
@@ -2959,8 +2975,8 @@
               "club": "BHA",
               "slot": 1,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 4,
@@ -2970,8 +2986,8 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "points": 8,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 115,
@@ -2981,8 +2997,8 @@
               "club": "BHA",
               "slot": 3,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 334,
@@ -2992,8 +3008,8 @@
               "club": "LEE",
               "slot": 4,
               "bench": false,
-              "points": 10,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 10
             },
             {
               "id": 154,
@@ -3023,9 +3039,9 @@
               "club": "LIV",
               "slot": 7,
               "bench": false,
-              "points": 7,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 94,
@@ -3045,8 +3061,8 @@
               "club": "LEE",
               "slot": 9,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 552,
@@ -3056,9 +3072,9 @@
               "club": "SUN",
               "slot": 10,
               "bench": false,
-              "points": 4,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 4
             },
             {
               "id": 569,
@@ -3068,8 +3084,8 @@
               "club": "FUL",
               "slot": 11,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 385,
@@ -3079,8 +3095,8 @@
               "club": "LEE",
               "slot": 12,
               "bench": true,
-              "points": 10,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 10
             },
             {
               "id": 335,
@@ -3100,8 +3116,8 @@
               "club": "LEE",
               "slot": 14,
               "bench": true,
-              "points": 7,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 200,
@@ -3147,8 +3163,8 @@
               "club": "FUL",
               "slot": 2,
               "bench": false,
-              "points": 7,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 229,
@@ -3168,8 +3184,8 @@
               "club": "BHA",
               "slot": 4,
               "bench": false,
-              "points": 5,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 5
             },
             {
               "id": 504,
@@ -3179,9 +3195,9 @@
               "club": "BHA",
               "slot": 5,
               "bench": false,
-              "points": 12,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 12
             },
             {
               "id": 453,
@@ -3201,8 +3217,8 @@
               "club": "MCI",
               "slot": 7,
               "bench": false,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             },
             {
               "id": 68,
@@ -3232,8 +3248,8 @@
               "club": "BOU",
               "slot": 10,
               "bench": false,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             },
             {
               "id": 138,
@@ -3243,8 +3259,8 @@
               "club": "BHA",
               "slot": 11,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 384,
@@ -3340,8 +3356,8 @@
               "club": "LIV",
               "slot": 4,
               "bench": false,
-              "points": 7,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 555,
@@ -3361,8 +3377,8 @@
               "club": "ARS",
               "slot": 6,
               "bench": false,
-              "points": 8,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 236,
@@ -3372,8 +3388,8 @@
               "club": "EVE",
               "slot": 7,
               "bench": false,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             },
             {
               "id": 156,
@@ -3393,8 +3409,8 @@
               "club": "MUN",
               "slot": 9,
               "bench": false,
-              "points": 5,
-              "assists": 1
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 628,
@@ -3404,9 +3420,9 @@
               "club": "LIV",
               "slot": 10,
               "bench": false,
-              "points": 5,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 5
             },
             {
               "id": 465,
@@ -3464,6 +3480,54 @@
         }
       ],
       "transactions": [
+        {
+          "id": 22359716,
+          "teamId": 16076,
+          "gameweek": 11,
+          "playerInId": 60,
+          "playerOutId": 200,
+          "playerIn": "Hill",
+          "playerOut": "Lacroix",
+          "playerInPhotoCode": 463981,
+          "playerOutPhotoCode": 437499,
+          "playerInDraftRank": 142,
+          "playerOutDraftRank": 64,
+          "playerInPoints": 42,
+          "playerOutPoints": 24,
+          "kind": "Free agent"
+        },
+        {
+          "id": 21834978,
+          "teamId": 39254,
+          "gameweek": 11,
+          "playerInId": 127,
+          "playerOutId": 453,
+          "playerIn": "Gomez",
+          "playerOut": "Barnes",
+          "playerInPhotoCode": 514254,
+          "playerOutPhotoCode": 201666,
+          "playerInDraftRank": 268,
+          "playerOutDraftRank": 84,
+          "playerInPoints": 51,
+          "playerOutPoints": 44,
+          "kind": "Waiver"
+        },
+        {
+          "id": 21721702,
+          "teamId": 16076,
+          "gameweek": 11,
+          "playerInId": 366,
+          "playerOutId": 94,
+          "playerIn": "Wirtz",
+          "playerOut": "Schade",
+          "playerInPhotoCode": 494595,
+          "playerOutPhotoCode": 513418,
+          "playerInDraftRank": 19,
+          "playerOutDraftRank": 77,
+          "playerInPoints": 46,
+          "playerOutPoints": 46,
+          "kind": "Waiver"
+        },
         {
           "id": 21417405,
           "teamId": 264049,
@@ -4345,7 +4409,7 @@
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-19T15:52:04.241Z",
+      "updatedAt": "2026-11-20T15:35:36.301Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -4375,8 +4439,8 @@
               "club": "BHA",
               "slot": 1,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 4,
@@ -4386,8 +4450,8 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "points": 8,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 504,
@@ -4397,9 +4461,9 @@
               "club": "BHA",
               "slot": 3,
               "bench": false,
-              "points": 12,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 12
             },
             {
               "id": 229,
@@ -4439,9 +4503,9 @@
               "club": "ARS",
               "slot": 7,
               "bench": false,
-              "points": 11,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 11
             },
             {
               "id": 428,
@@ -4451,8 +4515,8 @@
               "club": "MUN",
               "slot": 8,
               "bench": false,
-              "points": 5,
-              "assists": 1
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 367,
@@ -4462,8 +4526,8 @@
               "club": "LIV",
               "slot": 9,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 526,
@@ -4483,9 +4547,9 @@
               "club": "AVL",
               "slot": 11,
               "bench": false,
-              "points": 11,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 11
             },
             {
               "id": 496,
@@ -4505,9 +4569,9 @@
               "club": "SUN",
               "slot": 13,
               "bench": true,
-              "points": 4,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 4
             },
             {
               "id": 129,
@@ -4517,8 +4581,8 @@
               "club": "BHA",
               "slot": 14,
               "bench": true,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 12,
@@ -4594,9 +4658,9 @@
               "club": "BHA",
               "slot": 5,
               "bench": false,
-              "points": 9,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 9
             },
             {
               "id": 40,
@@ -4626,9 +4690,9 @@
               "club": "BHA",
               "slot": 8,
               "bench": false,
-              "points": 10,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 10
             },
             {
               "id": 106,
@@ -4658,8 +4722,8 @@
               "club": "BOU",
               "slot": 11,
               "bench": false,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             },
             {
               "id": 82,
@@ -4689,8 +4753,8 @@
               "club": "HUL",
               "slot": 14,
               "bench": true,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 330,
@@ -4700,8 +4764,8 @@
               "club": "LEE",
               "slot": 15,
               "bench": true,
-              "points": 7,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             }
           ],
           "squadGameweek": 10,
@@ -4737,8 +4801,8 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "points": 8,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 115,
@@ -4748,8 +4812,8 @@
               "club": "BHA",
               "slot": 3,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 5,
@@ -4759,8 +4823,8 @@
               "club": "ARS",
               "slot": 4,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 499,
@@ -4770,8 +4834,8 @@
               "club": "TOT",
               "slot": 5,
               "bench": false,
-              "points": 5,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 5
             },
             {
               "id": 154,
@@ -4811,8 +4875,8 @@
               "club": "ARS",
               "slot": 9,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 53,
@@ -4832,8 +4896,8 @@
               "club": "NEW",
               "slot": 11,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 412,
@@ -4899,8 +4963,8 @@
               "club": "ARS",
               "slot": 1,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 8,
@@ -4910,8 +4974,8 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 356,
@@ -4941,8 +5005,8 @@
               "club": "LIV",
               "slot": 5,
               "bench": false,
-              "points": 7,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 628,
@@ -4952,9 +5016,9 @@
               "club": "LIV",
               "slot": 6,
               "bench": false,
-              "points": 5,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 5
             },
             {
               "id": 155,
@@ -4974,8 +5038,8 @@
               "club": "NFO",
               "slot": 8,
               "bench": false,
-              "points": 5,
-              "assists": 1
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 13,
@@ -4985,8 +5049,8 @@
               "club": "ARS",
               "slot": 9,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 401,
@@ -4996,8 +5060,8 @@
               "club": "TOT",
               "slot": 10,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 346,
@@ -5007,8 +5071,8 @@
               "club": "LEE",
               "slot": 11,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 226,
@@ -5038,8 +5102,8 @@
               "club": "BHA",
               "slot": 14,
               "bench": true,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 398,
@@ -5125,9 +5189,9 @@
               "club": "MUN",
               "slot": 6,
               "bench": false,
-              "points": 10,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 10
             },
             {
               "id": 156,
@@ -5147,8 +5211,8 @@
               "club": "MCI",
               "slot": 8,
               "bench": false,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             },
             {
               "id": 453,
@@ -5168,9 +5232,9 @@
               "club": "LIV",
               "slot": 10,
               "bench": false,
-              "points": 8,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 26,
@@ -5180,8 +5244,8 @@
               "club": "ARS",
               "slot": 11,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 597,
@@ -5201,9 +5265,9 @@
               "club": "EVE",
               "slot": 13,
               "bench": true,
-              "points": 16,
               "goals": 2,
-              "assists": 1
+              "assists": 1,
+              "points": 16
             },
             {
               "id": 449,
@@ -5223,8 +5287,8 @@
               "club": "BHA",
               "slot": 15,
               "bench": true,
-              "points": 5,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 5
             }
           ],
           "squadGameweek": 10,
@@ -5232,6 +5296,22 @@
         }
       ],
       "transactions": [
+        {
+          "id": 22111710,
+          "teamId": 259085,
+          "gameweek": 11,
+          "playerInId": 366,
+          "playerOutId": 156,
+          "playerIn": "Wirtz",
+          "playerOut": "Neto",
+          "playerInPhotoCode": 494595,
+          "playerOutPhotoCode": 247632,
+          "playerInDraftRank": 19,
+          "playerOutDraftRank": 39,
+          "playerInPoints": 46,
+          "playerOutPoints": 41,
+          "kind": "Waiver"
+        },
         {
           "id": 20956372,
           "teamId": 334163,
@@ -6049,7 +6129,7 @@
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-19T15:52:04.241Z",
+      "updatedAt": "2026-11-20T15:35:36.301Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -6079,8 +6159,8 @@
               "club": "ARS",
               "slot": 1,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 229,
@@ -6110,8 +6190,8 @@
               "club": "ARS",
               "slot": 4,
               "bench": false,
-              "points": 8,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 398,
@@ -6131,8 +6211,8 @@
               "club": "NFO",
               "slot": 6,
               "bench": false,
-              "points": 5,
-              "assists": 1
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 155,
@@ -6152,9 +6232,9 @@
               "club": "LIV",
               "slot": 8,
               "bench": false,
-              "points": 13,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 13
             },
             {
               "id": 40,
@@ -6184,9 +6264,9 @@
               "club": "LIV",
               "slot": 11,
               "bench": false,
-              "points": 8,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 109,
@@ -6196,8 +6276,8 @@
               "club": "BHA",
               "slot": 12,
               "bench": true,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 504,
@@ -6207,9 +6287,9 @@
               "club": "BHA",
               "slot": 13,
               "bench": true,
-              "points": 12,
               "assists": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 12
             },
             {
               "id": 11,
@@ -6229,8 +6309,8 @@
               "club": "FUL",
               "slot": 15,
               "bench": true,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             }
           ],
           "squadGameweek": 10,
@@ -6266,8 +6346,8 @@
               "club": "BHA",
               "slot": 2,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 112,
@@ -6317,8 +6397,8 @@
               "club": "ARS",
               "slot": 7,
               "bench": false,
-              "points": 3,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 3
             },
             {
               "id": 399,
@@ -6328,8 +6408,8 @@
               "club": "MCI",
               "slot": 8,
               "bench": false,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             },
             {
               "id": 428,
@@ -6339,8 +6419,8 @@
               "club": "MUN",
               "slot": 9,
               "bench": false,
-              "points": 5,
-              "assists": 1
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 138,
@@ -6350,8 +6430,8 @@
               "club": "BHA",
               "slot": 10,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 26,
@@ -6361,8 +6441,8 @@
               "club": "ARS",
               "slot": 11,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 597,
@@ -6382,8 +6462,8 @@
               "club": "ARS",
               "slot": 13,
               "bench": true,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 165,
@@ -6403,8 +6483,8 @@
               "club": "EVE",
               "slot": 15,
               "bench": true,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             }
           ],
           "squadGameweek": 10,
@@ -6450,8 +6530,8 @@
               "club": "ARS",
               "slot": 3,
               "bench": false,
-              "points": 8,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 555,
@@ -6471,8 +6551,8 @@
               "club": "ARS",
               "slot": 5,
               "bench": false,
-              "points": 6,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 426,
@@ -6482,9 +6562,9 @@
               "club": "MUN",
               "slot": 6,
               "bench": false,
-              "points": 10,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 10
             },
             {
               "id": 427,
@@ -6514,9 +6594,9 @@
               "club": "BHA",
               "slot": 9,
               "bench": false,
-              "points": 10,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 10
             },
             {
               "id": 156,
@@ -6536,9 +6616,9 @@
               "club": "EVE",
               "slot": 11,
               "bench": false,
-              "points": 16,
               "goals": 2,
-              "assists": 1
+              "assists": 1,
+              "points": 16
             },
             {
               "id": 82,
@@ -6568,8 +6648,8 @@
               "club": "NEW",
               "slot": 14,
               "bench": true,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 6,
@@ -6635,8 +6715,8 @@
               "club": "LEE",
               "slot": 4,
               "bench": false,
-              "points": 7,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 68,
@@ -6666,9 +6746,9 @@
               "club": "ARS",
               "slot": 7,
               "bench": false,
-              "points": 11,
               "goals": 1,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 11
             },
             {
               "id": 94,
@@ -6688,8 +6768,8 @@
               "club": "BOU",
               "slot": 9,
               "bench": false,
-              "points": 9,
-              "goals": 1
+              "goals": 1,
+              "points": 9
             },
             {
               "id": 346,
@@ -6699,8 +6779,8 @@
               "club": "LEE",
               "slot": 10,
               "bench": false,
-              "points": 2,
-              "cleanSheets": 1
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 166,
@@ -6710,9 +6790,9 @@
               "club": "AVL",
               "slot": 11,
               "bench": false,
-              "points": 11,
               "goals": 1,
-              "assists": 1
+              "assists": 1,
+              "points": 11
             },
             {
               "id": 226,
@@ -6760,6 +6840,102 @@
         }
       ],
       "transactions": [
+        {
+          "id": 21976041,
+          "teamId": 130177,
+          "gameweek": 11,
+          "playerInId": 334,
+          "playerOutId": 11,
+          "playerIn": "Muharemović",
+          "playerOut": "Mosquera",
+          "playerInPhotoCode": 522047,
+          "playerOutPhotoCode": 500040,
+          "playerInDraftRank": 391,
+          "playerOutDraftRank": 191,
+          "playerInPoints": 56,
+          "playerOutPoints": 12,
+          "kind": "Waiver"
+        },
+        {
+          "id": 21976040,
+          "teamId": 130177,
+          "gameweek": 11,
+          "playerInId": 367,
+          "playerOutId": 155,
+          "playerIn": "Gakpo",
+          "playerOut": "Enzo",
+          "playerInPhotoCode": 243298,
+          "playerOutPhotoCode": 448047,
+          "playerInDraftRank": 27,
+          "playerOutDraftRank": 25,
+          "playerInPoints": 40,
+          "playerOutPoints": 23,
+          "kind": "Waiver"
+        },
+        {
+          "id": 21689566,
+          "teamId": 50027,
+          "gameweek": 11,
+          "playerInId": 401,
+          "playerOutId": 106,
+          "playerIn": "Marmoush",
+          "playerOut": "Thiago",
+          "playerInPhotoCode": 438234,
+          "playerOutPhotoCode": 502500,
+          "playerInDraftRank": 30,
+          "playerOutDraftRank": 10,
+          "playerInPoints": 24,
+          "playerOutPoints": 30,
+          "kind": "Waiver"
+        },
+        {
+          "id": 21689565,
+          "teamId": 50027,
+          "gameweek": 11,
+          "playerInId": 45,
+          "playerOutId": 156,
+          "playerIn": "McGinn",
+          "playerOut": "Neto",
+          "playerInPhotoCode": 122806,
+          "playerOutPhotoCode": 247632,
+          "playerInDraftRank": 147,
+          "playerOutDraftRank": 39,
+          "playerInPoints": 44,
+          "playerOutPoints": 41,
+          "kind": "Waiver"
+        },
+        {
+          "id": 21688608,
+          "teamId": 50751,
+          "gameweek": 11,
+          "playerInId": 127,
+          "playerOutId": 12,
+          "playerIn": "Gomez",
+          "playerOut": "Saka",
+          "playerInPhotoCode": 514254,
+          "playerOutPhotoCode": 223340,
+          "playerInDraftRank": 268,
+          "playerOutDraftRank": 3,
+          "playerInPoints": 51,
+          "playerOutPoints": 37,
+          "kind": "Waiver"
+        },
+        {
+          "id": 21607720,
+          "teamId": 131691,
+          "gameweek": 11,
+          "playerInId": 362,
+          "playerOutId": 388,
+          "playerIn": "Jacquet",
+          "playerOut": "Guéhi",
+          "playerInPhotoCode": 606702,
+          "playerOutPhotoCode": 209036,
+          "playerInDraftRank": 393,
+          "playerOutDraftRank": 57,
+          "playerInPoints": 44,
+          "playerOutPoints": 37,
+          "kind": "Waiver"
+        },
         {
           "id": 21112259,
           "teamId": 131691,
@@ -7417,7 +7593,7 @@
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-19T15:52:04.241Z",
+      "updatedAt": "2026-11-20T15:35:36.301Z",
       "source": "api",
       "stale": false,
       "gameweek": 10,
@@ -7425,6 +7601,7 @@
     }
   },
   "history": [
+    "2026-11-20",
     "2026-11-19",
     "2026-11-18",
     "2026-11-17"
@@ -7432,7 +7609,7 @@
   "weekly": {
     "10": {
       "A": {
-        "updatedAt": "2026-11-19T15:52:04.241Z",
+        "updatedAt": "2026-11-20T15:35:36.301Z",
         "teams": [
           {
             "id": 157661,
@@ -7482,7 +7659,7 @@
         ]
       },
       "D": {
-        "updatedAt": "2026-11-19T15:52:04.241Z",
+        "updatedAt": "2026-11-20T15:35:36.301Z",
         "teams": [
           {
             "id": 130177,
@@ -7523,7 +7700,7 @@
         ]
       },
       "C": {
-        "updatedAt": "2026-11-19T15:52:04.241Z",
+        "updatedAt": "2026-11-20T15:35:36.301Z",
         "teams": [
           {
             "id": 334163,
@@ -7573,7 +7750,7 @@
         ]
       },
       "B": {
-        "updatedAt": "2026-11-19T15:52:04.241Z",
+        "updatedAt": "2026-11-20T15:35:36.301Z",
         "teams": [
           {
             "id": 16602,
