@@ -54,8 +54,8 @@ League D (10219) is connected to the supplied league-details sample; League A
   markers, names, clubs and gameweek points. Bench players remain outside
   the field. Use official player headshots when a valid photo code is present,
   and retain shirt fallbacks for missing codes or failed image loads. Infer
-  formation counts from actual starting roles; do not invent
-  left/right positions that the Draft API does not provide. Keep the full list
+  formation counts from FPL starting roles. Use cached Premier League roles
+  only for placement within each FPL band. Keep the full list
   expandable for long names and accessible reading on phones.
 - Portraits are 64px on desktop and scale from 40–48px on phones, with a
   closer face crop, points below the portrait and readable name/club labels.

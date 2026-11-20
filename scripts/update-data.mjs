@@ -1,5 +1,6 @@
 import { readFile, writeFile, rename, mkdir } from 'node:fs/promises';
 import { refreshData } from './refresh.mjs';
+import { refreshPitchRoles } from './pitch-roles.mjs';
 
 const root = new URL('../', import.meta.url);
 const config = JSON.parse(await readFile(new URL('data/config.json', root), 'utf8'));
@@ -25,6 +26,7 @@ if (refreshed) {
   result.history = [...new Set([...result.history, date])].sort().reverse();
 }
 const temporary = new URL('data/latest.json.tmp', root);
+result.pitchRoles = await refreshPitchRoles(config.season, previous.season === config.season ? previous.pitchRoles : undefined, now);
 await writeFile(temporary, JSON.stringify(result, null, 2) + '\n');
 await rename(temporary, new URL('data/latest.json', root));
 for (const division of Object.values(result.divisions)) {

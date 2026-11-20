@@ -224,8 +224,22 @@ summary { cursor: pointer; color: #d0d8cb; }
 .field-box, .field-goal { position: absolute; bottom: -4px; left: 17.5%; width: 65%; height: 18%; border: 4px solid; border-radius: 9px 9px 0 0; }
 .field-goal { left: 35%; width: 30%; height: 7.5%; }
 .field-box::before { content: ''; position: absolute; bottom: 100%; left: 32%; width: 36%; height: 18%; border: 4px solid; border-bottom: 0; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
-.formation-rows { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-height: 530px; padding: 24px 4px 20px; }
+.formation-rows {
+  --field-portrait: clamp(42px, 14.5cqw, 72px);
+  --field-name: clamp(12px, 3.6cqw, 16px);
+  --row-gap: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: content-box;
+  /* Reserve a five-row pitch and distribute its free space between the actual rows. */
+  height: calc(5 * (var(--field-portrait) + 10px + 1.2 * var(--field-name)) + 4 * var(--row-gap));
+  padding: 24px 4px 20px;
+}
 .pitch-row { display: flex; justify-content: center; gap: 4px; padding: 0; margin: 0; list-style: none; }
+.diamond-upper > .pitch-player { translate: 0 20%; }
+.diamond-lower > .pitch-player { translate: 0 -20%; }
 .pitch-player { --portrait-size: 64px; position: relative; flex: 1; min-width: 0; max-width: 120px; text-align: center; padding: 0 2px; }
 .player-avatar { position: relative; overflow: hidden; display: grid; place-items: center; width: var(--portrait-size); height: var(--portrait-size); margin: 0 auto; border-radius: 50%; background: #233a30; border: 2px solid #9fbfae; color: #f5f5f5; }
 .player-headshot { position: absolute; top: -5%; left: 50%; transform: translateX(-50%); width: 200%; height: auto; max-width: none; background: inherit; }
@@ -236,10 +250,11 @@ summary { cursor: pointer; color: #d0d8cb; }
 .pitch-score { top: -2%; left: 74%; min-width: 45%; height: 34%; padding: 0 .34em; color: #101717; font-size: clamp(11px, calc(var(--portrait-size) * .24), 16px); }
 .pitch-portrait .player-avatar { border: 0; background: #005b3e; color: #d8eee4; }
 .pitch-portrait .player-headshot { width: 190%; top: -3%; }
-.lineup-pitch .pitch-player { --portrait-size: clamp(42px, 14.5cqw, 72px); max-width: 42%; }
+.lineup-pitch .pitch-player { --portrait-size: var(--field-portrait); max-width: 42%; }
+.formation-rows:has(> :nth-child(6)) .pitch-player { --portrait-size: calc(var(--field-portrait) - 6px); }
 .pitch-row:has(> :nth-child(5)) .pitch-player { --portrait-size: clamp(34px, 12cqw, 60px); }
 .pitch-row > :last-child .pitch-score { left: auto; right: -18%; }
-.lineup-pitch .pitch-player-name { margin-top: 10px; font-size: clamp(12px, 3.6cqw, 16px); font-weight: 450; }
+.lineup-pitch .pitch-player-name { margin-top: 10px; font-size: var(--field-name); font-weight: 450; }
 .lineup-pitch .pitch-player-club { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .pitch-star { margin-left: 2px; font-size: .85em; }
 .pitch-score.red { background: #ff776d; color: #250a08; }
@@ -262,7 +277,6 @@ summary { cursor: pointer; color: #d0d8cb; }
 .bench-players .pitch-player { --portrait-size: 60px; }
 .bench-players .pitch-player-name { margin-top: 6px; padding: 0; text-shadow: none; }
 .bench-players .pitch-player-club { color: var(--muted); }
-.lineup-note { margin: 12px 16px; font-size: 12px; line-height: 1.6; color: var(--muted); }
 .squad-details { border-top: 1px solid var(--border); }
 .squad-details summary { padding: 12px 16px; min-height: 44px; font-size: 14px; }
 .squad-details[open] summary { border-bottom: 1px solid var(--border); }
@@ -540,6 +554,7 @@ html { scroll-padding-bottom: 24px; }
   .footer { flex-direction: column; gap: 8px; margin: 0 12px; padding: 16px 0; font-size: 12px; }
   .footer > span:last-child { text-align: left; }
   .team-hero { gap: 12px; }
+  .player-heading .player-avatar { flex-shrink: 0; }
   .team-hero h1 { font-size: 24px; }
   .team-badge.large { width: 48px; height: 56px; font-size: 20px; }
   .team-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 0; padding: 8px 0; margin-bottom: 12px; }
@@ -569,7 +584,7 @@ html { scroll-padding-bottom: 24px; }
   .transfer-player .player-avatar { --portrait-size: 28px; }
   .team-hero .eyebrow { display: none; }
   .team-summary > div:nth-child(2) { border-right: 0; }
-  .formation-rows { min-height: clamp(370px, 131cqw, 560px); padding: 7cqw 2px 6cqw; gap: 20px; }
+  .formation-rows { --row-gap: 20px; padding: 7cqw 2px 6cqw; }
   .pitch-row { gap: 0; }
   .pitch-player { --portrait-size: clamp(40px, 11.7vw, 48px); padding: 0; }
   .pitch-player-club { font-size: 10px; margin-top: 1px; }
