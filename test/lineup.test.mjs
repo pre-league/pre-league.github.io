@@ -156,6 +156,19 @@ test('the top scorer star follows the best known starting score, including ties'
   assert.doesNotMatch(view().split('class="bench-heading"')[1], /class="pitch-star"/);
 });
 
+test('pending fixtures have blank scores on the pitch, bench and list and cannot win the star', () => {
+  const players = squad.map(player => ({ ...player, points: 0, awaitingKickoff: true }));
+  const view = () => renderLineup({ squad: players });
+  assert.doesNotMatch(view(), /class="pitch-(score|star)|class="numeric points-cell">0/);
+  players[0].awaitingKickoff = false;
+  players[0].points = -1;
+  players[11].awaitingKickoff = false;
+  const html = view();
+  assert.equal(html.match(/class="pitch-score/g).length, 2);
+  assert.equal(html.match(/class="pitch-star"/g).length, 1);
+  assert.match(html, /class="numeric points-cell">0<\/td>/);
+});
+
 test('pitch badges use inclusive score bands and only show recorded events', () => {
   for (const [points, color] of [[null, 'unknown'], [-1, 'red'], [2, 'red'], [3, 'yellow'], [5, 'yellow'], [6, 'green'], [9, 'green'], [10, 'blue']]) {
     const html = renderLineup({ squad: [{ ...squad[0], points, goals: 2, assists: 0, cleanSheets: 1 }] });

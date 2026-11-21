@@ -38,6 +38,14 @@ test('missing player scores remain unknown; zero and negative scores are retaine
   assert.throws(() => normalizeSquad({ picks: [{ element: 999, position: 1 }] }, bootstrap, {}));
 });
 
+test('marks players as awaiting kickoff until either home or away fixture starts in the gameweek', () => {
+  const elements = [1, 2, 3, 4].map(id => ({ id, web_name: 'Player', team: id }));
+  const picks = elements.map(({ id }) => ({ element: id, position: id }));
+  const fixtures = [{ team_h: 1, team_a: 2, started: true }, { team_h: 2, team_a: 3, started: false }];
+  const squad = normalizeSquad({ picks }, { elements }, { fixtures });
+  assert.deepEqual(squad.map(p => !!p.awaitingKickoff), [false, false, true, true]);
+});
+
 test('keeps only completed public transactions and resolves owner using entry ID', () => {
   const league = normalizeLeague(sample, 10219);
   const rows = normalizeTransactions({ transactions: [

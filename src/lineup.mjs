@@ -98,7 +98,7 @@ export function buildLineup(squad, roles = {}) {
   return { rows: rows.filter(row => row.players.length).flatMap(row => arrange(row, roles)), bench: ordered.filter(player => player.bench), formation };
 }
 
-const points = player => number(player.points);
+const points = player => player.awaitingKickoff ? '' : number(player.points);
 const shirt = '<svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="m13 7-8 5 4 9 5-2v16h12V19l5 2 4-9-8-5c-1 4-3 5-7 5s-6-1-7-5Z" fill="currentColor"/><path d="M16 8c0 5 8 5 8 0" stroke="#17231b" stroke-width="2"/></svg>';
 
 export function handleHeadshotError(event) {
@@ -127,6 +127,7 @@ function playerToken(player, key, topScore) {
   const score = player.points;
   const scoreClass = score == null ? 'unknown' : score <= 2 ? 'red' : score <= 5 ? 'yellow' : score <= 9 ? 'green' : 'blue';
   const star = Number.isFinite(score) && score === topScore ? `<span class="pitch-star" role="img" aria-label="${t("Top scorer")}" title="${t("Top scorer")}">★</span>` : '';
+  const badge = player.awaitingKickoff ? '' : `<span class="pitch-score ${scoreClass}"><span class="sr-only">${t("Gameweek points: ")}</span>${points(player)}<span class="sr-only">${t(" points")}</span>${star}</span>`;
   const events = pitchEvents.map(([field, label, icon]) => {
     if (field === 'cleanSheets' && player.position === 'FWD') return '';
     const count = player[field];
@@ -134,7 +135,7 @@ function playerToken(player, key, topScore) {
     const description = `${t(label)}: ${number(count)}`;
     return `<span class="pitch-event ${field}" role="img" aria-label="${description}" title="${description}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${icon}</svg>${number(count)}</span>`;
   }).join('');
-  return `<li class="pitch-player"><a href="${playerRoute(player.id, player.photoCode, key)}"><span class="pitch-portrait">${renderPlayerAvatar(player.photoCode, player.position === 'GK')}<span class="pitch-score ${scoreClass}"><span class="sr-only">${t("Gameweek points: ")}</span>${points(player)}<span class="sr-only">${t(" points")}</span>${star}</span>${events}</span><strong class="pitch-player-name" title="${e(player.name)}">${e(player.name)}</strong><span class="pitch-player-club">${e(player.club)}<span class="sr-only"> · ${e(t(player.position))}</span></span></a></li>`;
+  return `<li class="pitch-player"><a href="${playerRoute(player.id, player.photoCode, key)}"><span class="pitch-portrait">${renderPlayerAvatar(player.photoCode, player.position === 'GK')}${badge}${events}</span><strong class="pitch-player-name" title="${e(player.name)}">${e(player.name)}</strong><span class="pitch-player-club">${e(player.club)}<span class="sr-only"> · ${e(t(player.position))}</span></span></a></li>`;
 }
 
 export function renderLineup(team, key = 'D', roles) {
@@ -142,7 +143,7 @@ export function renderLineup(team, key = 'D', roles) {
   const coach = `<section class="head-coach"><span class="coach-avatar" aria-hidden="true">${e(manager.split(/\s+/).slice(0, 2).map(word => word[0]).join(''))}</span><div><h3>${t("Head Coach")}</h3><strong>${e(manager)}</strong></div></section>`;
   if (!team.squad?.length) return `<section class="panel squad-panel"><div class="panel-heading"><h2>${t("Lineup")}</h2><span class="subtle-label">${t("Awaiting first sync")}</span></div><div class="empty-pitch"><div class="pitch-center"></div><div class="pitch-message"><span aria-hidden="true">♧</span><h2>${t("The lineup is on its way")}</h2><p>${t("Players and gameweek points will appear after")}<br>${t("the first successful squad sync.")}</p></div></div>${coach}</section>`;
   const lineup = buildLineup(team.squad, roles);
-  const topScore = Math.max(...team.squad.filter(player => !player.bench && Number.isFinite(player.points)).map(player => player.points));
+  const topScore = Math.max(...team.squad.filter(player => !player.bench && !player.awaitingKickoff && Number.isFinite(player.points)).map(player => player.points));
   const playerRows = players => players.map(player => `<tr><td><span class="position-tag">${e(t(player.position))}</span></td><td><a href="${playerRoute(player.id, player.photoCode, key)}"><strong>${e(player.name)}</strong></a><small class="player-club">${e(player.club)}</small></td><td class="numeric points-cell">${points(player)}</td></tr>`).join('');
   return `<section class="panel squad-panel"><div class="panel-heading"><h2>${t("Lineup")} <span class="formation-tag">${e(lineup.formation ?? t("Starting XI"))}</span></h2><span class="tiny-accent">${team.squadGameweek ? gameweekLabel(e(team.squadGameweek)) : t("Saved squad")}</span></div>
     <div class="lineup-pitch"><div class="field-markings" aria-hidden="true"><span class="field-circle"></span><span class="field-box"></span><span class="field-goal"></span></div><div class="formation-rows">${lineup.rows.map(row => `<ul class="pitch-row${row.diamondTip ? ' diamond-' + row.diamondTip : ''}" aria-label="${e(t(row.label))}">${row.players.map(player => playerToken(player, key, topScore)).join('')}</ul>`).join('')}</div></div>

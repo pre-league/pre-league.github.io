@@ -41,12 +41,12 @@ test('API manager capitalization and accent differences retain confirmed club id
   const snapshot = structuredClone(current);
   snapshot.divisions.C.teams.find(team => team.name === 'Fredddd').manager = 'frederico belchior';
   snapshot.divisions.C.teams.find(team => team.name === 'Jotinha FC').manager = 'Joao Martins';
-  for (const [manager, key] of [['frederico belchior', 'frederico-belchior'], ['Joao Martins', 'joao-martins']]) {
+  for (const [manager, key, firstWeekPoints] of [['frederico belchior', 'frederico-belchior', 29], ['Joao Martins', 'joao-martins', 42]]) {
     const club = clubForTeam(community, { manager }, '2026/27');
     assert.equal(club?.key, key);
     const view = getClubSeason(community, snapshot, club, '2026/27');
     assert.equal(view.key, 'C');
-    assert.equal(view.weeks.length, 10);
+    assert.equal(view.weeks.find(week => week.gameweek === 1)?.points, firstWeekPoints);
     assert.equal(view.brandTeam.manager, manager);
     if (key === 'joao-martins') {
       const past = getClubSeason(community, snapshot, club, '2025/26');

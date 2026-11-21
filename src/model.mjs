@@ -48,6 +48,8 @@ export function normalizeSquad(data, bootstrap, live) {
   const clubs = new Map((bootstrap.teams ?? []).map(club => [club.id, club.short_name ?? club.name]));
   const livePlayers = Array.isArray(live?.elements)
     ? Object.fromEntries(live.elements.map(player => [player.id, player])) : live?.elements ?? {};
+  const startedClubs = Array.isArray(live?.fixtures)
+    ? new Set(live.fixtures.filter(fixture => fixture.started).flatMap(fixture => [fixture.team_h, fixture.team_a])) : null;
   const seen = new Set();
   const slots = new Set();
   return data.picks.map(pick => {
@@ -64,6 +66,7 @@ export function normalizeSquad(data, bootstrap, live) {
       position: ({ 1: 'GK', 2: 'DEF', 3: 'MID', 4: 'FWD' })[player.element_type] ?? '—',
       club: text(clubs.get(player.team) ?? '—', 'club'),
       slot: pick.position, bench: pick.position > 11,
+      ...(startedClubs && !startedClubs.has(player.team) && { awaitingKickoff: true }),
       ...(stats?.goals_scored > 0 && { goals: integer(stats.goals_scored, 'goals', 1) }),
       ...(stats?.assists > 0 && { assists: integer(stats.assists, 'assists', 1) }),
       ...(stats?.clean_sheets > 0 && { cleanSheets: integer(stats.clean_sheets, 'clean sheets', 1) }),
