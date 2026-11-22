@@ -1,6 +1,6 @@
 {
   "season": "2026/27",
-  "lastAttemptAt": "2026-11-21T14:45:42.913Z",
+  "lastAttemptAt": "2026-11-22T14:41:16.888Z",
   "divisions": {
     "A": {
       "leagueId": 3887,
@@ -14,8 +14,8 @@
           "initials": "GM",
           "rank": 1,
           "lastRank": 1,
-          "total": 495,
-          "eventPoints": 0,
+          "total": 519,
+          "eventPoints": 24,
           "waiverPick": 5,
           "squad": [
             {
@@ -37,8 +37,7 @@
               "club": "LEE",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 5,
@@ -48,8 +47,7 @@
               "club": "ARS",
               "slot": 3,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 391,
@@ -69,8 +67,7 @@
               "club": "NFO",
               "slot": 5,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 13,
@@ -80,8 +77,7 @@
               "club": "ARS",
               "slot": 6,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 286,
@@ -91,8 +87,7 @@
               "club": "HUL",
               "slot": 7,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 400,
@@ -123,8 +118,9 @@
               "club": "BOU",
               "slot": 10,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "goals": 1,
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 346,
@@ -134,8 +130,9 @@
               "club": "LEE",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "goals": 1,
+              "assists": 1,
+              "points": 9
             },
             {
               "id": 566,
@@ -145,8 +142,7 @@
               "club": "NEW",
               "slot": 12,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 499,
@@ -156,8 +152,9 @@
               "club": "TOT",
               "slot": 13,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 12
             },
             {
               "id": 388,
@@ -177,6 +174,181 @@
               "club": "ARS",
               "slot": 15,
               "bench": true,
+              "points": 0
+            }
+          ],
+          "squadGameweek": 11,
+          "benchPoints": null
+        },
+        {
+          "id": 15016,
+          "leagueEntryId": 15024,
+          "name": "Pigui FC",
+          "manager": "Miguel Fernandes",
+          "initials": "MF",
+          "rank": 2,
+          "lastRank": 3,
+          "total": 509,
+          "eventPoints": 32,
+          "waiverPick": 4,
+          "squad": [
+            {
+              "id": 496,
+              "name": "Kinsky",
+              "photoCode": 485055,
+              "position": "GK",
+              "club": "TOT",
+              "slot": 1,
+              "bench": false,
+              "cleanSheets": 1,
+              "points": 7
+            },
+            {
+              "id": 8,
+              "name": "Calafiori",
+              "photoCode": 466075,
+              "position": "DEF",
+              "club": "ARS",
+              "slot": 2,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 229,
+              "name": "Tarkowski",
+              "photoCode": 17761,
+              "position": "DEF",
+              "club": "EVE",
+              "slot": 3,
+              "bench": false,
+              "awaitingKickoff": true,
+              "points": 0
+            },
+            {
+              "id": 61,
+              "name": "Truffert",
+              "photoCode": 494521,
+              "position": "DEF",
+              "club": "BOU",
+              "slot": 4,
+              "bench": false,
+              "cleanSheets": 1,
+              "points": 6
+            },
+            {
+              "id": 390,
+              "name": "Rúben",
+              "photoCode": 171314,
+              "position": "DEF",
+              "club": "MCI",
+              "slot": 5,
+              "bench": false,
+              "points": 2
+            },
+            {
+              "id": 68,
+              "name": "Tavernier",
+              "photoCode": 201658,
+              "position": "MID",
+              "club": "BOU",
+              "slot": 6,
+              "bench": false,
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 8
+            },
+            {
+              "id": 53,
+              "name": "Manzambi",
+              "photoCode": 614071,
+              "position": "MID",
+              "club": "AVL",
+              "slot": 7,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 124,
+              "name": "Groß",
+              "photoCode": 60307,
+              "position": "MID",
+              "club": "BHA",
+              "slot": 8,
+              "bench": false,
+              "points": 3
+            },
+            {
+              "id": 512,
+              "name": "Kudus",
+              "photoCode": 460842,
+              "position": "MID",
+              "club": "TOT",
+              "slot": 9,
+              "bench": false,
+              "cleanSheets": 1,
+              "points": 2
+            },
+            {
+              "id": 165,
+              "name": "João Pedro",
+              "photoCode": 475168,
+              "position": "FWD",
+              "club": "CHE",
+              "slot": 10,
+              "bench": false,
+              "points": 0
+            },
+            {
+              "id": 26,
+              "name": "Havertz",
+              "photoCode": 219847,
+              "position": "FWD",
+              "club": "ARS",
+              "slot": 11,
+              "bench": false,
+              "assists": 1,
+              "points": 5
+            },
+            {
+              "id": 350,
+              "name": "A.Becker",
+              "photoCode": 116535,
+              "position": "GK",
+              "club": "LIV",
+              "slot": 12,
+              "bench": true,
+              "awaitingKickoff": true,
+              "points": 0
+            },
+            {
+              "id": 67,
+              "name": "Rayan",
+              "photoCode": 499604,
+              "position": "MID",
+              "club": "BOU",
+              "slot": 13,
+              "bench": true,
+              "cleanSheets": 1,
+              "points": 3
+            },
+            {
+              "id": 6,
+              "name": "Saliba",
+              "photoCode": 462424,
+              "position": "DEF",
+              "club": "ARS",
+              "slot": 14,
+              "bench": true,
+              "points": 0
+            },
+            {
+              "id": 106,
+              "name": "Thiago",
+              "photoCode": 502500,
+              "position": "FWD",
+              "club": "BRE",
+              "slot": 15,
+              "bench": true,
               "awaitingKickoff": true,
               "points": 0
             }
@@ -190,11 +362,11 @@
           "name": "Estripador de Cu’s",
           "manager": "Daniel Massano",
           "initials": "DM",
-          "rank": 2,
+          "rank": 3,
           "lastRank": 2,
-          "total": 480,
-          "eventPoints": 0,
-          "waiverPick": 4,
+          "total": 491,
+          "eventPoints": 11,
+          "waiverPick": 3,
           "squad": [
             {
               "id": 1,
@@ -204,8 +376,7 @@
               "club": "ARS",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 4,
@@ -215,8 +386,7 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 580,
@@ -248,8 +418,7 @@
               "club": "ARS",
               "slot": 5,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 87,
@@ -270,8 +439,7 @@
               "club": "ARS",
               "slot": 7,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 367,
@@ -292,8 +460,8 @@
               "club": "ARS",
               "slot": 9,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 167,
@@ -303,8 +471,7 @@
               "club": "NFO",
               "slot": 10,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 401,
@@ -314,8 +481,7 @@
               "club": "TOT",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 82,
@@ -358,184 +524,179 @@
               "club": "IPS",
               "slot": 15,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             }
           ],
           "squadGameweek": 11,
           "benchPoints": null
         },
         {
-          "id": 15016,
-          "leagueEntryId": 15024,
-          "name": "Pigui FC",
-          "manager": "Miguel Fernandes",
-          "initials": "MF",
-          "rank": 3,
-          "lastRank": 3,
-          "total": 477,
-          "eventPoints": 0,
-          "waiverPick": 3,
+          "id": 16948,
+          "leagueEntryId": 16958,
+          "name": "Mike’s Cold One",
+          "manager": "Miguel Silva",
+          "initials": "MS",
+          "rank": 4,
+          "lastRank": 5,
+          "total": 485,
+          "eventPoints": 45,
+          "waiverPick": 2,
           "squad": [
             {
-              "id": 496,
-              "name": "Kinsky",
-              "photoCode": 485055,
+              "id": 57,
+              "name": "Petrović",
+              "photoCode": 457569,
               "position": "GK",
-              "club": "TOT",
+              "club": "BOU",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 6
             },
             {
-              "id": 8,
-              "name": "Calafiori",
-              "photoCode": 466075,
-              "position": "DEF",
-              "club": "ARS",
-              "slot": 2,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 229,
-              "name": "Tarkowski",
-              "photoCode": 17761,
-              "position": "DEF",
-              "club": "EVE",
-              "slot": 3,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 61,
-              "name": "Truffert",
-              "photoCode": 494521,
+              "id": 555,
+              "name": "Silva",
+              "photoCode": 483067,
               "position": "DEF",
               "club": "BOU",
+              "slot": 2,
+              "bench": false,
+              "cleanSheets": 1,
+              "points": 8
+            },
+            {
+              "id": 115,
+              "name": "De Cuyper",
+              "photoCode": 465730,
+              "position": "DEF",
+              "club": "BHA",
+              "slot": 3,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 504,
+              "name": "Vuskovic",
+              "photoCode": 610799,
+              "position": "DEF",
+              "club": "BHA",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
-              "id": 390,
-              "name": "Rúben",
-              "photoCode": 171314,
+              "id": 112,
+              "name": "Van Hecke",
+              "photoCode": 469142,
               "position": "DEF",
-              "club": "MCI",
+              "club": "TOT",
               "slot": 5,
+              "bench": false,
+              "cleanSheets": 1,
+              "points": 6
+            },
+            {
+              "id": 183,
+              "name": "Rudoni",
+              "photoCode": 480457,
+              "position": "MID",
+              "club": "COV",
+              "slot": 6,
+              "bench": false,
+              "assists": 2,
+              "points": 10
+            },
+            {
+              "id": 40,
+              "name": "Rogers",
+              "photoCode": 244850,
+              "position": "MID",
+              "club": "CHE",
+              "slot": 7,
+              "bench": false,
+              "assists": 1,
+              "points": 5
+            },
+            {
+              "id": 155,
+              "name": "Enzo",
+              "photoCode": 448047,
+              "position": "MID",
+              "club": "MCI",
+              "slot": 8,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 129,
+              "name": "Ayari",
+              "photoCode": 509416,
+              "position": "MID",
+              "club": "BHA",
+              "slot": 9,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 526,
+              "name": "Solanke",
+              "photoCode": 154566,
+              "position": "FWD",
+              "club": "TOT",
+              "slot": 10,
+              "bench": false,
+              "goals": 1,
+              "cleanSheets": 1,
+              "points": 7
+            },
+            {
+              "id": 411,
+              "name": "Haaland",
+              "photoCode": 223094,
+              "position": "FWD",
+              "club": "MCI",
+              "slot": 11,
               "bench": false,
               "points": 2
             },
             {
-              "id": 68,
-              "name": "Tavernier",
-              "photoCode": 201658,
-              "position": "MID",
-              "club": "BOU",
-              "slot": 6,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 53,
-              "name": "Manzambi",
-              "photoCode": 614071,
-              "position": "MID",
-              "club": "AVL",
-              "slot": 7,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 124,
-              "name": "Groß",
-              "photoCode": 60307,
-              "position": "MID",
-              "club": "BHA",
-              "slot": 8,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 512,
-              "name": "Kudus",
-              "photoCode": 460842,
-              "position": "MID",
-              "club": "TOT",
-              "slot": 9,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 165,
-              "name": "João Pedro",
-              "photoCode": 475168,
-              "position": "FWD",
-              "club": "CHE",
-              "slot": 10,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 26,
-              "name": "Havertz",
-              "photoCode": 219847,
-              "position": "FWD",
-              "club": "ARS",
-              "slot": 11,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 350,
-              "name": "A.Becker",
-              "photoCode": 116535,
+              "id": 597,
+              "name": "Suzuki",
+              "photoCode": 433969,
               "position": "GK",
-              "club": "LIV",
+              "club": "AVL",
               "slot": 12,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 6
             },
             {
-              "id": 67,
-              "name": "Rayan",
-              "photoCode": 499604,
-              "position": "MID",
-              "club": "BOU",
+              "id": 25,
+              "name": "Gyökeres",
+              "photoCode": 224117,
+              "position": "FWD",
+              "club": "ARS",
               "slot": 13,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
-              "id": 6,
-              "name": "Saliba",
-              "photoCode": 462424,
+              "id": 230,
+              "name": "Branthwaite",
+              "photoCode": 480455,
               "position": "DEF",
-              "club": "ARS",
+              "club": "EVE",
               "slot": 14,
               "bench": true,
               "awaitingKickoff": true,
               "points": 0
             },
             {
-              "id": 106,
-              "name": "Thiago",
-              "photoCode": 502500,
-              "position": "FWD",
-              "club": "BRE",
+              "id": 427,
+              "name": "Mbeumo",
+              "photoCode": 446008,
+              "position": "MID",
+              "club": "MUN",
               "slot": 15,
               "bench": true,
               "awaitingKickoff": true,
@@ -551,11 +712,11 @@
           "name": "CHANGE NAME",
           "manager": "Diogo Costa",
           "initials": "DC",
-          "rank": 4,
+          "rank": 5,
           "lastRank": 4,
-          "total": 457,
-          "eventPoints": 0,
-          "waiverPick": 2,
+          "total": 476,
+          "eventPoints": 19,
+          "waiverPick": 1,
           "squad": [
             {
               "id": 109,
@@ -565,8 +726,7 @@
               "club": "BHA",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 60,
@@ -576,8 +736,9 @@
               "club": "BOU",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 14
             },
             {
               "id": 503,
@@ -587,7 +748,6 @@
               "club": "TOT",
               "slot": 3,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -620,8 +780,7 @@
               "club": "CHE",
               "slot": 6,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 399,
@@ -652,8 +811,8 @@
               "club": "AVL",
               "slot": 9,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 249,
@@ -674,7 +833,6 @@
               "club": "BHA",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -695,8 +853,8 @@
               "club": "LEE",
               "slot": 13,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 4
             },
             {
               "id": 595,
@@ -706,7 +864,6 @@
               "club": "NEW",
               "slot": 14,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -717,185 +874,6 @@
               "club": "MCI",
               "slot": 15,
               "bench": true,
-              "points": 0
-            }
-          ],
-          "squadGameweek": 11,
-          "benchPoints": null
-        },
-        {
-          "id": 16948,
-          "leagueEntryId": 16958,
-          "name": "Mike’s Cold One",
-          "manager": "Miguel Silva",
-          "initials": "MS",
-          "rank": 5,
-          "lastRank": 5,
-          "total": 440,
-          "eventPoints": 0,
-          "waiverPick": 1,
-          "squad": [
-            {
-              "id": 57,
-              "name": "Petrović",
-              "photoCode": 457569,
-              "position": "GK",
-              "club": "BOU",
-              "slot": 1,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 555,
-              "name": "Silva",
-              "photoCode": 483067,
-              "position": "DEF",
-              "club": "BOU",
-              "slot": 2,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 115,
-              "name": "De Cuyper",
-              "photoCode": 465730,
-              "position": "DEF",
-              "club": "BHA",
-              "slot": 3,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 504,
-              "name": "Vuskovic",
-              "photoCode": 610799,
-              "position": "DEF",
-              "club": "BHA",
-              "slot": 4,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 112,
-              "name": "Van Hecke",
-              "photoCode": 469142,
-              "position": "DEF",
-              "club": "TOT",
-              "slot": 5,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 183,
-              "name": "Rudoni",
-              "photoCode": 480457,
-              "position": "MID",
-              "club": "COV",
-              "slot": 6,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 40,
-              "name": "Rogers",
-              "photoCode": 244850,
-              "position": "MID",
-              "club": "CHE",
-              "slot": 7,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 155,
-              "name": "Enzo",
-              "photoCode": 448047,
-              "position": "MID",
-              "club": "MCI",
-              "slot": 8,
-              "bench": false,
-              "points": 1
-            },
-            {
-              "id": 129,
-              "name": "Ayari",
-              "photoCode": 509416,
-              "position": "MID",
-              "club": "BHA",
-              "slot": 9,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 526,
-              "name": "Solanke",
-              "photoCode": 154566,
-              "position": "FWD",
-              "club": "TOT",
-              "slot": 10,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 411,
-              "name": "Haaland",
-              "photoCode": 223094,
-              "position": "FWD",
-              "club": "MCI",
-              "slot": 11,
-              "bench": false,
-              "points": 2
-            },
-            {
-              "id": 597,
-              "name": "Suzuki",
-              "photoCode": 433969,
-              "position": "GK",
-              "club": "AVL",
-              "slot": 12,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 25,
-              "name": "Gyökeres",
-              "photoCode": 224117,
-              "position": "FWD",
-              "club": "ARS",
-              "slot": 13,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 230,
-              "name": "Branthwaite",
-              "photoCode": 480455,
-              "position": "DEF",
-              "club": "EVE",
-              "slot": 14,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 427,
-              "name": "Mbeumo",
-              "photoCode": 446008,
-              "position": "MID",
-              "club": "MUN",
-              "slot": 15,
-              "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             }
           ],
@@ -932,8 +910,8 @@
           "playerOutPhotoCode": 690838,
           "playerInDraftRank": 185,
           "playerOutDraftRank": 236,
-          "playerInPoints": 30,
-          "playerOutPoints": 1,
+          "playerInPoints": 31,
+          "playerOutPoints": 2,
           "kind": "Waiver"
         },
         {
@@ -948,8 +926,8 @@
           "playerOutPhotoCode": 215136,
           "playerInDraftRank": 391,
           "playerOutDraftRank": 252,
-          "playerInPoints": 56,
-          "playerOutPoints": 34,
+          "playerInPoints": 58,
+          "playerOutPoints": 35,
           "kind": "Free agent"
         },
         {
@@ -964,8 +942,8 @@
           "playerOutPhotoCode": 487838,
           "playerInDraftRank": 117,
           "playerOutDraftRank": 280,
-          "playerInPoints": 33,
-          "playerOutPoints": 46,
+          "playerInPoints": 39,
+          "playerOutPoints": 47,
           "kind": "Free agent"
         },
         {
@@ -978,10 +956,10 @@
           "playerOut": "Trafford",
           "playerInPhotoCode": 489639,
           "playerOutPhotoCode": 432720,
-          "playerInDraftRank": 428,
+          "playerInDraftRank": 429,
           "playerOutDraftRank": 338,
-          "playerInPoints": 57,
-          "playerOutPoints": 54,
+          "playerInPoints": 58,
+          "playerOutPoints": 56,
           "kind": "Waiver"
         },
         {
@@ -1012,8 +990,8 @@
           "playerOutPhotoCode": 230730,
           "playerInDraftRank": 30,
           "playerOutDraftRank": 370,
-          "playerInPoints": 24,
-          "playerOutPoints": 23,
+          "playerInPoints": 25,
+          "playerOutPoints": 27,
           "kind": "Waiver"
         },
         {
@@ -1028,7 +1006,7 @@
           "playerOutPhotoCode": 513418,
           "playerInDraftRank": 56,
           "playerOutDraftRank": 77,
-          "playerInPoints": 22,
+          "playerInPoints": 23,
           "playerOutPoints": 46,
           "kind": "Waiver"
         },
@@ -1043,9 +1021,9 @@
           "playerInPhotoCode": 462424,
           "playerOutPhotoCode": 487676,
           "playerInDraftRank": 70,
-          "playerOutDraftRank": 449,
+          "playerOutDraftRank": 450,
           "playerInPoints": 0,
-          "playerOutPoints": 27,
+          "playerOutPoints": 32,
           "kind": "Waiver"
         },
         {
@@ -1059,7 +1037,7 @@
           "playerInPhotoCode": 480455,
           "playerOutPhotoCode": 199796,
           "playerInDraftRank": 195,
-          "playerOutDraftRank": 446,
+          "playerOutDraftRank": 447,
           "playerInPoints": 43,
           "playerOutPoints": 18,
           "kind": "Waiver"
@@ -1076,7 +1054,7 @@
           "playerOutPhotoCode": 209244,
           "playerInDraftRank": 366,
           "playerOutDraftRank": 28,
-          "playerInPoints": 39,
+          "playerInPoints": 49,
           "playerOutPoints": 23,
           "kind": "Waiver"
         },
@@ -1090,9 +1068,9 @@
           "playerOut": "Leno",
           "playerInPhotoCode": 457569,
           "playerOutPhotoCode": 80201,
-          "playerInDraftRank": 429,
-          "playerOutDraftRank": 434,
-          "playerInPoints": 30,
+          "playerInDraftRank": 430,
+          "playerOutDraftRank": 435,
+          "playerInPoints": 36,
           "playerOutPoints": 41,
           "kind": "Waiver"
         },
@@ -1108,8 +1086,8 @@
           "playerOutPhotoCode": 201666,
           "playerInDraftRank": 150,
           "playerOutDraftRank": 84,
-          "playerInPoints": 46,
-          "playerOutPoints": 44,
+          "playerInPoints": 47,
+          "playerOutPoints": 51,
           "kind": "Waiver"
         },
         {
@@ -1124,7 +1102,7 @@
           "playerOutPhotoCode": 437499,
           "playerInDraftRank": 406,
           "playerOutDraftRank": 64,
-          "playerInPoints": 70,
+          "playerInPoints": 72,
           "playerOutPoints": 24,
           "kind": "Free agent"
         },
@@ -1138,9 +1116,9 @@
           "playerOut": "O'Reilly",
           "playerInPhotoCode": 487676,
           "playerOutPhotoCode": 472769,
-          "playerInDraftRank": 449,
+          "playerInDraftRank": 450,
           "playerOutDraftRank": 35,
-          "playerInPoints": 27,
+          "playerInPoints": 32,
           "playerOutPoints": 17,
           "kind": "Waiver"
         },
@@ -1156,7 +1134,7 @@
           "playerOutPhotoCode": 430871,
           "playerInDraftRank": 44,
           "playerOutDraftRank": 13,
-          "playerInPoints": 28,
+          "playerInPoints": 30,
           "playerOutPoints": 45,
           "kind": "Waiver"
         },
@@ -1172,8 +1150,8 @@
           "playerOutPhotoCode": 439509,
           "playerInDraftRank": 48,
           "playerOutDraftRank": 56,
-          "playerInPoints": 30,
-          "playerOutPoints": 22,
+          "playerInPoints": 33,
+          "playerOutPoints": 23,
           "kind": "Waiver"
         },
         {
@@ -1186,10 +1164,10 @@
           "playerOut": "Sels",
           "playerInPhotoCode": 485055,
           "playerOutPhotoCode": 85633,
-          "playerInDraftRank": 492,
+          "playerInDraftRank": 493,
           "playerOutDraftRank": 265,
-          "playerInPoints": 40,
-          "playerOutPoints": 23,
+          "playerInPoints": 47,
+          "playerOutPoints": 25,
           "kind": "Waiver"
         },
         {
@@ -1204,7 +1182,7 @@
           "playerOutPhotoCode": 577725,
           "playerInDraftRank": 111,
           "playerOutDraftRank": 174,
-          "playerInPoints": 40,
+          "playerInPoints": 41,
           "playerOutPoints": 41,
           "kind": "Waiver"
         },
@@ -1220,8 +1198,8 @@
           "playerOutPhotoCode": 216646,
           "playerInDraftRank": 236,
           "playerOutDraftRank": 108,
-          "playerInPoints": 1,
-          "playerOutPoints": 22,
+          "playerInPoints": 2,
+          "playerOutPoints": 23,
           "kind": "Waiver"
         },
         {
@@ -1234,10 +1212,10 @@
           "playerOut": "Botman",
           "playerInPhotoCode": 191866,
           "playerOutPhotoCode": 220237,
-          "playerInDraftRank": 463,
+          "playerInDraftRank": 464,
           "playerOutDraftRank": 277,
           "playerInPoints": 42,
-          "playerOutPoints": 26,
+          "playerOutPoints": 27,
           "kind": "Waiver"
         },
         {
@@ -1253,7 +1231,7 @@
           "playerInDraftRank": 27,
           "playerOutDraftRank": 39,
           "playerInPoints": 40,
-          "playerOutPoints": 41,
+          "playerOutPoints": 42,
           "kind": "Waiver"
         },
         {
@@ -1266,7 +1244,7 @@
           "playerOut": "Araujo",
           "playerInPhotoCode": 199796,
           "playerOutPhotoCode": 445087,
-          "playerInDraftRank": 446,
+          "playerInDraftRank": 447,
           "playerOutDraftRank": 233,
           "playerInPoints": 18,
           "playerOutPoints": 44,
@@ -1284,8 +1262,8 @@
           "playerOutPhotoCode": 498016,
           "playerInDraftRank": 422,
           "playerOutDraftRank": 248,
-          "playerInPoints": 31,
-          "playerOutPoints": 33,
+          "playerInPoints": 37,
+          "playerOutPoints": 44,
           "kind": "Waiver"
         },
         {
@@ -1299,9 +1277,9 @@
           "playerInPhotoCode": 483067,
           "playerOutPhotoCode": 461102,
           "playerInDraftRank": 407,
-          "playerOutDraftRank": 610,
-          "playerInPoints": 40,
-          "playerOutPoints": 32,
+          "playerOutDraftRank": 612,
+          "playerInPoints": 48,
+          "playerOutPoints": 35,
           "kind": "Waiver"
         },
         {
@@ -1316,7 +1294,7 @@
           "playerOutPhotoCode": 171314,
           "playerInDraftRank": 142,
           "playerOutDraftRank": 140,
-          "playerInPoints": 42,
+          "playerInPoints": 56,
           "playerOutPoints": 30,
           "kind": "Waiver"
         },
@@ -1332,8 +1310,8 @@
           "playerOutPhotoCode": 510281,
           "playerInDraftRank": 84,
           "playerOutDraftRank": 51,
-          "playerInPoints": 44,
-          "playerOutPoints": 10,
+          "playerInPoints": 51,
+          "playerOutPoints": 11,
           "kind": "Free agent"
         },
         {
@@ -1364,7 +1342,7 @@
           "playerOutPhotoCode": 613221,
           "playerInDraftRank": 370,
           "playerOutDraftRank": 58,
-          "playerInPoints": 23,
+          "playerInPoints": 27,
           "playerOutPoints": 8,
           "kind": "Waiver"
         },
@@ -1380,7 +1358,7 @@
           "playerOutPhotoCode": 441264,
           "playerInDraftRank": 226,
           "playerOutDraftRank": 88,
-          "playerInPoints": 34,
+          "playerInPoints": 35,
           "playerOutPoints": 32,
           "kind": "Waiver"
         },
@@ -1396,7 +1374,7 @@
           "playerOutPhotoCode": 176297,
           "playerInDraftRank": 39,
           "playerOutDraftRank": 31,
-          "playerInPoints": 41,
+          "playerInPoints": 42,
           "playerOutPoints": 11,
           "kind": "Waiver"
         },
@@ -1413,7 +1391,7 @@
           "playerInDraftRank": 19,
           "playerOutDraftRank": 111,
           "playerInPoints": 46,
-          "playerOutPoints": 40,
+          "playerOutPoints": 41,
           "kind": "Waiver"
         },
         {
@@ -1444,8 +1422,8 @@
           "playerOutPhotoCode": 98980,
           "playerInDraftRank": 338,
           "playerOutDraftRank": 256,
-          "playerInPoints": 54,
-          "playerOutPoints": 20,
+          "playerInPoints": 56,
+          "playerOutPoints": 21,
           "kind": "Waiver"
         },
         {
@@ -1458,9 +1436,9 @@
           "playerOut": "Mosquera",
           "playerInPhotoCode": 226182,
           "playerOutPhotoCode": 500040,
-          "playerInDraftRank": 455,
+          "playerInDraftRank": 456,
           "playerOutDraftRank": 191,
-          "playerInPoints": 58,
+          "playerInPoints": 62,
           "playerOutPoints": 12,
           "kind": "Waiver"
         },
@@ -1475,9 +1453,9 @@
           "playerInPhotoCode": 85633,
           "playerOutPhotoCode": 489639,
           "playerInDraftRank": 265,
-          "playerOutDraftRank": 428,
-          "playerInPoints": 23,
-          "playerOutPoints": 57,
+          "playerOutDraftRank": 429,
+          "playerInPoints": 25,
+          "playerOutPoints": 58,
           "kind": "Waiver"
         },
         {
@@ -1493,7 +1471,7 @@
           "playerInDraftRank": 184,
           "playerOutDraftRank": 253,
           "playerInPoints": 42,
-          "playerOutPoints": 18,
+          "playerOutPoints": 25,
           "kind": "Free agent"
         },
         {
@@ -1508,7 +1486,7 @@
           "playerOutPhotoCode": 440993,
           "playerInDraftRank": 111,
           "playerOutDraftRank": 75,
-          "playerInPoints": 40,
+          "playerInPoints": 41,
           "playerOutPoints": 39,
           "kind": "Free agent"
         },
@@ -1525,7 +1503,7 @@
           "playerInDraftRank": 88,
           "playerOutDraftRank": 76,
           "playerInPoints": 32,
-          "playerOutPoints": 9,
+          "playerOutPoints": 10,
           "kind": "Free agent"
         },
         {
@@ -1540,7 +1518,7 @@
           "playerOutPhotoCode": 513545,
           "playerInDraftRank": 377,
           "playerOutDraftRank": 228,
-          "playerInPoints": 48,
+          "playerInPoints": 49,
           "playerOutPoints": 32,
           "kind": "Free agent"
         },
@@ -1572,7 +1550,7 @@
           "playerOutPhotoCode": 494595,
           "playerInDraftRank": 71,
           "playerOutDraftRank": 19,
-          "playerInPoints": 58,
+          "playerInPoints": 66,
           "playerOutPoints": 46,
           "kind": "Free agent"
         },
@@ -1587,7 +1565,7 @@
           "playerInPhotoCode": 472769,
           "playerOutPhotoCode": 166477,
           "playerInDraftRank": 35,
-          "playerOutDraftRank": 470,
+          "playerOutDraftRank": 471,
           "playerInPoints": 17,
           "playerOutPoints": 44,
           "kind": "Waiver"
@@ -1602,9 +1580,9 @@
           "playerOut": "Mykolenko",
           "playerInPhotoCode": 461102,
           "playerOutPhotoCode": 224967,
-          "playerInDraftRank": 610,
-          "playerOutDraftRank": 456,
-          "playerInPoints": 32,
+          "playerInDraftRank": 612,
+          "playerOutDraftRank": 457,
+          "playerInPoints": 35,
           "playerOutPoints": 42,
           "kind": "Waiver"
         },
@@ -1620,7 +1598,7 @@
           "playerOutPhotoCode": 224117,
           "playerInDraftRank": 107,
           "playerOutDraftRank": 18,
-          "playerInPoints": 22,
+          "playerInPoints": 29,
           "playerOutPoints": 11,
           "kind": "Waiver"
         },
@@ -1636,8 +1614,8 @@
           "playerOutPhotoCode": 201666,
           "playerInDraftRank": 51,
           "playerOutDraftRank": 84,
-          "playerInPoints": 10,
-          "playerOutPoints": 44,
+          "playerInPoints": 11,
+          "playerOutPoints": 51,
           "kind": "Waiver"
         },
         {
@@ -1652,7 +1630,7 @@
           "playerOutPhotoCode": 485711,
           "playerInDraftRank": 53,
           "playerOutDraftRank": 29,
-          "playerInPoints": 54,
+          "playerInPoints": 56,
           "playerOutPoints": 8,
           "kind": "Waiver"
         },
@@ -1668,8 +1646,8 @@
           "playerOutPhotoCode": 482973,
           "playerInDraftRank": 80,
           "playerOutDraftRank": 81,
-          "playerInPoints": 61,
-          "playerOutPoints": 12,
+          "playerInPoints": 67,
+          "playerOutPoints": 13,
           "kind": "Free agent"
         },
         {
@@ -1685,7 +1663,7 @@
           "playerInDraftRank": 194,
           "playerOutDraftRank": 226,
           "playerInPoints": 47,
-          "playerOutPoints": 34,
+          "playerOutPoints": 35,
           "kind": "Waiver"
         },
         {
@@ -1700,7 +1678,7 @@
           "playerOutPhotoCode": 472769,
           "playerInDraftRank": 277,
           "playerOutDraftRank": 35,
-          "playerInPoints": 26,
+          "playerInPoints": 27,
           "playerOutPoints": 17,
           "kind": "Waiver"
         },
@@ -1717,7 +1695,7 @@
           "playerInDraftRank": 58,
           "playerOutDraftRank": 185,
           "playerInPoints": 8,
-          "playerOutPoints": 30,
+          "playerOutPoints": 31,
           "kind": "Waiver"
         },
         {
@@ -1732,7 +1710,7 @@
           "playerOutPhotoCode": 247348,
           "playerInDraftRank": 253,
           "playerOutDraftRank": 127,
-          "playerInPoints": 18,
+          "playerInPoints": 25,
           "playerOutPoints": 17,
           "kind": "Waiver"
         },
@@ -1746,10 +1724,10 @@
           "playerOut": "Sels",
           "playerInPhotoCode": 489639,
           "playerOutPhotoCode": 85633,
-          "playerInDraftRank": 428,
+          "playerInDraftRank": 429,
           "playerOutDraftRank": 265,
-          "playerInPoints": 57,
-          "playerOutPoints": 23,
+          "playerInPoints": 58,
+          "playerOutPoints": 25,
           "kind": "Waiver"
         },
         {
@@ -1762,10 +1740,10 @@
           "playerOut": "Muharemović",
           "playerInPhotoCode": 166477,
           "playerOutPhotoCode": 522047,
-          "playerInDraftRank": 470,
+          "playerInDraftRank": 471,
           "playerOutDraftRank": 391,
           "playerInPoints": 44,
-          "playerOutPoints": 56,
+          "playerOutPoints": 58,
           "kind": "Waiver"
         },
         {
@@ -1796,7 +1774,7 @@
           "playerOutPhotoCode": 243298,
           "playerInDraftRank": 165,
           "playerOutDraftRank": 27,
-          "playerInPoints": 70,
+          "playerInPoints": 73,
           "playerOutPoints": 40,
           "kind": "Waiver"
         },
@@ -1813,7 +1791,7 @@
           "playerInDraftRank": 25,
           "playerOutDraftRank": 26,
           "playerInPoints": 24,
-          "playerOutPoints": 28,
+          "playerOutPoints": 30,
           "kind": "Waiver"
         },
         {
@@ -1829,7 +1807,7 @@
           "playerInDraftRank": 18,
           "playerOutDraftRank": 30,
           "playerInPoints": 11,
-          "playerOutPoints": 24,
+          "playerOutPoints": 25,
           "kind": "Waiver"
         },
         {
@@ -1842,10 +1820,10 @@
           "playerOut": "Kinsky",
           "playerInPhotoCode": 80201,
           "playerOutPhotoCode": 485055,
-          "playerInDraftRank": 434,
-          "playerOutDraftRank": 492,
+          "playerInDraftRank": 435,
+          "playerOutDraftRank": 493,
           "playerInPoints": 41,
-          "playerOutPoints": 40,
+          "playerOutPoints": 47,
           "kind": "Free agent"
         },
         {
@@ -1877,7 +1855,7 @@
           "playerInDraftRank": 195,
           "playerOutDraftRank": 295,
           "playerInPoints": 43,
-          "playerOutPoints": 20,
+          "playerOutPoints": 22,
           "kind": "Free agent"
         },
         {
@@ -1890,7 +1868,7 @@
           "playerOut": "Kerkez",
           "playerInPhotoCode": 224967,
           "playerOutPhotoCode": 544877,
-          "playerInDraftRank": 456,
+          "playerInDraftRank": 457,
           "playerOutDraftRank": 157,
           "playerInPoints": 42,
           "playerOutPoints": 25,
@@ -1906,10 +1884,10 @@
           "playerOut": "Verbruggen",
           "playerInPhotoCode": 485055,
           "playerOutPhotoCode": 489639,
-          "playerInDraftRank": 492,
-          "playerOutDraftRank": 428,
-          "playerInPoints": 40,
-          "playerOutPoints": 57,
+          "playerInDraftRank": 493,
+          "playerOutDraftRank": 429,
+          "playerInPoints": 47,
+          "playerOutPoints": 58,
           "kind": "Free agent"
         },
         {
@@ -1924,8 +1902,8 @@
           "playerOutPhotoCode": 444102,
           "playerInDraftRank": 76,
           "playerOutDraftRank": 80,
-          "playerInPoints": 9,
-          "playerOutPoints": 61,
+          "playerInPoints": 10,
+          "playerOutPoints": 67,
           "kind": "Free agent"
         },
         {
@@ -1972,7 +1950,7 @@
           "playerOutPhotoCode": 198869,
           "playerInDraftRank": 391,
           "playerOutDraftRank": 184,
-          "playerInPoints": 56,
+          "playerInPoints": 58,
           "playerOutPoints": 42,
           "kind": "Waiver"
         },
@@ -1989,7 +1967,7 @@
           "playerInDraftRank": 36,
           "playerOutDraftRank": 268,
           "playerInPoints": 50,
-          "playerOutPoints": 51,
+          "playerOutPoints": 52,
           "kind": "Waiver"
         },
         {
@@ -2004,8 +1982,8 @@
           "playerOutPhotoCode": 172649,
           "playerInDraftRank": 265,
           "playerOutDraftRank": 249,
-          "playerInPoints": 23,
-          "playerOutPoints": 10,
+          "playerInPoints": 25,
+          "playerOutPoints": 12,
           "kind": "Waiver"
         },
         {
@@ -2036,7 +2014,7 @@
           "playerOutPhotoCode": 441264,
           "playerInDraftRank": 226,
           "playerOutDraftRank": 88,
-          "playerInPoints": 34,
+          "playerInPoints": 35,
           "playerOutPoints": 32,
           "kind": "Waiver"
         },
@@ -2050,8 +2028,8 @@
           "playerOut": "Hato",
           "playerInPhotoCode": 463726,
           "playerOutPhotoCode": 551210,
-          "playerInDraftRank": 569,
-          "playerOutDraftRank": 493,
+          "playerInDraftRank": 570,
+          "playerOutDraftRank": 494,
           "playerInPoints": 29,
           "playerOutPoints": 25,
           "kind": "Waiver"
@@ -2067,7 +2045,7 @@
           "playerInPhotoCode": 247348,
           "playerOutPhotoCode": 607464,
           "playerInDraftRank": 127,
-          "playerOutDraftRank": 447,
+          "playerOutDraftRank": 448,
           "playerInPoints": 17,
           "playerOutPoints": 34,
           "kind": "Waiver"
@@ -2084,8 +2062,8 @@
           "playerOutPhotoCode": 517052,
           "playerInDraftRank": 185,
           "playerOutDraftRank": 53,
-          "playerInPoints": 30,
-          "playerOutPoints": 54,
+          "playerInPoints": 31,
+          "playerOutPoints": 56,
           "kind": "Waiver"
         },
         {
@@ -2099,8 +2077,8 @@
           "playerInPhotoCode": 215136,
           "playerOutPhotoCode": 463726,
           "playerInDraftRank": 252,
-          "playerOutDraftRank": 569,
-          "playerInPoints": 34,
+          "playerOutDraftRank": 570,
+          "playerInPoints": 35,
           "playerOutPoints": 29,
           "kind": "Free agent"
         },
@@ -2117,7 +2095,7 @@
           "playerInDraftRank": 61,
           "playerOutDraftRank": 406,
           "playerInPoints": 56,
-          "playerOutPoints": 70,
+          "playerOutPoints": 72,
           "kind": "Free agent"
         },
         {
@@ -2148,7 +2126,7 @@
           "playerOutPhotoCode": 440993,
           "playerInDraftRank": 268,
           "playerOutDraftRank": 75,
-          "playerInPoints": 51,
+          "playerInPoints": 52,
           "playerOutPoints": 39,
           "kind": "Waiver"
         },
@@ -2163,8 +2141,8 @@
           "playerInPhotoCode": 610799,
           "playerOutPhotoCode": 191866,
           "playerInDraftRank": 406,
-          "playerOutDraftRank": 463,
-          "playerInPoints": 70,
+          "playerOutDraftRank": 464,
+          "playerInPoints": 72,
           "playerOutPoints": 42,
           "kind": "Waiver"
         },
@@ -2196,8 +2174,8 @@
           "playerOutPhotoCode": 221466,
           "playerInDraftRank": 241,
           "playerOutDraftRank": 60,
-          "playerInPoints": 57,
-          "playerOutPoints": 5,
+          "playerInPoints": 63,
+          "playerOutPoints": 13,
           "kind": "Waiver"
         },
         {
@@ -2212,8 +2190,8 @@
           "playerOutPhotoCode": 465642,
           "playerInDraftRank": 295,
           "playerOutDraftRank": 253,
-          "playerInPoints": 20,
-          "playerOutPoints": 18,
+          "playerInPoints": 22,
+          "playerOutPoints": 25,
           "kind": "Waiver"
         },
         {
@@ -2228,8 +2206,8 @@
           "playerOutPhotoCode": 551226,
           "playerInDraftRank": 84,
           "playerOutDraftRank": 74,
-          "playerInPoints": 44,
-          "playerOutPoints": 24,
+          "playerInPoints": 51,
+          "playerOutPoints": 28,
           "kind": "Waiver"
         },
         {
@@ -2258,7 +2236,7 @@
           "playerOut": "Palestra",
           "playerInPhotoCode": 551210,
           "playerOutPhotoCode": 620109,
-          "playerInDraftRank": 493,
+          "playerInDraftRank": 494,
           "playerOutDraftRank": 216,
           "playerInPoints": 25,
           "playerOutPoints": 10,
@@ -2276,7 +2254,7 @@
           "playerOutPhotoCode": 500040,
           "playerInDraftRank": 253,
           "playerOutDraftRank": 191,
-          "playerInPoints": 18,
+          "playerInPoints": 25,
           "playerOutPoints": 12,
           "kind": "Free agent"
         },
@@ -2292,7 +2270,7 @@
           "playerOutPhotoCode": 465247,
           "playerInDraftRank": 249,
           "playerOutDraftRank": 263,
-          "playerInPoints": 10,
+          "playerInPoints": 12,
           "playerOutPoints": 21,
           "kind": "Free agent"
         },
@@ -2308,8 +2286,8 @@
           "playerOutPhotoCode": 85633,
           "playerInDraftRank": 402,
           "playerOutDraftRank": 265,
-          "playerInPoints": 30,
-          "playerOutPoints": 23,
+          "playerInPoints": 31,
+          "playerOutPoints": 25,
           "kind": "Waiver"
         },
         {
@@ -2340,8 +2318,8 @@
           "playerOutPhotoCode": 169432,
           "playerInDraftRank": 108,
           "playerOutDraftRank": 223,
-          "playerInPoints": 22,
-          "playerOutPoints": 38,
+          "playerInPoints": 23,
+          "playerOutPoints": 39,
           "kind": "Waiver"
         },
         {
@@ -2354,9 +2332,9 @@
           "playerOut": "Sánchez",
           "playerInPhotoCode": 489639,
           "playerOutPhotoCode": 215059,
-          "playerInDraftRank": 428,
+          "playerInDraftRank": 429,
           "playerOutDraftRank": 261,
-          "playerInPoints": 57,
+          "playerInPoints": 58,
           "playerOutPoints": 2,
           "kind": "Waiver"
         },
@@ -2386,10 +2364,10 @@
           "playerOut": "Hume",
           "playerInPhotoCode": 191866,
           "playerOutPhotoCode": 487676,
-          "playerInDraftRank": 463,
-          "playerOutDraftRank": 449,
+          "playerInDraftRank": 464,
+          "playerOutDraftRank": 450,
           "playerInPoints": 42,
-          "playerOutPoints": 27,
+          "playerOutPoints": 32,
           "kind": "Waiver"
         },
         {
@@ -2404,8 +2382,8 @@
           "playerOutPhotoCode": 494521,
           "playerInDraftRank": 280,
           "playerOutDraftRank": 117,
-          "playerInPoints": 46,
-          "playerOutPoints": 33,
+          "playerInPoints": 47,
+          "playerOutPoints": 39,
           "kind": "Waiver"
         },
         {
@@ -2421,7 +2399,7 @@
           "playerInDraftRank": 8,
           "playerOutDraftRank": 196,
           "playerInPoints": 25,
-          "playerOutPoints": 13,
+          "playerOutPoints": 14,
           "kind": "Waiver"
         },
         {
@@ -2436,7 +2414,7 @@
           "playerOutPhotoCode": 178301,
           "playerInDraftRank": 223,
           "playerOutDraftRank": 11,
-          "playerInPoints": 38,
+          "playerInPoints": 39,
           "playerOutPoints": 0,
           "kind": "Waiver"
         },
@@ -2450,10 +2428,10 @@
           "playerOut": "Van Hecke",
           "playerInPhotoCode": 607464,
           "playerOutPhotoCode": 469142,
-          "playerInDraftRank": 447,
+          "playerInDraftRank": 448,
           "playerOutDraftRank": 241,
           "playerInPoints": 34,
-          "playerOutPoints": 57,
+          "playerOutPoints": 63,
           "kind": "Waiver"
         },
         {
@@ -2466,9 +2444,9 @@
           "playerOut": "Tarkowski",
           "playerInPhotoCode": 199798,
           "playerOutPhotoCode": 17761,
-          "playerInDraftRank": 452,
+          "playerInDraftRank": 453,
           "playerOutDraftRank": 61,
-          "playerInPoints": 57,
+          "playerInPoints": 58,
           "playerOutPoints": 56,
           "kind": "Waiver"
         },
@@ -2484,7 +2462,7 @@
           "playerOutPhotoCode": 486385,
           "playerInDraftRank": 80,
           "playerOutDraftRank": 146,
-          "playerInPoints": 61,
+          "playerInPoints": 67,
           "playerOutPoints": 2,
           "kind": "Waiver"
         },
@@ -2498,9 +2476,9 @@
           "playerOut": "Diomande",
           "playerInPhotoCode": 465730,
           "playerOutPhotoCode": 568420,
-          "playerInDraftRank": 460,
+          "playerInDraftRank": 461,
           "playerOutDraftRank": 232,
-          "playerInPoints": 75,
+          "playerInPoints": 76,
           "playerOutPoints": 10,
           "kind": "Waiver"
         },
@@ -2514,7 +2492,7 @@
           "playerOut": "Kerkez",
           "playerInPhotoCode": 463726,
           "playerOutPhotoCode": 544877,
-          "playerInDraftRank": 569,
+          "playerInDraftRank": 570,
           "playerOutDraftRank": 157,
           "playerInPoints": 29,
           "playerOutPoints": 25,
@@ -2549,7 +2527,7 @@
           "playerInDraftRank": 17,
           "playerOutDraftRank": 48,
           "playerInPoints": 55,
-          "playerOutPoints": 30,
+          "playerOutPoints": 33,
           "kind": "Waiver"
         },
         {
@@ -2564,8 +2542,8 @@
           "playerOutPhotoCode": 624773,
           "playerInDraftRank": 196,
           "playerOutDraftRank": 49,
-          "playerInPoints": 13,
-          "playerOutPoints": 10,
+          "playerInPoints": 14,
+          "playerOutPoints": 12,
           "kind": "Free agent"
         },
         {
@@ -2578,9 +2556,9 @@
           "playerOut": "Muñoz",
           "playerInPhotoCode": 487676,
           "playerOutPhotoCode": 247348,
-          "playerInDraftRank": 449,
+          "playerInDraftRank": 450,
           "playerOutDraftRank": 127,
-          "playerInPoints": 27,
+          "playerInPoints": 32,
           "playerOutPoints": 17,
           "kind": "Free agent"
         },
@@ -2596,7 +2574,7 @@
           "playerOutPhotoCode": 231747,
           "playerInDraftRank": 23,
           "playerOutDraftRank": 41,
-          "playerInPoints": 35,
+          "playerInPoints": 40,
           "playerOutPoints": 3,
           "kind": "Waiver"
         },
@@ -2611,9 +2589,9 @@
           "playerInPhotoCode": 544877,
           "playerOutPhotoCode": 199798,
           "playerInDraftRank": 157,
-          "playerOutDraftRank": 452,
+          "playerOutDraftRank": 453,
           "playerInPoints": 25,
-          "playerOutPoints": 57,
+          "playerOutPoints": 58,
           "kind": "Waiver"
         },
         {
@@ -2627,13 +2605,13 @@
           "playerInPhotoCode": 620109,
           "playerOutPhotoCode": 232859,
           "playerInDraftRank": 216,
-          "playerOutDraftRank": 462,
+          "playerOutDraftRank": 463,
           "playerInPoints": 10,
           "playerOutPoints": 0,
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-21T14:45:42.913Z",
+      "updatedAt": "2026-11-22T14:41:16.888Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -2651,8 +2629,8 @@
           "initials": "MP",
           "rank": 1,
           "lastRank": 1,
-          "total": 503,
-          "eventPoints": 0,
+          "total": 537,
+          "eventPoints": 34,
           "waiverPick": 5,
           "squad": [
             {
@@ -2663,8 +2641,7 @@
               "club": "ARS",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 8,
@@ -2674,8 +2651,7 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 391,
@@ -2695,8 +2671,8 @@
               "club": "TOT",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 124,
@@ -2706,8 +2682,7 @@
               "club": "BHA",
               "slot": 5,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 13,
@@ -2717,8 +2692,7 @@
               "club": "ARS",
               "slot": 6,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 40,
@@ -2728,8 +2702,8 @@
               "club": "CHE",
               "slot": 7,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 481,
@@ -2760,8 +2734,8 @@
               "club": "ARS",
               "slot": 10,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 411,
@@ -2781,8 +2755,8 @@
               "club": "SUN",
               "slot": 12,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 11
             },
             {
               "id": 295,
@@ -2792,8 +2766,7 @@
               "club": "HUL",
               "slot": 13,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 277,
@@ -2803,7 +2776,6 @@
               "club": "HUL",
               "slot": 14,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -2814,7 +2786,6 @@
               "club": "NFO",
               "slot": 15,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             }
           ],
@@ -2829,8 +2800,8 @@
           "initials": "TF",
           "rank": 2,
           "lastRank": 2,
-          "total": 488,
-          "eventPoints": 0,
+          "total": 500,
+          "eventPoints": 12,
           "waiverPick": 4,
           "squad": [
             {
@@ -2841,8 +2812,7 @@
               "club": "CHE",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 356,
@@ -2863,8 +2833,7 @@
               "club": "NEW",
               "slot": 3,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 5,
@@ -2874,8 +2843,7 @@
               "club": "ARS",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 362,
@@ -2907,8 +2875,8 @@
               "club": "ARS",
               "slot": 7,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 452,
@@ -2918,8 +2886,7 @@
               "club": "ARS",
               "slot": 8,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 429,
@@ -2940,8 +2907,8 @@
               "club": "AVL",
               "slot": 10,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 249,
@@ -2962,8 +2929,7 @@
               "club": "HUL",
               "slot": 12,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 5
             },
             {
               "id": 379,
@@ -2984,7 +2950,6 @@
               "club": "ARS",
               "slot": 14,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -3010,8 +2975,8 @@
           "initials": "IB",
           "rank": 3,
           "lastRank": 3,
-          "total": 466,
-          "eventPoints": 0,
+          "total": 495,
+          "eventPoints": 29,
           "waiverPick": 3,
           "squad": [
             {
@@ -3022,8 +2987,7 @@
               "club": "BHA",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 4,
@@ -3033,8 +2997,7 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 115,
@@ -3044,8 +3007,7 @@
               "club": "BHA",
               "slot": 3,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 334,
@@ -3055,8 +3017,7 @@
               "club": "LEE",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 60,
@@ -3066,8 +3027,9 @@
               "club": "BOU",
               "slot": 5,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 14
             },
             {
               "id": 154,
@@ -3077,8 +3039,7 @@
               "club": "CHE",
               "slot": 6,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 427,
@@ -3099,8 +3060,7 @@
               "club": "LEE",
               "slot": 8,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 366,
@@ -3132,8 +3092,9 @@
               "club": "LEE",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "goals": 1,
+              "assists": 1,
+              "points": 9
             },
             {
               "id": 385,
@@ -3143,8 +3104,7 @@
               "club": "LEE",
               "slot": 12,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 552,
@@ -3154,7 +3114,6 @@
               "club": "SUN",
               "slot": 13,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -3175,8 +3134,8 @@
               "club": "LEE",
               "slot": 15,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 4
             }
           ],
           "squadGameweek": 11,
@@ -3190,8 +3149,8 @@
           "initials": "RM",
           "rank": 4,
           "lastRank": 4,
-          "total": 453,
-          "eventPoints": 0,
+          "total": 470,
+          "eventPoints": 17,
           "waiverPick": 2,
           "squad": [
             {
@@ -3212,8 +3171,7 @@
               "club": "BHA",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 504,
@@ -3223,7 +3181,6 @@
               "club": "BHA",
               "slot": 3,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -3245,7 +3202,6 @@
               "club": "ARS",
               "slot": 5,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -3266,8 +3222,7 @@
               "club": "BHA",
               "slot": 7,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 68,
@@ -3277,8 +3232,9 @@
               "club": "BOU",
               "slot": 8,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 399,
@@ -3298,7 +3254,6 @@
               "club": "BHA",
               "slot": 10,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -3309,8 +3264,9 @@
               "club": "BOU",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "goals": 1,
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 226,
@@ -3331,8 +3287,7 @@
               "club": "HUL",
               "slot": 13,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 106,
@@ -3367,8 +3322,8 @@
           "initials": "JC",
           "rank": 5,
           "lastRank": 5,
-          "total": 443,
-          "eventPoints": 0,
+          "total": 462,
+          "eventPoints": 19,
           "waiverPick": 1,
           "squad": [
             {
@@ -3421,8 +3376,8 @@
               "club": "BOU",
               "slot": 5,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 31,
@@ -3432,8 +3387,7 @@
               "club": "ARS",
               "slot": 6,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 236,
@@ -3454,8 +3408,7 @@
               "club": "CHE",
               "slot": 8,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 428,
@@ -3487,8 +3440,8 @@
               "club": "NEW",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 198,
@@ -3498,8 +3451,7 @@
               "club": "CRY",
               "slot": 12,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 25,
@@ -3509,7 +3461,6 @@
               "club": "ARS",
               "slot": 13,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -3520,7 +3471,6 @@
               "club": "CHE",
               "slot": 14,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -3531,7 +3481,6 @@
               "club": "ARS",
               "slot": 15,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             }
           ],
@@ -3552,7 +3501,7 @@
           "playerOutPhotoCode": 437499,
           "playerInDraftRank": 142,
           "playerOutDraftRank": 64,
-          "playerInPoints": 42,
+          "playerInPoints": 56,
           "playerOutPoints": 24,
           "kind": "Free agent"
         },
@@ -3568,8 +3517,8 @@
           "playerOutPhotoCode": 201666,
           "playerInDraftRank": 268,
           "playerOutDraftRank": 84,
-          "playerInPoints": 51,
-          "playerOutPoints": 44,
+          "playerInPoints": 52,
+          "playerOutPoints": 51,
           "kind": "Waiver"
         },
         {
@@ -3600,7 +3549,7 @@
           "playerOutPhotoCode": 491279,
           "playerInDraftRank": 407,
           "playerOutDraftRank": 258,
-          "playerInPoints": 40,
+          "playerInPoints": 48,
           "playerOutPoints": 31,
           "kind": "Free agent"
         },
@@ -3616,7 +3565,7 @@
           "playerOutPhotoCode": 465247,
           "playerInDraftRank": 338,
           "playerOutDraftRank": 263,
-          "playerInPoints": 54,
+          "playerInPoints": 56,
           "playerOutPoints": 21,
           "kind": "Waiver"
         },
@@ -3632,8 +3581,8 @@
           "playerOutPhotoCode": 222531,
           "playerInDraftRank": 377,
           "playerOutDraftRank": 9,
-          "playerInPoints": 48,
-          "playerOutPoints": 39,
+          "playerInPoints": 49,
+          "playerOutPoints": 41,
           "kind": "Waiver"
         },
         {
@@ -3648,8 +3597,8 @@
           "playerOutPhotoCode": 216646,
           "playerInDraftRank": 96,
           "playerOutDraftRank": 108,
-          "playerInPoints": 18,
-          "playerOutPoints": 22,
+          "playerInPoints": 23,
+          "playerOutPoints": 23,
           "kind": "Waiver"
         },
         {
@@ -3662,10 +3611,10 @@
           "playerOut": "Thomas",
           "playerInPhotoCode": 226182,
           "playerOutPhotoCode": 461102,
-          "playerInDraftRank": 455,
-          "playerOutDraftRank": 610,
-          "playerInPoints": 58,
-          "playerOutPoints": 32,
+          "playerInDraftRank": 456,
+          "playerOutDraftRank": 612,
+          "playerInPoints": 62,
+          "playerOutPoints": 35,
           "kind": "Waiver"
         },
         {
@@ -3680,8 +3629,8 @@
           "playerOutPhotoCode": 543968,
           "playerInDraftRank": 223,
           "playerOutDraftRank": 226,
-          "playerInPoints": 38,
-          "playerOutPoints": 34,
+          "playerInPoints": 39,
+          "playerOutPoints": 35,
           "kind": "Waiver"
         },
         {
@@ -3696,7 +3645,7 @@
           "playerOutPhotoCode": 448047,
           "playerInDraftRank": 84,
           "playerOutDraftRank": 25,
-          "playerInPoints": 44,
+          "playerInPoints": 51,
           "playerOutPoints": 24,
           "kind": "Waiver"
         },
@@ -3710,7 +3659,7 @@
           "playerOut": "Matheus N.",
           "playerInPhotoCode": 166477,
           "playerOutPhotoCode": 465351,
-          "playerInDraftRank": 470,
+          "playerInDraftRank": 471,
           "playerOutDraftRank": 66,
           "playerInPoints": 44,
           "playerOutPoints": 22,
@@ -3744,8 +3693,8 @@
           "playerOutPhotoCode": 510281,
           "playerInDraftRank": 39,
           "playerOutDraftRank": 51,
-          "playerInPoints": 41,
-          "playerOutPoints": 10,
+          "playerInPoints": 42,
+          "playerOutPoints": 11,
           "kind": "Free agent"
         },
         {
@@ -3758,10 +3707,10 @@
           "playerOut": "Pedro Porro",
           "playerInPhotoCode": 461102,
           "playerOutPhotoCode": 441164,
-          "playerInDraftRank": 610,
+          "playerInDraftRank": 612,
           "playerOutDraftRank": 136,
-          "playerInPoints": 32,
-          "playerOutPoints": 16,
+          "playerInPoints": 35,
+          "playerOutPoints": 28,
           "kind": "Waiver"
         },
         {
@@ -3774,9 +3723,9 @@
           "playerOut": "Muñoz",
           "playerInPhotoCode": 204120,
           "playerOutPhotoCode": 247348,
-          "playerInDraftRank": 480,
+          "playerInDraftRank": 481,
           "playerOutDraftRank": 127,
-          "playerInPoints": 44,
+          "playerInPoints": 45,
           "playerOutPoints": 17,
           "kind": "Waiver"
         },
@@ -3793,7 +3742,7 @@
           "playerInDraftRank": 88,
           "playerOutDraftRank": 30,
           "playerInPoints": 32,
-          "playerOutPoints": 24,
+          "playerOutPoints": 25,
           "kind": "Waiver"
         },
         {
@@ -3806,9 +3755,9 @@
           "playerOut": "Mosquera",
           "playerInPhotoCode": 199798,
           "playerOutPhotoCode": 500040,
-          "playerInDraftRank": 452,
+          "playerInDraftRank": 453,
           "playerOutDraftRank": 191,
-          "playerInPoints": 57,
+          "playerInPoints": 58,
           "playerOutPoints": 12,
           "kind": "Waiver"
         },
@@ -3825,7 +3774,7 @@
           "playerInDraftRank": 36,
           "playerOutDraftRank": 56,
           "playerInPoints": 50,
-          "playerOutPoints": 22,
+          "playerOutPoints": 23,
           "kind": "Free agent"
         },
         {
@@ -3839,9 +3788,9 @@
           "playerInPhotoCode": 500040,
           "playerOutPhotoCode": 199798,
           "playerInDraftRank": 191,
-          "playerOutDraftRank": 452,
+          "playerOutDraftRank": 453,
           "playerInPoints": 12,
-          "playerOutPoints": 57,
+          "playerOutPoints": 58,
           "kind": "Free agent"
         },
         {
@@ -3856,7 +3805,7 @@
           "playerOutPhotoCode": 441264,
           "playerInDraftRank": 226,
           "playerOutDraftRank": 88,
-          "playerInPoints": 34,
+          "playerInPoints": 35,
           "playerOutPoints": 32,
           "kind": "Free agent"
         },
@@ -3903,9 +3852,9 @@
           "playerInPhotoCode": 610799,
           "playerOutPhotoCode": 146426,
           "playerInDraftRank": 406,
-          "playerOutDraftRank": 630,
-          "playerInPoints": 70,
-          "playerOutPoints": 42,
+          "playerOutDraftRank": 632,
+          "playerInPoints": 72,
+          "playerOutPoints": 43,
           "kind": "Waiver"
         },
         {
@@ -3921,7 +3870,7 @@
           "playerInDraftRank": 194,
           "playerOutDraftRank": 167,
           "playerInPoints": 47,
-          "playerOutPoints": 19,
+          "playerOutPoints": 21,
           "kind": "Waiver"
         },
         {
@@ -3934,10 +3883,10 @@
           "playerOut": "N.Williams",
           "playerInPhotoCode": 108416,
           "playerOutPhotoCode": 215136,
-          "playerInDraftRank": 626,
+          "playerInDraftRank": 628,
           "playerOutDraftRank": 252,
           "playerInPoints": 38,
-          "playerOutPoints": 34,
+          "playerOutPoints": 35,
           "kind": "Waiver"
         },
         {
@@ -3952,7 +3901,7 @@
           "playerOutPhotoCode": 209244,
           "playerInDraftRank": 56,
           "playerOutDraftRank": 28,
-          "playerInPoints": 22,
+          "playerInPoints": 23,
           "playerOutPoints": 23,
           "kind": "Waiver"
         },
@@ -3967,8 +3916,8 @@
           "playerInPhotoCode": 215136,
           "playerOutPhotoCode": 463726,
           "playerInDraftRank": 252,
-          "playerOutDraftRank": 569,
-          "playerInPoints": 34,
+          "playerOutDraftRank": 570,
+          "playerInPoints": 35,
           "playerOutPoints": 29,
           "kind": "Waiver"
         },
@@ -3983,9 +3932,9 @@
           "playerInPhotoCode": 575476,
           "playerOutPhotoCode": 606930,
           "playerInDraftRank": 158,
-          "playerOutDraftRank": 660,
+          "playerOutDraftRank": 662,
           "playerInPoints": 35,
-          "playerOutPoints": 34,
+          "playerOutPoints": 35,
           "kind": "Waiver"
         },
         {
@@ -4000,8 +3949,8 @@
           "playerOutPhotoCode": 449434,
           "playerInDraftRank": 72,
           "playerOutDraftRank": 103,
-          "playerInPoints": 33,
-          "playerOutPoints": 22,
+          "playerInPoints": 34,
+          "playerOutPoints": 23,
           "kind": "Waiver"
         },
         {
@@ -4014,9 +3963,9 @@
           "playerOut": "Kelleher",
           "playerInPhotoCode": 473284,
           "playerOutPhotoCode": 200720,
-          "playerInDraftRank": 567,
+          "playerInDraftRank": 568,
           "playerOutDraftRank": 246,
-          "playerInPoints": 49,
+          "playerInPoints": 54,
           "playerOutPoints": 35,
           "kind": "Waiver"
         },
@@ -4046,9 +3995,9 @@
           "playerOut": "Collins",
           "playerInPhotoCode": 146426,
           "playerOutPhotoCode": 432830,
-          "playerInDraftRank": 630,
+          "playerInDraftRank": 632,
           "playerOutDraftRank": 132,
-          "playerInPoints": 42,
+          "playerInPoints": 43,
           "playerOutPoints": 11,
           "kind": "Waiver"
         },
@@ -4078,10 +4027,10 @@
           "playerOut": "Horníček",
           "playerInPhotoCode": 489639,
           "playerOutPhotoCode": 470551,
-          "playerInDraftRank": 428,
+          "playerInDraftRank": 429,
           "playerOutDraftRank": 402,
-          "playerInPoints": 57,
-          "playerOutPoints": 30,
+          "playerInPoints": 58,
+          "playerOutPoints": 31,
           "kind": "Waiver"
         },
         {
@@ -4097,7 +4046,7 @@
           "playerInDraftRank": 75,
           "playerOutDraftRank": 74,
           "playerInPoints": 39,
-          "playerOutPoints": 24,
+          "playerOutPoints": 28,
           "kind": "Free agent"
         },
         {
@@ -4128,7 +4077,7 @@
           "playerOutPhotoCode": 166989,
           "playerInDraftRank": 165,
           "playerOutDraftRank": 98,
-          "playerInPoints": 70,
+          "playerInPoints": 73,
           "playerOutPoints": 31,
           "kind": "Waiver"
         },
@@ -4142,10 +4091,10 @@
           "playerOut": "Richards",
           "playerInPhotoCode": 463726,
           "playerOutPhotoCode": 427623,
-          "playerInDraftRank": 569,
+          "playerInDraftRank": 570,
           "playerOutDraftRank": 251,
           "playerInPoints": 29,
-          "playerOutPoints": 27,
+          "playerOutPoints": 30,
           "kind": "Waiver"
         },
         {
@@ -4161,7 +4110,7 @@
           "playerInDraftRank": 258,
           "playerOutDraftRank": 60,
           "playerInPoints": 31,
-          "playerOutPoints": 5,
+          "playerOutPoints": 13,
           "kind": "Waiver"
         },
         {
@@ -4174,9 +4123,9 @@
           "playerOut": "Frimpong",
           "playerInPhotoCode": 199798,
           "playerOutPhotoCode": 216094,
-          "playerInDraftRank": 452,
+          "playerInDraftRank": 453,
           "playerOutDraftRank": 175,
-          "playerInPoints": 57,
+          "playerInPoints": 58,
           "playerOutPoints": 4,
           "kind": "Waiver"
         },
@@ -4193,7 +4142,7 @@
           "playerInDraftRank": 8,
           "playerOutDraftRank": 34,
           "playerInPoints": 25,
-          "playerOutPoints": 12,
+          "playerOutPoints": 16,
           "kind": "Waiver"
         },
         {
@@ -4208,8 +4157,8 @@
           "playerOutPhotoCode": 50175,
           "playerInDraftRank": 167,
           "playerOutDraftRank": 76,
-          "playerInPoints": 19,
-          "playerOutPoints": 9,
+          "playerInPoints": 21,
+          "playerOutPoints": 10,
           "kind": "Waiver"
         },
         {
@@ -4240,7 +4189,7 @@
           "playerOutPhotoCode": 225796,
           "playerInDraftRank": 280,
           "playerOutDraftRank": 138,
-          "playerInPoints": 46,
+          "playerInPoints": 47,
           "playerOutPoints": 3,
           "kind": "Waiver"
         },
@@ -4255,9 +4204,9 @@
           "playerInPhotoCode": 470551,
           "playerOutPhotoCode": 485055,
           "playerInDraftRank": 402,
-          "playerOutDraftRank": 492,
-          "playerInPoints": 30,
-          "playerOutPoints": 40,
+          "playerOutDraftRank": 493,
+          "playerInPoints": 31,
+          "playerOutPoints": 47,
           "kind": "Waiver"
         },
         {
@@ -4272,7 +4221,7 @@
           "playerOutPhotoCode": 231747,
           "playerInDraftRank": 30,
           "playerOutDraftRank": 41,
-          "playerInPoints": 24,
+          "playerInPoints": 25,
           "playerOutPoints": 3,
           "kind": "Waiver"
         },
@@ -4288,8 +4237,8 @@
           "playerOutPhotoCode": 439509,
           "playerInDraftRank": 103,
           "playerOutDraftRank": 56,
-          "playerInPoints": 22,
-          "playerOutPoints": 22,
+          "playerInPoints": 23,
+          "playerOutPoints": 23,
           "kind": "Waiver"
         },
         {
@@ -4304,7 +4253,7 @@
           "playerOutPhotoCode": 178301,
           "playerInDraftRank": 53,
           "playerOutDraftRank": 11,
-          "playerInPoints": 54,
+          "playerInPoints": 56,
           "playerOutPoints": 0,
           "kind": "Free agent"
         },
@@ -4336,7 +4285,7 @@
           "playerOutPhotoCode": 485711,
           "playerInDraftRank": 108,
           "playerOutDraftRank": 29,
-          "playerInPoints": 22,
+          "playerInPoints": 23,
           "playerOutPoints": 8,
           "kind": "Waiver"
         },
@@ -4350,10 +4299,10 @@
           "playerOut": "Canvot",
           "playerInPhotoCode": 465730,
           "playerOutPhotoCode": 651426,
-          "playerInDraftRank": 460,
+          "playerInDraftRank": 461,
           "playerOutDraftRank": 287,
-          "playerInPoints": 75,
-          "playerOutPoints": 15,
+          "playerInPoints": 76,
+          "playerOutPoints": 16,
           "kind": "Waiver"
         },
         {
@@ -4384,8 +4333,8 @@
           "playerOutPhotoCode": 247632,
           "playerInDraftRank": 71,
           "playerOutDraftRank": 39,
-          "playerInPoints": 58,
-          "playerOutPoints": 41,
+          "playerInPoints": 66,
+          "playerOutPoints": 42,
           "kind": "Waiver"
         },
         {
@@ -4417,7 +4366,7 @@
           "playerInDraftRank": 184,
           "playerOutDraftRank": 117,
           "playerInPoints": 42,
-          "playerOutPoints": 33,
+          "playerOutPoints": 39,
           "kind": "Waiver"
         },
         {
@@ -4430,10 +4379,10 @@
           "playerOut": "Gusto",
           "playerInPhotoCode": 606930,
           "playerOutPhotoCode": 482609,
-          "playerInDraftRank": 660,
+          "playerInDraftRank": 662,
           "playerOutDraftRank": 269,
-          "playerInPoints": 34,
-          "playerOutPoints": 7,
+          "playerInPoints": 35,
+          "playerOutPoints": 8,
           "kind": "Waiver"
         },
         {
@@ -4464,12 +4413,12 @@
           "playerOutPhotoCode": 466052,
           "playerInDraftRank": 51,
           "playerOutDraftRank": 17,
-          "playerInPoints": 10,
+          "playerInPoints": 11,
           "playerOutPoints": 55,
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-21T14:45:42.913Z",
+      "updatedAt": "2026-11-22T14:41:16.888Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -4487,8 +4436,8 @@
           "initials": "JF",
           "rank": 1,
           "lastRank": 1,
-          "total": 482,
-          "eventPoints": 0,
+          "total": 511,
+          "eventPoints": 29,
           "waiverPick": 5,
           "squad": [
             {
@@ -4499,8 +4448,7 @@
               "club": "BHA",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 4,
@@ -4510,8 +4458,7 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 504,
@@ -4521,7 +4468,6 @@
               "club": "BHA",
               "slot": 3,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -4543,8 +4489,9 @@
               "club": "BOU",
               "slot": 5,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 14
             },
             {
               "id": 15,
@@ -4554,8 +4501,8 @@
               "club": "ARS",
               "slot": 6,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 129,
@@ -4565,8 +4512,7 @@
               "club": "BHA",
               "slot": 7,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 367,
@@ -4587,7 +4533,6 @@
               "club": "SUN",
               "slot": 9,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -4598,8 +4543,9 @@
               "club": "TOT",
               "slot": 10,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "goals": 1,
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 166,
@@ -4609,8 +4555,8 @@
               "club": "AVL",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 2
             },
             {
               "id": 496,
@@ -4620,8 +4566,8 @@
               "club": "TOT",
               "slot": 12,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 7
             },
             {
               "id": 388,
@@ -4652,7 +4598,6 @@
               "club": "ARS",
               "slot": 15,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             }
           ],
@@ -4667,8 +4612,8 @@
           "initials": "HP",
           "rank": 2,
           "lastRank": 2,
-          "total": 462,
-          "eventPoints": 0,
+          "total": 489,
+          "eventPoints": 27,
           "waiverPick": 4,
           "squad": [
             {
@@ -4712,8 +4657,8 @@
               "club": "TOT",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 279,
@@ -4723,8 +4668,7 @@
               "club": "HUL",
               "slot": 5,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 127,
@@ -4734,8 +4678,7 @@
               "club": "BHA",
               "slot": 6,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 40,
@@ -4745,8 +4688,8 @@
               "club": "CHE",
               "slot": 7,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 68,
@@ -4756,8 +4699,9 @@
               "club": "BOU",
               "slot": 8,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 124,
@@ -4767,8 +4711,7 @@
               "club": "BHA",
               "slot": 9,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 411,
@@ -4788,8 +4731,9 @@
               "club": "BOU",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "goals": 1,
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 384,
@@ -4830,189 +4774,8 @@
               "club": "LEE",
               "slot": 15,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            }
-          ],
-          "squadGameweek": 11,
-          "benchPoints": null
-        },
-        {
-          "id": 38169,
-          "leagueEntryId": 38223,
-          "name": "Ninos",
-          "manager": "Miguel Vilares",
-          "initials": "MV",
-          "rank": 3,
-          "lastRank": 3,
-          "total": 440,
-          "eventPoints": 0,
-          "waiverPick": 3,
-          "squad": [
-            {
-              "id": 566,
-              "name": "Horníček",
-              "photoCode": 470551,
-              "position": "GK",
-              "club": "NEW",
-              "slot": 1,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 31,
-              "name": "Konsa",
-              "photoCode": 199798,
-              "position": "DEF",
-              "club": "ARS",
-              "slot": 2,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 5,
-              "name": "J.Timber",
-              "photoCode": 445122,
-              "position": "DEF",
-              "club": "ARS",
-              "slot": 3,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 115,
-              "name": "De Cuyper",
-              "photoCode": 465730,
-              "position": "DEF",
-              "club": "BHA",
-              "slot": 4,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 154,
-              "name": "Palmer",
-              "photoCode": 244851,
-              "position": "MID",
-              "club": "CHE",
-              "slot": 5,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 427,
-              "name": "Mbeumo",
-              "photoCode": 446008,
-              "position": "MID",
-              "club": "MUN",
-              "slot": 6,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 78,
-              "name": "Kroupi.Jr",
-              "photoCode": 560262,
-              "position": "MID",
-              "club": "BOU",
-              "slot": 7,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 53,
-              "name": "Manzambi",
-              "photoCode": 614071,
-              "position": "MID",
-              "club": "AVL",
-              "slot": 8,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 554,
-              "name": "Tzolis",
-              "photoCode": 439509,
-              "position": "MID",
-              "club": "ARS",
-              "slot": 9,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 464,
-              "name": "Wissa",
-              "photoCode": 216646,
-              "position": "FWD",
-              "club": "NEW",
-              "slot": 10,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 165,
-              "name": "João Pedro",
-              "photoCode": 475168,
-              "position": "FWD",
-              "club": "CHE",
-              "slot": 11,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 412,
-              "name": "Lammens",
-              "photoCode": 465247,
-              "position": "GK",
-              "club": "MUN",
-              "slot": 12,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 499,
-              "name": "Pedro Porro",
-              "photoCode": 441164,
-              "position": "DEF",
-              "club": "TOT",
-              "slot": 13,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 334,
-              "name": "Muharemović",
-              "photoCode": 522047,
-              "position": "DEF",
-              "club": "LEE",
-              "slot": 14,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 316,
-              "name": "Emersonn",
-              "photoCode": 543968,
-              "position": "FWD",
-              "club": "IPS",
-              "slot": 15,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 4
             }
           ],
           "squadGameweek": 11,
@@ -5024,11 +4787,11 @@
           "name": "Fredddd",
           "manager": "frederico belchior",
           "initials": "fb",
-          "rank": 4,
+          "rank": 3,
           "lastRank": 4,
-          "total": 434,
-          "eventPoints": 0,
-          "waiverPick": 2,
+          "total": 451,
+          "eventPoints": 17,
+          "waiverPick": 3,
           "squad": [
             {
               "id": 1,
@@ -5038,8 +4801,7 @@
               "club": "ARS",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 8,
@@ -5049,8 +4811,7 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 356,
@@ -5071,8 +4832,7 @@
               "club": "TOT",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 580,
@@ -5114,8 +4874,7 @@
               "club": "NFO",
               "slot": 8,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 13,
@@ -5125,8 +4884,7 @@
               "club": "ARS",
               "slot": 9,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 401,
@@ -5136,8 +4894,7 @@
               "club": "TOT",
               "slot": 10,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 346,
@@ -5147,8 +4904,9 @@
               "club": "LEE",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "goals": 1,
+              "assists": 1,
+              "points": 9
             },
             {
               "id": 226,
@@ -5169,8 +4927,8 @@
               "club": "BOU",
               "slot": 13,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 138,
@@ -5180,7 +4938,6 @@
               "club": "BHA",
               "slot": 14,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -5203,11 +4960,11 @@
           "name": "Jotinha FC",
           "manager": "Joao Martins",
           "initials": "JM",
-          "rank": 5,
+          "rank": 4,
           "lastRank": 5,
-          "total": 427,
-          "eventPoints": 0,
-          "waiverPick": 1,
+          "total": 450,
+          "eventPoints": 23,
+          "waiverPick": 2,
           "squad": [
             {
               "id": 597,
@@ -5217,8 +4974,8 @@
               "club": "AVL",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 503,
@@ -5228,7 +4985,6 @@
               "club": "TOT",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -5249,8 +5005,7 @@
               "club": "BHA",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 400,
@@ -5302,8 +5057,8 @@
               "club": "NEW",
               "slot": 9,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "goals": 1,
+              "points": 7
             },
             {
               "id": 379,
@@ -5324,8 +5079,8 @@
               "club": "ARS",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 350,
@@ -5357,8 +5112,7 @@
               "club": "NEW",
               "slot": 14,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 391,
@@ -5366,6 +5120,176 @@
               "photoCode": 477424,
               "position": "DEF",
               "club": "MCI",
+              "slot": 15,
+              "bench": true,
+              "points": 1
+            }
+          ],
+          "squadGameweek": 11,
+          "benchPoints": null
+        },
+        {
+          "id": 38169,
+          "leagueEntryId": 38223,
+          "name": "Ninos",
+          "manager": "Miguel Vilares",
+          "initials": "MV",
+          "rank": 5,
+          "lastRank": 3,
+          "total": 449,
+          "eventPoints": 9,
+          "waiverPick": 1,
+          "squad": [
+            {
+              "id": 566,
+              "name": "Horníček",
+              "photoCode": 470551,
+              "position": "GK",
+              "club": "NEW",
+              "slot": 1,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 31,
+              "name": "Konsa",
+              "photoCode": 199798,
+              "position": "DEF",
+              "club": "ARS",
+              "slot": 2,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 5,
+              "name": "J.Timber",
+              "photoCode": 445122,
+              "position": "DEF",
+              "club": "ARS",
+              "slot": 3,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 115,
+              "name": "De Cuyper",
+              "photoCode": 465730,
+              "position": "DEF",
+              "club": "BHA",
+              "slot": 4,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 154,
+              "name": "Palmer",
+              "photoCode": 244851,
+              "position": "MID",
+              "club": "CHE",
+              "slot": 5,
+              "bench": false,
+              "points": 2
+            },
+            {
+              "id": 427,
+              "name": "Mbeumo",
+              "photoCode": 446008,
+              "position": "MID",
+              "club": "MUN",
+              "slot": 6,
+              "bench": false,
+              "awaitingKickoff": true,
+              "points": 0
+            },
+            {
+              "id": 78,
+              "name": "Kroupi.Jr",
+              "photoCode": 560262,
+              "position": "MID",
+              "club": "BOU",
+              "slot": 7,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 53,
+              "name": "Manzambi",
+              "photoCode": 614071,
+              "position": "MID",
+              "club": "AVL",
+              "slot": 8,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 554,
+              "name": "Tzolis",
+              "photoCode": 439509,
+              "position": "MID",
+              "club": "ARS",
+              "slot": 9,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 464,
+              "name": "Wissa",
+              "photoCode": 216646,
+              "position": "FWD",
+              "club": "NEW",
+              "slot": 10,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 165,
+              "name": "João Pedro",
+              "photoCode": 475168,
+              "position": "FWD",
+              "club": "CHE",
+              "slot": 11,
+              "bench": false,
+              "points": 0
+            },
+            {
+              "id": 412,
+              "name": "Lammens",
+              "photoCode": 465247,
+              "position": "GK",
+              "club": "MUN",
+              "slot": 12,
+              "bench": true,
+              "awaitingKickoff": true,
+              "points": 0
+            },
+            {
+              "id": 499,
+              "name": "Pedro Porro",
+              "photoCode": 441164,
+              "position": "DEF",
+              "club": "TOT",
+              "slot": 13,
+              "bench": true,
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 12
+            },
+            {
+              "id": 334,
+              "name": "Muharemović",
+              "photoCode": 522047,
+              "position": "DEF",
+              "club": "LEE",
+              "slot": 14,
+              "bench": true,
+              "points": 2
+            },
+            {
+              "id": 316,
+              "name": "Emersonn",
+              "photoCode": 543968,
+              "position": "FWD",
+              "club": "IPS",
               "slot": 15,
               "bench": true,
               "points": 1
@@ -5388,7 +5312,7 @@
           "playerOutPhotoCode": 437499,
           "playerInDraftRank": 391,
           "playerOutDraftRank": 64,
-          "playerInPoints": 56,
+          "playerInPoints": 58,
           "playerOutPoints": 24,
           "kind": "Free agent"
         },
@@ -5405,7 +5329,7 @@
           "playerInDraftRank": 19,
           "playerOutDraftRank": 39,
           "playerInPoints": 46,
-          "playerOutPoints": 41,
+          "playerOutPoints": 42,
           "kind": "Waiver"
         },
         {
@@ -5418,10 +5342,10 @@
           "playerOut": "Tzolakis",
           "playerInPhotoCode": 485055,
           "playerOutPhotoCode": 473284,
-          "playerInDraftRank": 492,
-          "playerOutDraftRank": 567,
-          "playerInPoints": 40,
-          "playerOutPoints": 49,
+          "playerInDraftRank": 493,
+          "playerOutDraftRank": 568,
+          "playerInPoints": 47,
+          "playerOutPoints": 54,
           "kind": "Waiver"
         },
         {
@@ -5436,7 +5360,7 @@
           "playerOutPhotoCode": 465351,
           "playerInDraftRank": 142,
           "playerOutDraftRank": 66,
-          "playerInPoints": 42,
+          "playerInPoints": 56,
           "playerOutPoints": 22,
           "kind": "Waiver"
         },
@@ -5452,8 +5376,8 @@
           "playerOutPhotoCode": 540324,
           "playerInDraftRank": 150,
           "playerOutDraftRank": 377,
-          "playerInPoints": 46,
-          "playerOutPoints": 48,
+          "playerInPoints": 47,
+          "playerOutPoints": 49,
           "kind": "Waiver"
         },
         {
@@ -5466,7 +5390,7 @@
           "playerOut": "White",
           "playerInPhotoCode": 191866,
           "playerOutPhotoCode": 198869,
-          "playerInDraftRank": 463,
+          "playerInDraftRank": 464,
           "playerOutDraftRank": 184,
           "playerInPoints": 42,
           "playerOutPoints": 42,
@@ -5484,7 +5408,7 @@
           "playerOutPhotoCode": 513418,
           "playerInDraftRank": 22,
           "playerOutDraftRank": 77,
-          "playerInPoints": 6,
+          "playerInPoints": 7,
           "playerOutPoints": 46,
           "kind": "Waiver"
         },
@@ -5500,8 +5424,8 @@
           "playerOutPhotoCode": 98980,
           "playerInDraftRank": 422,
           "playerOutDraftRank": 256,
-          "playerInPoints": 31,
-          "playerOutPoints": 20,
+          "playerInPoints": 37,
+          "playerOutPoints": 21,
           "kind": "Waiver"
         },
         {
@@ -5514,9 +5438,9 @@
           "playerOut": "Maguire",
           "playerInPhotoCode": 122798,
           "playerOutPhotoCode": 95658,
-          "playerInDraftRank": 472,
+          "playerInDraftRank": 473,
           "playerOutDraftRank": 276,
-          "playerInPoints": 38,
+          "playerInPoints": 39,
           "playerOutPoints": 16,
           "kind": "Waiver"
         },
@@ -5532,8 +5456,8 @@
           "playerOutPhotoCode": 482973,
           "playerInDraftRank": 30,
           "playerOutDraftRank": 81,
-          "playerInPoints": 24,
-          "playerOutPoints": 12,
+          "playerInPoints": 25,
+          "playerOutPoints": 13,
           "kind": "Waiver"
         },
         {
@@ -5547,7 +5471,7 @@
           "playerInPhotoCode": 606702,
           "playerOutPhotoCode": 224967,
           "playerInDraftRank": 393,
-          "playerOutDraftRank": 456,
+          "playerOutDraftRank": 457,
           "playerInPoints": 44,
           "playerOutPoints": 42,
           "kind": "Waiver"
@@ -5594,9 +5518,9 @@
           "playerOut": "Hincapie",
           "playerInPhotoCode": 204120,
           "playerOutPhotoCode": 448104,
-          "playerInDraftRank": 480,
+          "playerInDraftRank": 481,
           "playerOutDraftRank": 153,
-          "playerInPoints": 44,
+          "playerInPoints": 45,
           "playerOutPoints": 5,
           "kind": "Free agent"
         },
@@ -5612,7 +5536,7 @@
           "playerOutPhotoCode": 166989,
           "playerInDraftRank": 39,
           "playerOutDraftRank": 98,
-          "playerInPoints": 41,
+          "playerInPoints": 42,
           "playerOutPoints": 31,
           "kind": "Free agent"
         },
@@ -5628,8 +5552,8 @@
           "playerOutPhotoCode": 437505,
           "playerInDraftRank": 107,
           "playerOutDraftRank": 167,
-          "playerInPoints": 22,
-          "playerOutPoints": 19,
+          "playerInPoints": 29,
+          "playerOutPoints": 21,
           "kind": "Waiver"
         },
         {
@@ -5644,7 +5568,7 @@
           "playerOutPhotoCode": 513545,
           "playerInDraftRank": 268,
           "playerOutDraftRank": 228,
-          "playerInPoints": 51,
+          "playerInPoints": 52,
           "playerOutPoints": 32,
           "kind": "Waiver"
         },
@@ -5661,7 +5585,7 @@
           "playerInDraftRank": 88,
           "playerOutDraftRank": 30,
           "playerInPoints": 32,
-          "playerOutPoints": 24,
+          "playerOutPoints": 25,
           "kind": "Waiver"
         },
         {
@@ -5676,7 +5600,7 @@
           "playerOutPhotoCode": 441266,
           "playerInDraftRank": 377,
           "playerOutDraftRank": 68,
-          "playerInPoints": 48,
+          "playerInPoints": 49,
           "playerOutPoints": 11,
           "kind": "Waiver"
         },
@@ -5690,10 +5614,10 @@
           "playerOut": "Roefs",
           "playerInPhotoCode": 489639,
           "playerOutPhotoCode": 498016,
-          "playerInDraftRank": 428,
+          "playerInDraftRank": 429,
           "playerOutDraftRank": 248,
-          "playerInPoints": 57,
-          "playerOutPoints": 33,
+          "playerInPoints": 58,
+          "playerOutPoints": 44,
           "kind": "Waiver"
         },
         {
@@ -5708,7 +5632,7 @@
           "playerOutPhotoCode": 472769,
           "playerInDraftRank": 406,
           "playerOutDraftRank": 35,
-          "playerInPoints": 70,
+          "playerInPoints": 72,
           "playerOutPoints": 17,
           "kind": "Free agent"
         },
@@ -5722,9 +5646,9 @@
           "playerOut": "White",
           "playerInPhotoCode": 226182,
           "playerOutPhotoCode": 198869,
-          "playerInDraftRank": 455,
+          "playerInDraftRank": 456,
           "playerOutDraftRank": 184,
-          "playerInPoints": 58,
+          "playerInPoints": 62,
           "playerOutPoints": 42,
           "kind": "Waiver"
         },
@@ -5756,8 +5680,8 @@
           "playerOutPhotoCode": 449434,
           "playerInDraftRank": 165,
           "playerOutDraftRank": 103,
-          "playerInPoints": 70,
-          "playerOutPoints": 22,
+          "playerInPoints": 73,
+          "playerOutPoints": 23,
           "kind": "Waiver"
         },
         {
@@ -5772,7 +5696,7 @@
           "playerOutPhotoCode": 224117,
           "playerInDraftRank": 167,
           "playerOutDraftRank": 18,
-          "playerInPoints": 19,
+          "playerInPoints": 21,
           "playerOutPoints": 11,
           "kind": "Waiver"
         },
@@ -5804,7 +5728,7 @@
           "playerOutPhotoCode": 551466,
           "playerInDraftRank": 226,
           "playerOutDraftRank": 115,
-          "playerInPoints": 34,
+          "playerInPoints": 35,
           "playerOutPoints": 25,
           "kind": "Waiver"
         },
@@ -5836,7 +5760,7 @@
           "playerOutPhotoCode": 513545,
           "playerInDraftRank": 84,
           "playerOutDraftRank": 228,
-          "playerInPoints": 44,
+          "playerInPoints": 51,
           "playerOutPoints": 32,
           "kind": "Free agent"
         },
@@ -5868,8 +5792,8 @@
           "playerOutPhotoCode": 499604,
           "playerInDraftRank": 111,
           "playerOutDraftRank": 48,
-          "playerInPoints": 40,
-          "playerOutPoints": 30,
+          "playerInPoints": 41,
+          "playerOutPoints": 33,
           "kind": "Waiver"
         },
         {
@@ -5884,7 +5808,7 @@
           "playerOutPhotoCode": 500040,
           "playerInDraftRank": 37,
           "playerOutDraftRank": 191,
-          "playerInPoints": 14,
+          "playerInPoints": 15,
           "playerOutPoints": 12,
           "kind": "Waiver"
         },
@@ -5898,10 +5822,10 @@
           "playerOut": "Henderson",
           "playerInPhotoCode": 473284,
           "playerOutPhotoCode": 172649,
-          "playerInDraftRank": 567,
+          "playerInDraftRank": 568,
           "playerOutDraftRank": 249,
-          "playerInPoints": 49,
-          "playerOutPoints": 10,
+          "playerInPoints": 54,
+          "playerOutPoints": 12,
           "kind": "Waiver"
         },
         {
@@ -5915,8 +5839,8 @@
           "playerInPhotoCode": 487838,
           "playerOutPhotoCode": 463726,
           "playerInDraftRank": 280,
-          "playerOutDraftRank": 569,
-          "playerInPoints": 46,
+          "playerOutDraftRank": 570,
+          "playerInPoints": 47,
           "playerOutPoints": 29,
           "kind": "Waiver"
         },
@@ -5932,8 +5856,8 @@
           "playerOutPhotoCode": 208706,
           "playerInDraftRank": 71,
           "playerOutDraftRank": 26,
-          "playerInPoints": 58,
-          "playerOutPoints": 28,
+          "playerInPoints": 66,
+          "playerOutPoints": 30,
           "kind": "Waiver"
         },
         {
@@ -5949,7 +5873,7 @@
           "playerInDraftRank": 8,
           "playerOutDraftRank": 71,
           "playerInPoints": 25,
-          "playerOutPoints": 58,
+          "playerOutPoints": 66,
           "kind": "Waiver"
         },
         {
@@ -5965,7 +5889,7 @@
           "playerInDraftRank": 228,
           "playerOutDraftRank": 105,
           "playerInPoints": 32,
-          "playerOutPoints": 31,
+          "playerOutPoints": 40,
           "kind": "Waiver"
         },
         {
@@ -5978,7 +5902,7 @@
           "playerOut": "Kerkez",
           "playerInPhotoCode": 463726,
           "playerOutPhotoCode": 544877,
-          "playerInDraftRank": 569,
+          "playerInDraftRank": 570,
           "playerOutDraftRank": 157,
           "playerInPoints": 29,
           "playerOutPoints": 25,
@@ -5996,7 +5920,7 @@
           "playerOutPhotoCode": 485711,
           "playerInDraftRank": 53,
           "playerOutDraftRank": 29,
-          "playerInPoints": 54,
+          "playerInPoints": 56,
           "playerOutPoints": 8,
           "kind": "Waiver"
         },
@@ -6010,9 +5934,9 @@
           "playerOut": "Muñoz",
           "playerInPhotoCode": 146426,
           "playerOutPhotoCode": 247348,
-          "playerInDraftRank": 630,
+          "playerInDraftRank": 632,
           "playerOutDraftRank": 127,
-          "playerInPoints": 42,
+          "playerInPoints": 43,
           "playerOutPoints": 17,
           "kind": "Waiver"
         },
@@ -6026,10 +5950,10 @@
           "playerOut": "Senesi",
           "playerInPhotoCode": 224967,
           "playerOutPhotoCode": 221466,
-          "playerInDraftRank": 456,
+          "playerInDraftRank": 457,
           "playerOutDraftRank": 60,
           "playerInPoints": 42,
-          "playerOutPoints": 5,
+          "playerOutPoints": 13,
           "kind": "Waiver"
         },
         {
@@ -6076,7 +6000,7 @@
           "playerOutPhotoCode": 231747,
           "playerInDraftRank": 108,
           "playerOutDraftRank": 41,
-          "playerInPoints": 22,
+          "playerInPoints": 23,
           "playerOutPoints": 3,
           "kind": "Free agent"
         },
@@ -6092,7 +6016,7 @@
           "playerOutPhotoCode": 481655,
           "playerInDraftRank": 71,
           "playerOutDraftRank": 131,
-          "playerInPoints": 58,
+          "playerInPoints": 66,
           "playerOutPoints": 7,
           "kind": "Waiver"
         },
@@ -6108,8 +6032,8 @@
           "playerOutPhotoCode": 50175,
           "playerInDraftRank": 69,
           "playerOutDraftRank": 76,
-          "playerInPoints": 39,
-          "playerOutPoints": 9,
+          "playerInPoints": 48,
+          "playerOutPoints": 10,
           "kind": "Waiver"
         },
         {
@@ -6123,7 +6047,7 @@
           "playerInPhotoCode": 578153,
           "playerOutPhotoCode": 106760,
           "playerInDraftRank": 172,
-          "playerOutDraftRank": 448,
+          "playerOutDraftRank": 449,
           "playerInPoints": 20,
           "playerOutPoints": 12,
           "kind": "Waiver"
@@ -6156,7 +6080,7 @@
           "playerOutPhotoCode": 248875,
           "playerInDraftRank": 105,
           "playerOutDraftRank": 21,
-          "playerInPoints": 31,
+          "playerInPoints": 40,
           "playerOutPoints": 27,
           "kind": "Waiver"
         },
@@ -6172,8 +6096,8 @@
           "playerOutPhotoCode": 153682,
           "playerInDraftRank": 103,
           "playerOutDraftRank": 34,
-          "playerInPoints": 22,
-          "playerOutPoints": 12,
+          "playerInPoints": 23,
+          "playerOutPoints": 16,
           "kind": "Waiver"
         },
         {
@@ -6189,7 +6113,7 @@
           "playerInDraftRank": 89,
           "playerOutDraftRank": 74,
           "playerInPoints": 25,
-          "playerOutPoints": 24,
+          "playerOutPoints": 28,
           "kind": "Waiver"
         },
         {
@@ -6218,14 +6142,14 @@
           "playerOut": "Frimpong",
           "playerInPhotoCode": 465730,
           "playerOutPhotoCode": 216094,
-          "playerInDraftRank": 460,
+          "playerInDraftRank": 461,
           "playerOutDraftRank": 175,
-          "playerInPoints": 75,
+          "playerInPoints": 76,
           "playerOutPoints": 4,
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-21T14:45:42.913Z",
+      "updatedAt": "2026-11-22T14:41:16.888Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -6243,8 +6167,8 @@
           "initials": "AN",
           "rank": 1,
           "lastRank": 1,
-          "total": 536,
-          "eventPoints": 0,
+          "total": 549,
+          "eventPoints": 13,
           "waiverPick": 4,
           "squad": [
             {
@@ -6255,8 +6179,7 @@
               "club": "ARS",
               "slot": 1,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 504,
@@ -6266,7 +6189,6 @@
               "club": "BHA",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -6288,8 +6210,7 @@
               "club": "ARS",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 398,
@@ -6309,8 +6230,7 @@
               "club": "NFO",
               "slot": 6,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 366,
@@ -6331,8 +6251,8 @@
               "club": "CHE",
               "slot": 8,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 367,
@@ -6374,8 +6294,7 @@
               "club": "BHA",
               "slot": 12,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 229,
@@ -6396,8 +6315,7 @@
               "club": "LEE",
               "slot": 14,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 569,
@@ -6421,8 +6339,8 @@
           "initials": "DB",
           "rank": 2,
           "lastRank": 2,
-          "total": 442,
-          "eventPoints": 0,
+          "total": 473,
+          "eventPoints": 31,
           "waiverPick": 3,
           "squad": [
             {
@@ -6443,8 +6361,7 @@
               "club": "BHA",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 112,
@@ -6454,8 +6371,8 @@
               "club": "TOT",
               "slot": 3,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 8,
@@ -6465,8 +6382,7 @@
               "club": "ARS",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 60,
@@ -6476,8 +6392,9 @@
               "club": "BOU",
               "slot": 5,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 14
             },
             {
               "id": 53,
@@ -6487,8 +6404,7 @@
               "club": "AVL",
               "slot": 6,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 13,
@@ -6498,8 +6414,7 @@
               "club": "ARS",
               "slot": 7,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 399,
@@ -6530,7 +6445,6 @@
               "club": "BHA",
               "slot": 10,
               "bench": false,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -6541,8 +6455,8 @@
               "club": "ARS",
               "slot": 11,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "assists": 1,
+              "points": 5
             },
             {
               "id": 597,
@@ -6552,8 +6466,8 @@
               "club": "AVL",
               "slot": 12,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 6
             },
             {
               "id": 362,
@@ -6574,7 +6488,6 @@
               "club": "CHE",
               "slot": 14,
               "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             },
             {
@@ -6593,16 +6506,193 @@
           "benchPoints": null
         },
         {
+          "id": 50751,
+          "leagueEntryId": 50826,
+          "name": "SportingCadafais",
+          "manager": "Rodrigo Fernandes",
+          "initials": "RF",
+          "rank": 3,
+          "lastRank": 4,
+          "total": 465,
+          "eventPoints": 36,
+          "waiverPick": 2,
+          "squad": [
+            {
+              "id": 566,
+              "name": "Horníček",
+              "photoCode": 470551,
+              "position": "GK",
+              "club": "NEW",
+              "slot": 1,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 390,
+              "name": "Rúben",
+              "photoCode": 171314,
+              "position": "DEF",
+              "club": "MCI",
+              "slot": 2,
+              "bench": false,
+              "points": 2
+            },
+            {
+              "id": 449,
+              "name": "Hall",
+              "photoCode": 487838,
+              "position": "DEF",
+              "club": "NEW",
+              "slot": 3,
+              "bench": false,
+              "points": 1
+            },
+            {
+              "id": 10,
+              "name": "White",
+              "photoCode": 198869,
+              "position": "DEF",
+              "club": "ARS",
+              "slot": 4,
+              "bench": false,
+              "points": 0
+            },
+            {
+              "id": 68,
+              "name": "Tavernier",
+              "photoCode": 201658,
+              "position": "MID",
+              "club": "BOU",
+              "slot": 5,
+              "bench": false,
+              "assists": 1,
+              "cleanSheets": 1,
+              "points": 8
+            },
+            {
+              "id": 214,
+              "name": "Kamada",
+              "photoCode": 209400,
+              "position": "MID",
+              "club": "CRY",
+              "slot": 6,
+              "bench": false,
+              "points": 2
+            },
+            {
+              "id": 15,
+              "name": "Ødegaard",
+              "photoCode": 184029,
+              "position": "MID",
+              "club": "ARS",
+              "slot": 7,
+              "bench": false,
+              "assists": 1,
+              "points": 5
+            },
+            {
+              "id": 94,
+              "name": "Schade",
+              "photoCode": 513418,
+              "position": "MID",
+              "club": "BRE",
+              "slot": 8,
+              "bench": false,
+              "awaitingKickoff": true,
+              "points": 0
+            },
+            {
+              "id": 166,
+              "name": "N.Jackson",
+              "photoCode": 517052,
+              "position": "FWD",
+              "club": "AVL",
+              "slot": 9,
+              "bench": false,
+              "cleanSheets": 1,
+              "points": 2
+            },
+            {
+              "id": 79,
+              "name": "Evanilson",
+              "photoCode": 444102,
+              "position": "FWD",
+              "club": "BOU",
+              "slot": 10,
+              "bench": false,
+              "goals": 1,
+              "cleanSheets": 1,
+              "points": 6
+            },
+            {
+              "id": 346,
+              "name": "Calvert-Lewin",
+              "photoCode": 177815,
+              "position": "FWD",
+              "club": "LEE",
+              "slot": 11,
+              "bench": false,
+              "goals": 1,
+              "assists": 1,
+              "points": 9
+            },
+            {
+              "id": 226,
+              "name": "Pickford",
+              "photoCode": 111234,
+              "position": "GK",
+              "club": "EVE",
+              "slot": 12,
+              "bench": true,
+              "awaitingKickoff": true,
+              "points": 0
+            },
+            {
+              "id": 127,
+              "name": "Gomez",
+              "photoCode": 514254,
+              "position": "MID",
+              "club": "BHA",
+              "slot": 13,
+              "bench": true,
+              "points": 1
+            },
+            {
+              "id": 330,
+              "name": "Bogle",
+              "photoCode": 226182,
+              "position": "DEF",
+              "club": "LEE",
+              "slot": 14,
+              "bench": true,
+              "assists": 1,
+              "points": 4
+            },
+            {
+              "id": 201,
+              "name": "Muñoz",
+              "photoCode": 247348,
+              "position": "DEF",
+              "club": "NFO",
+              "slot": 15,
+              "bench": true,
+              "points": 0
+            }
+          ],
+          "squadGameweek": 11,
+          "benchPoints": null
+        },
+        {
           "id": 50027,
           "leagueEntryId": 50100,
           "name": "Grannies FC",
           "manager": "Filipe Pregal",
           "initials": "FP",
-          "rank": 3,
+          "rank": 4,
           "lastRank": 3,
-          "total": 441,
-          "eventPoints": 0,
-          "waiverPick": 2,
+          "total": 455,
+          "eventPoints": 14,
+          "waiverPick": 1,
           "squad": [
             {
               "id": 82,
@@ -6623,8 +6713,7 @@
               "club": "ARS",
               "slot": 2,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 555,
@@ -6634,8 +6723,8 @@
               "club": "BOU",
               "slot": 3,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "cleanSheets": 1,
+              "points": 8
             },
             {
               "id": 5,
@@ -6645,8 +6734,7 @@
               "club": "ARS",
               "slot": 4,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 426,
@@ -6678,8 +6766,7 @@
               "club": "CHE",
               "slot": 7,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 2
             },
             {
               "id": 124,
@@ -6689,8 +6776,7 @@
               "club": "BHA",
               "slot": 8,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 3
             },
             {
               "id": 45,
@@ -6700,8 +6786,7 @@
               "club": "AVL",
               "slot": 9,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 401,
@@ -6711,8 +6796,7 @@
               "club": "TOT",
               "slot": 10,
               "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 249,
@@ -6754,8 +6838,7 @@
               "club": "NEW",
               "slot": 14,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
+              "points": 1
             },
             {
               "id": 6,
@@ -6765,187 +6848,6 @@
               "club": "ARS",
               "slot": 15,
               "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            }
-          ],
-          "squadGameweek": 11,
-          "benchPoints": null
-        },
-        {
-          "id": 50751,
-          "leagueEntryId": 50826,
-          "name": "SportingCadafais",
-          "manager": "Rodrigo Fernandes",
-          "initials": "RF",
-          "rank": 4,
-          "lastRank": 4,
-          "total": 429,
-          "eventPoints": 0,
-          "waiverPick": 1,
-          "squad": [
-            {
-              "id": 566,
-              "name": "Horníček",
-              "photoCode": 470551,
-              "position": "GK",
-              "club": "NEW",
-              "slot": 1,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 390,
-              "name": "Rúben",
-              "photoCode": 171314,
-              "position": "DEF",
-              "club": "MCI",
-              "slot": 2,
-              "bench": false,
-              "points": 2
-            },
-            {
-              "id": 449,
-              "name": "Hall",
-              "photoCode": 487838,
-              "position": "DEF",
-              "club": "NEW",
-              "slot": 3,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 10,
-              "name": "White",
-              "photoCode": 198869,
-              "position": "DEF",
-              "club": "ARS",
-              "slot": 4,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 68,
-              "name": "Tavernier",
-              "photoCode": 201658,
-              "position": "MID",
-              "club": "BOU",
-              "slot": 5,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 214,
-              "name": "Kamada",
-              "photoCode": 209400,
-              "position": "MID",
-              "club": "CRY",
-              "slot": 6,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 15,
-              "name": "Ødegaard",
-              "photoCode": 184029,
-              "position": "MID",
-              "club": "ARS",
-              "slot": 7,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 94,
-              "name": "Schade",
-              "photoCode": 513418,
-              "position": "MID",
-              "club": "BRE",
-              "slot": 8,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 166,
-              "name": "N.Jackson",
-              "photoCode": 517052,
-              "position": "FWD",
-              "club": "AVL",
-              "slot": 9,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 79,
-              "name": "Evanilson",
-              "photoCode": 444102,
-              "position": "FWD",
-              "club": "BOU",
-              "slot": 10,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 346,
-              "name": "Calvert-Lewin",
-              "photoCode": 177815,
-              "position": "FWD",
-              "club": "LEE",
-              "slot": 11,
-              "bench": false,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 226,
-              "name": "Pickford",
-              "photoCode": 111234,
-              "position": "GK",
-              "club": "EVE",
-              "slot": 12,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 127,
-              "name": "Gomez",
-              "photoCode": 514254,
-              "position": "MID",
-              "club": "BHA",
-              "slot": 13,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 330,
-              "name": "Bogle",
-              "photoCode": 226182,
-              "position": "DEF",
-              "club": "LEE",
-              "slot": 14,
-              "bench": true,
-              "awaitingKickoff": true,
-              "points": 0
-            },
-            {
-              "id": 201,
-              "name": "Muñoz",
-              "photoCode": 247348,
-              "position": "DEF",
-              "club": "NFO",
-              "slot": 15,
-              "bench": true,
-              "awaitingKickoff": true,
               "points": 0
             }
           ],
@@ -6966,7 +6868,7 @@
           "playerOutPhotoCode": 500040,
           "playerInDraftRank": 391,
           "playerOutDraftRank": 191,
-          "playerInPoints": 56,
+          "playerInPoints": 58,
           "playerOutPoints": 12,
           "kind": "Waiver"
         },
@@ -6998,7 +6900,7 @@
           "playerOutPhotoCode": 502500,
           "playerInDraftRank": 30,
           "playerOutDraftRank": 10,
-          "playerInPoints": 24,
+          "playerInPoints": 25,
           "playerOutPoints": 30,
           "kind": "Waiver"
         },
@@ -7014,8 +6916,8 @@
           "playerOutPhotoCode": 247632,
           "playerInDraftRank": 147,
           "playerOutDraftRank": 39,
-          "playerInPoints": 44,
-          "playerOutPoints": 41,
+          "playerInPoints": 45,
+          "playerOutPoints": 42,
           "kind": "Waiver"
         },
         {
@@ -7030,7 +6932,7 @@
           "playerOutPhotoCode": 223340,
           "playerInDraftRank": 268,
           "playerOutDraftRank": 3,
-          "playerInPoints": 51,
+          "playerInPoints": 52,
           "playerOutPoints": 37,
           "kind": "Waiver"
         },
@@ -7062,8 +6964,8 @@
           "playerOutPhotoCode": 98980,
           "playerInDraftRank": 422,
           "playerOutDraftRank": 256,
-          "playerInPoints": 31,
-          "playerOutPoints": 20,
+          "playerInPoints": 37,
+          "playerOutPoints": 21,
           "kind": "Waiver"
         },
         {
@@ -7094,7 +6996,7 @@
           "playerOutPhotoCode": 472769,
           "playerInDraftRank": 142,
           "playerOutDraftRank": 35,
-          "playerInPoints": 42,
+          "playerInPoints": 56,
           "playerOutPoints": 17,
           "kind": "Waiver"
         },
@@ -7110,7 +7012,7 @@
           "playerOutPhotoCode": 243298,
           "playerInDraftRank": 111,
           "playerOutDraftRank": 27,
-          "playerInPoints": 40,
+          "playerInPoints": 41,
           "playerOutPoints": 40,
           "kind": "Waiver"
         },
@@ -7126,7 +7028,7 @@
           "playerOutPhotoCode": 437499,
           "playerInDraftRank": 241,
           "playerOutDraftRank": 64,
-          "playerInPoints": 57,
+          "playerInPoints": 63,
           "playerOutPoints": 24,
           "kind": "Waiver"
         },
@@ -7157,9 +7059,9 @@
           "playerInPhotoCode": 483067,
           "playerOutPhotoCode": 461102,
           "playerInDraftRank": 407,
-          "playerOutDraftRank": 610,
-          "playerInPoints": 40,
-          "playerOutPoints": 32,
+          "playerOutDraftRank": 612,
+          "playerInPoints": 48,
+          "playerOutPoints": 35,
           "kind": "Waiver"
         },
         {
@@ -7174,7 +7076,7 @@
           "playerOutPhotoCode": 441264,
           "playerInDraftRank": 23,
           "playerOutDraftRank": 88,
-          "playerInPoints": 35,
+          "playerInPoints": 40,
           "playerOutPoints": 32,
           "kind": "Waiver"
         },
@@ -7190,8 +7092,8 @@
           "playerOutPhotoCode": 449434,
           "playerInDraftRank": 14,
           "playerOutDraftRank": 103,
-          "playerInPoints": 50,
-          "playerOutPoints": 22,
+          "playerInPoints": 53,
+          "playerOutPoints": 23,
           "kind": "Waiver"
         },
         {
@@ -7204,9 +7106,9 @@
           "playerOut": "Lammens",
           "playerInPhotoCode": 489639,
           "playerOutPhotoCode": 465247,
-          "playerInDraftRank": 428,
+          "playerInDraftRank": 429,
           "playerOutDraftRank": 263,
-          "playerInPoints": 57,
+          "playerInPoints": 58,
           "playerOutPoints": 21,
           "kind": "Waiver"
         },
@@ -7222,8 +7124,8 @@
           "playerOutPhotoCode": 441164,
           "playerInDraftRank": 406,
           "playerOutDraftRank": 136,
-          "playerInPoints": 70,
-          "playerOutPoints": 16,
+          "playerInPoints": 72,
+          "playerOutPoints": 28,
           "kind": "Waiver"
         },
         {
@@ -7236,10 +7138,10 @@
           "playerOut": "N.Williams",
           "playerInPhotoCode": 461102,
           "playerOutPhotoCode": 215136,
-          "playerInDraftRank": 610,
+          "playerInDraftRank": 612,
           "playerOutDraftRank": 252,
-          "playerInPoints": 32,
-          "playerOutPoints": 34,
+          "playerInPoints": 35,
+          "playerOutPoints": 35,
           "kind": "Waiver"
         },
         {
@@ -7254,7 +7156,7 @@
           "playerOutPhotoCode": 482616,
           "playerInDraftRank": 39,
           "playerOutDraftRank": 8,
-          "playerInPoints": 41,
+          "playerInPoints": 42,
           "playerOutPoints": 25,
           "kind": "Waiver"
         },
@@ -7286,8 +7188,8 @@
           "playerOutPhotoCode": 482973,
           "playerInDraftRank": 53,
           "playerOutDraftRank": 81,
-          "playerInPoints": 54,
-          "playerOutPoints": 12,
+          "playerInPoints": 56,
+          "playerOutPoints": 13,
           "kind": "Waiver"
         },
         {
@@ -7302,7 +7204,7 @@
           "playerOutPhotoCode": 424876,
           "playerInDraftRank": 292,
           "playerOutDraftRank": 24,
-          "playerInPoints": 36,
+          "playerInPoints": 38,
           "playerOutPoints": 29,
           "kind": "Waiver"
         },
@@ -7318,7 +7220,7 @@
           "playerOutPhotoCode": 448104,
           "playerInDraftRank": 280,
           "playerOutDraftRank": 153,
-          "playerInPoints": 46,
+          "playerInPoints": 47,
           "playerOutPoints": 5,
           "kind": "Waiver"
         },
@@ -7334,8 +7236,8 @@
           "playerOutPhotoCode": 439509,
           "playerInDraftRank": 71,
           "playerOutDraftRank": 56,
-          "playerInPoints": 58,
-          "playerOutPoints": 22,
+          "playerInPoints": 66,
+          "playerOutPoints": 23,
           "kind": "Free agent"
         },
         {
@@ -7351,7 +7253,7 @@
           "playerInDraftRank": 10,
           "playerOutDraftRank": 23,
           "playerInPoints": 30,
-          "playerOutPoints": 35,
+          "playerOutPoints": 40,
           "kind": "Waiver"
         },
         {
@@ -7366,8 +7268,8 @@
           "playerOutPhotoCode": 204480,
           "playerInDraftRank": 165,
           "playerOutDraftRank": 14,
-          "playerInPoints": 70,
-          "playerOutPoints": 50,
+          "playerInPoints": 73,
+          "playerOutPoints": 53,
           "kind": "Waiver"
         },
         {
@@ -7383,7 +7285,7 @@
           "playerInDraftRank": 88,
           "playerOutDraftRank": 30,
           "playerInPoints": 32,
-          "playerOutPoints": 24,
+          "playerOutPoints": 25,
           "kind": "Waiver"
         },
         {
@@ -7396,10 +7298,10 @@
           "playerOut": "Hall",
           "playerInPhotoCode": 465730,
           "playerOutPhotoCode": 487838,
-          "playerInDraftRank": 460,
+          "playerInDraftRank": 461,
           "playerOutDraftRank": 280,
-          "playerInPoints": 75,
-          "playerOutPoints": 46,
+          "playerInPoints": 76,
+          "playerOutPoints": 47,
           "kind": "Waiver"
         },
         {
@@ -7412,10 +7314,10 @@
           "playerOut": "Maatsen",
           "playerInPhotoCode": 226182,
           "playerOutPhotoCode": 441302,
-          "playerInDraftRank": 455,
-          "playerOutDraftRank": 473,
-          "playerInPoints": 58,
-          "playerOutPoints": 13,
+          "playerInDraftRank": 456,
+          "playerOutDraftRank": 474,
+          "playerInPoints": 62,
+          "playerOutPoints": 18,
           "kind": "Waiver"
         },
         {
@@ -7431,7 +7333,7 @@
           "playerInDraftRank": 77,
           "playerOutDraftRank": 85,
           "playerInPoints": 46,
-          "playerOutPoints": 29,
+          "playerOutPoints": 30,
           "kind": "Waiver"
         },
         {
@@ -7462,8 +7364,8 @@
           "playerOutPhotoCode": 221466,
           "playerInDraftRank": 252,
           "playerOutDraftRank": 60,
-          "playerInPoints": 34,
-          "playerOutPoints": 5,
+          "playerInPoints": 35,
+          "playerOutPoints": 13,
           "kind": "Waiver"
         },
         {
@@ -7494,7 +7396,7 @@
           "playerOutPhotoCode": 224117,
           "playerInDraftRank": 80,
           "playerOutDraftRank": 18,
-          "playerInPoints": 61,
+          "playerInPoints": 67,
           "playerOutPoints": 11,
           "kind": "Waiver"
         },
@@ -7510,8 +7412,8 @@
           "playerOutPhotoCode": 208706,
           "playerInDraftRank": 9,
           "playerOutDraftRank": 26,
-          "playerInPoints": 39,
-          "playerOutPoints": 28,
+          "playerInPoints": 41,
+          "playerOutPoints": 30,
           "kind": "Waiver"
         },
         {
@@ -7526,7 +7428,7 @@
           "playerOutPhotoCode": 445087,
           "playerInDraftRank": 280,
           "playerOutDraftRank": 233,
-          "playerInPoints": 46,
+          "playerInPoints": 47,
           "playerOutPoints": 44,
           "kind": "Waiver"
         },
@@ -7542,8 +7444,8 @@
           "playerOutPhotoCode": 247632,
           "playerInDraftRank": 103,
           "playerOutDraftRank": 39,
-          "playerInPoints": 22,
-          "playerOutPoints": 41,
+          "playerInPoints": 23,
+          "playerOutPoints": 42,
           "kind": "Waiver"
         },
         {
@@ -7574,7 +7476,7 @@
           "playerOutPhotoCode": 178301,
           "playerInDraftRank": 108,
           "playerOutDraftRank": 11,
-          "playerInPoints": 22,
+          "playerInPoints": 23,
           "playerOutPoints": 0,
           "kind": "Free agent"
         },
@@ -7590,7 +7492,7 @@
           "playerOutPhotoCode": 441264,
           "playerInDraftRank": 30,
           "playerOutDraftRank": 88,
-          "playerInPoints": 24,
+          "playerInPoints": 25,
           "playerOutPoints": 32,
           "kind": "Waiver"
         },
@@ -7639,7 +7541,7 @@
           "playerInDraftRank": 164,
           "playerOutDraftRank": 117,
           "playerInPoints": 45,
-          "playerOutPoints": 33,
+          "playerOutPoints": 39,
           "kind": "Waiver"
         },
         {
@@ -7652,9 +7554,9 @@
           "playerOut": "Saliba",
           "playerInPhotoCode": 199798,
           "playerOutPhotoCode": 462424,
-          "playerInDraftRank": 452,
+          "playerInDraftRank": 453,
           "playerOutDraftRank": 70,
-          "playerInPoints": 57,
+          "playerInPoints": 58,
           "playerOutPoints": 0,
           "kind": "Waiver"
         },
@@ -7671,7 +7573,7 @@
           "playerInDraftRank": 228,
           "playerOutDraftRank": 9,
           "playerInPoints": 32,
-          "playerOutPoints": 39,
+          "playerOutPoints": 41,
           "kind": "Waiver"
         },
         {
@@ -7707,7 +7609,7 @@
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-21T14:45:42.913Z",
+      "updatedAt": "2026-11-22T14:41:16.888Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -7715,6 +7617,7 @@
     }
   },
   "history": [
+    "2026-11-22",
     "2026-11-21",
     "2026-11-20",
     "2026-11-19",
@@ -7917,124 +7820,142 @@
     },
     "11": {
       "A": {
-        "updatedAt": "2026-11-21T14:45:42.913Z",
+        "updatedAt": "2026-11-22T14:41:16.888Z",
         "teams": [
           {
             "id": 157661,
             "name": "GoncaBots",
             "manager": "Gonçalo Miranda",
             "division": "A",
-            "gameweekPoints": 0,
-            "totalPoints": 495,
-            "benchPoints": 2
-          },
-          {
-            "id": 17374,
-            "name": "Estripador de Cu’s",
-            "manager": "Daniel Massano",
-            "division": "A",
-            "gameweekPoints": 0,
-            "totalPoints": 480,
-            "benchPoints": 0
+            "gameweekPoints": 24,
+            "totalPoints": 519,
+            "benchPoints": 15
           },
           {
             "id": 15016,
             "name": "Pigui FC",
             "manager": "Miguel Fernandes",
             "division": "A",
-            "gameweekPoints": 0,
-            "totalPoints": 477,
-            "benchPoints": 0
+            "gameweekPoints": 32,
+            "totalPoints": 509,
+            "benchPoints": 3
           },
           {
-            "id": 15018,
-            "name": "CHANGE NAME",
-            "manager": "Diogo Costa",
+            "id": 17374,
+            "name": "Estripador de Cu’s",
+            "manager": "Daniel Massano",
             "division": "A",
-            "gameweekPoints": 0,
-            "totalPoints": 457,
-            "benchPoints": 2
+            "gameweekPoints": 11,
+            "totalPoints": 491,
+            "benchPoints": 1
           },
           {
             "id": 16948,
             "name": "Mike’s Cold One",
             "manager": "Miguel Silva",
             "division": "A",
-            "gameweekPoints": 0,
-            "totalPoints": 440,
-            "benchPoints": 0
+            "gameweekPoints": 45,
+            "totalPoints": 485,
+            "benchPoints": 6
+          },
+          {
+            "id": 15018,
+            "name": "CHANGE NAME",
+            "manager": "Diogo Costa",
+            "division": "A",
+            "gameweekPoints": 19,
+            "totalPoints": 476,
+            "benchPoints": 6
           }
         ]
       },
       "B": {
-        "updatedAt": "2026-11-21T14:45:42.913Z",
+        "updatedAt": "2026-11-22T14:41:16.888Z",
         "teams": [
           {
             "id": 16602,
             "name": "TaGanhoFC",
             "manager": "Mauro Pereira",
             "division": "B",
-            "gameweekPoints": 0,
-            "totalPoints": 503,
-            "benchPoints": 0
+            "gameweekPoints": 34,
+            "totalPoints": 537,
+            "benchPoints": 12
           },
           {
             "id": 285309,
             "name": "Chelas City",
             "manager": "Tiago Ferreira",
             "division": "B",
-            "gameweekPoints": 0,
-            "totalPoints": 488,
-            "benchPoints": 0
+            "gameweekPoints": 12,
+            "totalPoints": 500,
+            "benchPoints": 5
           },
           {
             "id": 16076,
             "name": "Bolinho FC",
             "manager": "Ivo Batista",
             "division": "B",
-            "gameweekPoints": 0,
-            "totalPoints": 466,
-            "benchPoints": 1
+            "gameweekPoints": 29,
+            "totalPoints": 495,
+            "benchPoints": 7
           },
           {
             "id": 39254,
             "name": "Los Majorettes",
             "manager": "Renato Major",
             "division": "B",
-            "gameweekPoints": 0,
-            "totalPoints": 453,
-            "benchPoints": 0
+            "gameweekPoints": 17,
+            "totalPoints": 470,
+            "benchPoints": 1
           },
           {
             "id": 264049,
             "name": "CHINS FC",
             "manager": "João Crujo",
             "division": "B",
-            "gameweekPoints": 0,
-            "totalPoints": 443,
-            "benchPoints": 0
+            "gameweekPoints": 19,
+            "totalPoints": 462,
+            "benchPoints": 2
           }
         ]
       },
       "C": {
-        "updatedAt": "2026-11-21T14:45:42.913Z",
+        "updatedAt": "2026-11-22T14:41:16.888Z",
         "teams": [
           {
             "id": 334163,
             "name": "Booh Cě Tá",
             "manager": "Joel Farinha",
             "division": "C",
-            "gameweekPoints": 0,
-            "totalPoints": 482,
-            "benchPoints": 2
+            "gameweekPoints": 29,
+            "totalPoints": 511,
+            "benchPoints": 9
           },
           {
             "id": 313847,
             "name": "Eusebiosempelota",
             "manager": "Henrique Peres",
             "division": "C",
-            "gameweekPoints": 0,
-            "totalPoints": 462,
+            "gameweekPoints": 27,
+            "totalPoints": 489,
+            "benchPoints": 6
+          },
+          {
+            "id": 323019,
+            "name": "Fredddd",
+            "manager": "frederico belchior",
+            "division": "C",
+            "gameweekPoints": 17,
+            "totalPoints": 451,
+            "benchPoints": 8
+          },
+          {
+            "id": 259085,
+            "name": "Jotinha FC",
+            "manager": "Joao Martins",
+            "division": "C",
+            "gameweekPoints": 23,
+            "totalPoints": 450,
             "benchPoints": 2
           },
           {
@@ -8042,68 +7963,50 @@
             "name": "Ninos",
             "manager": "Miguel Vilares",
             "division": "C",
-            "gameweekPoints": 0,
-            "totalPoints": 440,
-            "benchPoints": 0
-          },
-          {
-            "id": 323019,
-            "name": "Fredddd",
-            "manager": "frederico belchior",
-            "division": "C",
-            "gameweekPoints": 0,
-            "totalPoints": 434,
-            "benchPoints": 2
-          },
-          {
-            "id": 259085,
-            "name": "Jotinha FC",
-            "manager": "Joao Martins",
-            "division": "C",
-            "gameweekPoints": 0,
-            "totalPoints": 427,
-            "benchPoints": 1
+            "gameweekPoints": 9,
+            "totalPoints": 449,
+            "benchPoints": 15
           }
         ]
       },
       "D": {
-        "updatedAt": "2026-11-21T14:45:42.913Z",
+        "updatedAt": "2026-11-22T14:41:16.888Z",
         "teams": [
           {
             "id": 130177,
             "name": "Imperial FC",
             "manager": "André Neto",
             "division": "D",
-            "gameweekPoints": 0,
-            "totalPoints": 536,
-            "benchPoints": 1
+            "gameweekPoints": 13,
+            "totalPoints": 549,
+            "benchPoints": 6
           },
           {
             "id": 131691,
             "name": "Boomxhakalaka",
             "manager": "Daniel Becker",
             "division": "D",
-            "gameweekPoints": 0,
-            "totalPoints": 442,
-            "benchPoints": 0
-          },
-          {
-            "id": 50027,
-            "name": "Grannies FC",
-            "manager": "Filipe Pregal",
-            "division": "D",
-            "gameweekPoints": 0,
-            "totalPoints": 441,
-            "benchPoints": 1
+            "gameweekPoints": 31,
+            "totalPoints": 473,
+            "benchPoints": 6
           },
           {
             "id": 50751,
             "name": "SportingCadafais",
             "manager": "Rodrigo Fernandes",
             "division": "D",
-            "gameweekPoints": 0,
-            "totalPoints": 429,
-            "benchPoints": 0
+            "gameweekPoints": 36,
+            "totalPoints": 465,
+            "benchPoints": 5
+          },
+          {
+            "id": 50027,
+            "name": "Grannies FC",
+            "manager": "Filipe Pregal",
+            "division": "D",
+            "gameweekPoints": 14,
+            "totalPoints": 455,
+            "benchPoints": 2
           }
         ]
       }
