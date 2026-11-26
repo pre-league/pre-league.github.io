@@ -29,10 +29,22 @@ for (const division of ['A', 'D']) {
     }]));
     elements['#search'].dataset = { i18n: 'placeholder aria-label' };
     elements['#search'].attributes = { placeholder: 'Find a club', 'aria-label': 'Search teams and managers' };
-    const preferences = new Map();
+    const design = {
+      value: 'fotmob',
+      options: [
+        { value: 'fotmob', dataset: { themeColor: '#101010' } },
+        { value: 'fantasy', dataset: { themeColor: '#37003c' } },
+        { value: 'flashscore', dataset: { themeColor: '#001e28' } }
+      ],
+      get selectedOptions() { return this.options.filter(option => option.value === this.value); },
+      addEventListener(name, handler) { this[name] = handler; }
+    };
+    elements['#design'] = design;
+    elements['meta[name="theme-color"]'] = {};
+    const preferences = new Map([['pre-ftw-design', division === 'A' ? 'fantasy' : 'retired-design']]);
     const listeners = {};
     const globals = {
-      document: { querySelector: selector => elements[selector] ?? null, querySelectorAll: () => [elements['#search']], documentElement: {}, title: '' },
+      document: { querySelector: selector => elements[selector] ?? null, querySelectorAll: () => [elements['#search']], documentElement: { dataset: {} }, title: '' },
       window: { addEventListener: (name, handler) => { listeners[name] = handler; } },
       location: { hash: `#league=${division}`, reload() {} },
       history: { replaceState(_state, _title, hash) { globalThis.location.hash = hash; } },
@@ -53,6 +65,12 @@ for (const division of ['A', 'D']) {
       }
     });
     await import(`../src/app.mjs?regression=${division}`);
+    assert.equal(document.documentElement.dataset.design, division === 'A' ? 'fantasy' : 'fotmob');
+    design.value = division === 'A' ? 'flashscore' : 'fantasy';
+    design.change();
+    assert.equal(document.documentElement.dataset.design, design.value);
+    assert.equal(elements['meta[name="theme-color"]'].content, design.selectedOptions[0].dataset.themeColor);
+    assert.equal(preferences.get('pre-ftw-design'), design.value);
     await new Promise(resolve => setImmediate(resolve));
     assert.equal(elements['#app'].attributes['aria-busy'], 'false');
     assert.equal(elements['#main'].attributes['data-page'], 'league');

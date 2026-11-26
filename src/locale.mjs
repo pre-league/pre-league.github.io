@@ -150,6 +150,7 @@ const portuguese = {
   "Final standings": "Classificação final",
   "Final table": "Classificação final",
   "Find a club": "Procurar clube",
+  "Design": "Aspeto",
   "First place wins the PRE FTW League trophy. The bottom two teams move to League B.": "A primeira equipa ganha o troféu da PRE FTW League. As duas últimas descem à Liga B.",
   "Football. Friendship. Bragging rights.": "Futebol. Amizade. Orgulho.",
   "Forwards": "Avançados",

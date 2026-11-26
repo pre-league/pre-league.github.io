@@ -18,6 +18,20 @@ const search = document.querySelector('#search');
 const searchToggle = document.querySelector('#search-toggle');
 const searchCancel = document.querySelector('#search-cancel');
 const topbar = document.querySelector('#topbar');
+const design = document.querySelector('#design');
+function applyDesign() {
+  document.documentElement.dataset.design = design.value;
+  document.querySelector('meta[name="theme-color"]').content = design.selectedOptions[0].dataset.themeColor;
+}
+try {
+  const saved = localStorage.getItem('pre-ftw-design');
+  if ([...design.options].some(option => option.value === saved)) design.value = saved;
+} catch { /* Storage can be unavailable in private browsing. */ }
+applyDesign();
+design.addEventListener('change', () => {
+  applyDesign();
+  try { localStorage.setItem('pre-ftw-design', design.value); } catch { /* Keep the selection for this visit. */ }
+});
 const languageButton = document.querySelector('#language-toggle');
 const languageFlag = document.querySelector('#language-flag');
 const languageIndicator = document.querySelector('#language-indicator');
