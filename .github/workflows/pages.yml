@@ -6,7 +6,7 @@ on:
   pull_request:
   workflow_dispatch:
   schedule:
-    - cron: '17 6 * * *'
+    - cron: '17 6,14,22 * * *'
 
 permissions:
   contents: read
@@ -38,7 +38,7 @@ jobs:
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         continue-on-error: true
         run: npm run update-data
-      - name: Save daily standings
+      - name: Save refreshed standings
         if: steps.refresh.outcome == 'success' || steps.refresh.outcome == 'failure'
         run: |
           git config user.name "github-actions[bot]"

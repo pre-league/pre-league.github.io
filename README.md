@@ -85,7 +85,7 @@ the gameweek substitute total. Unavailable scores show a dash.
   or missing previous-week data has no movement arrow. Update timestamps and
   stale-data indicators remain visible.
 - Phone and desktop layouts, keyboard controls and reduced-motion support.
-- GitHub Actions testing, daily refresh and GitHub Pages deployment workflow.
+- GitHub Actions testing, three refreshes a day and GitHub Pages deployment.
 
 | Division | Draft league ID | Initial state |
 | --- | --- | --- |
@@ -152,18 +152,19 @@ Draft Rank and season FPL points come from the Draft player catalog.
 Add the remaining numeric IDs in **`data/config.json`** and refresh. Do not use
 invitation codes or add passwords, cookies or tokens.
 
-`data/latest.json` stores display data. Successful refreshes save one daily
-snapshot in `data/history/YYYY-MM-DD.json` (UTC) for internal retention. These
-daily files are not presented in the app. League fetch failures preserve
+`data/latest.json` stores display data. Each refresh that fetches new standings
+updates that UTC day's snapshot in `data/history/YYYY-MM-DD.json`.
+These daily files are not presented in the app. League fetch failures preserve
 previous standings and return a failing exit code; optional squad/transaction
 failures are reported separately. Each division retains its own update time.
 Player points are not summed to replace official team totals.
 
 The `weekly` field also retains one score record per team/division/gameweek
-for league History and the stats selector. It starts with the verified current snapshot, and daily
-syncs preserve previous weeks. Old gameweeks that were never captured are not
-fabricated. Bench scores use the official value when supplied, otherwise the
-sum of four known bench player scores; incomplete benches remain unavailable.
+for league History and the stats selector. It starts with the verified current
+snapshot, and syncs preserve previous weeks. Old gameweeks that were never
+captured are not fabricated. Bench scores use the official value when supplied,
+otherwise the sum of four known bench player scores. Incomplete benches remain
+unavailable.
 
 ## Documentation and historical seasons
 
@@ -269,10 +270,10 @@ The build copies public assets and data into `dist/` and checks the output.
 3. Allow Actions to write repository contents for saved data commits.
 4. Run **Test, refresh and publish** from Actions for the first API fetch.
 
-The workflow tests and publishes pushes to `main`, and refreshes daily at
-**06:17 UTC**. Schedules can be delayed; the site displays the actual update
-time. Public-repository schedules may be disabled after 60 days of inactivity.
-Manual runs can refresh the data too.
+The workflow tests and publishes pushes to `main`, and refreshes three times
+a day at **06:17, 14:17 and 22:17 UTC**. Schedules can be delayed. The site
+displays the actual update time. Public-repository schedules may be disabled
+after 60 days of inactivity. Manual runs can refresh the data too.
 
 An incomplete refresh still deploys retained data, then marks the workflow
 failed so the issue is visible. If branch rules block its snapshot commit,
