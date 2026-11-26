@@ -1,6 +1,6 @@
 {
   "season": "2026/27",
-  "lastAttemptAt": "2026-11-25T17:21:29.041Z",
+  "lastAttemptAt": "2026-11-26T16:57:55.354Z",
   "divisions": {
     "A": {
       "leagueId": 3887,
@@ -2611,7 +2611,7 @@
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-25T17:21:29.041Z",
+      "updatedAt": "2026-11-26T16:57:55.354Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -4420,7 +4420,7 @@
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-25T17:21:29.041Z",
+      "updatedAt": "2026-11-26T16:57:55.354Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -6150,7 +6150,7 @@
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-25T17:21:29.041Z",
+      "updatedAt": "2026-11-26T16:57:55.354Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -7605,7 +7605,7 @@
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-25T17:21:29.041Z",
+      "updatedAt": "2026-11-26T16:57:55.354Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -7613,6 +7613,7 @@
     }
   },
   "history": [
+    "2026-11-26",
     "2026-11-25",
     "2026-11-24",
     "2026-11-23",
@@ -7819,7 +7820,7 @@
     },
     "11": {
       "A": {
-        "updatedAt": "2026-11-25T17:21:29.041Z",
+        "updatedAt": "2026-11-26T16:57:55.354Z",
         "teams": [
           {
             "id": 157661,
@@ -7869,7 +7870,7 @@
         ]
       },
       "B": {
-        "updatedAt": "2026-11-25T17:21:29.041Z",
+        "updatedAt": "2026-11-26T16:57:55.354Z",
         "teams": [
           {
             "id": 16602,
@@ -7919,7 +7920,7 @@
         ]
       },
       "C": {
-        "updatedAt": "2026-11-25T17:21:29.041Z",
+        "updatedAt": "2026-11-26T16:57:55.354Z",
         "teams": [
           {
             "id": 313847,
@@ -7969,7 +7970,7 @@
         ]
       },
       "D": {
-        "updatedAt": "2026-11-25T17:21:29.041Z",
+        "updatedAt": "2026-11-26T16:57:55.354Z",
         "teams": [
           {
             "id": 130177,
