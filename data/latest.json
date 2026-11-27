@@ -1,6 +1,6 @@
 {
   "season": "2026/27",
-  "lastAttemptAt": "2026-11-26T16:57:55.354Z",
+  "lastAttemptAt": "2026-11-27T04:18:09.969Z",
   "divisions": {
     "A": {
       "leagueId": 3887,
@@ -882,6 +882,118 @@
         }
       ],
       "transactions": [
+        {
+          "id": 23464891,
+          "teamId": 15016,
+          "gameweek": 12,
+          "playerInId": 37,
+          "playerOutId": 229,
+          "playerIn": "Lindelöf",
+          "playerOut": "Tarkowski",
+          "playerInPhotoCode": 184667,
+          "playerOutPhotoCode": 17761,
+          "playerInDraftRank": 488,
+          "playerOutDraftRank": 61,
+          "playerInPoints": 26,
+          "playerOutPoints": 52,
+          "kind": "Free agent"
+        },
+        {
+          "id": 23461946,
+          "teamId": 17374,
+          "gameweek": 12,
+          "playerInId": 385,
+          "playerOutId": 82,
+          "playerIn": "Trafford",
+          "playerOut": "Kelleher",
+          "playerInPhotoCode": 432720,
+          "playerOutPhotoCode": 200720,
+          "playerInDraftRank": 338,
+          "playerOutDraftRank": 246,
+          "playerInPoints": 56,
+          "playerOutPoints": 41,
+          "kind": "Free agent"
+        },
+        {
+          "id": 23461864,
+          "teamId": 17374,
+          "gameweek": 12,
+          "playerInId": 336,
+          "playerOutId": 367,
+          "playerIn": "Okafor",
+          "playerOut": "Gakpo",
+          "playerInPhotoCode": 435997,
+          "playerOutPhotoCode": 243298,
+          "playerInDraftRank": 82,
+          "playerOutDraftRank": 27,
+          "playerInPoints": 43,
+          "playerOutPoints": 40,
+          "kind": "Free agent"
+        },
+        {
+          "id": 22731081,
+          "teamId": 17374,
+          "gameweek": 12,
+          "playerInId": 86,
+          "playerOutId": 554,
+          "playerIn": "Lewis-Potter",
+          "playerOut": "Tzolis",
+          "playerInPhotoCode": 249231,
+          "playerOutPhotoCode": 439509,
+          "playerInDraftRank": 137,
+          "playerOutDraftRank": 56,
+          "playerInPoints": 55,
+          "playerOutPoints": 23,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22731080,
+          "teamId": 17374,
+          "gameweek": 12,
+          "playerInId": 295,
+          "playerOutId": 401,
+          "playerIn": "McBurnie",
+          "playerOut": "Marmoush",
+          "playerInPhotoCode": 169432,
+          "playerOutPhotoCode": 438234,
+          "playerInDraftRank": 223,
+          "playerOutDraftRank": 30,
+          "playerInPoints": 51,
+          "playerOutPoints": 25,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22691620,
+          "teamId": 16948,
+          "gameweek": 12,
+          "playerInId": 45,
+          "playerOutId": 155,
+          "playerIn": "McGinn",
+          "playerOut": "Enzo",
+          "playerInPhotoCode": 122806,
+          "playerOutPhotoCode": 448047,
+          "playerInDraftRank": 147,
+          "playerOutDraftRank": 25,
+          "playerInPoints": 45,
+          "playerOutPoints": 24,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22602104,
+          "teamId": 15016,
+          "gameweek": 12,
+          "playerInId": 332,
+          "playerOutId": 390,
+          "playerIn": "Justin",
+          "playerOut": "Rúben",
+          "playerInPhotoCode": 220627,
+          "playerOutPhotoCode": 171314,
+          "playerInDraftRank": 459,
+          "playerOutDraftRank": 140,
+          "playerInPoints": 55,
+          "playerOutPoints": 30,
+          "kind": "Waiver"
+        },
         {
           "id": 22393079,
           "teamId": 15016,
@@ -2611,7 +2723,7 @@
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-26T16:57:55.354Z",
+      "updatedAt": "2026-11-27T04:18:09.969Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -3491,6 +3603,102 @@
         }
       ],
       "transactions": [
+        {
+          "id": 22827863,
+          "teamId": 264049,
+          "gameweek": 12,
+          "playerInId": 332,
+          "playerOutId": 390,
+          "playerIn": "Justin",
+          "playerOut": "Rúben",
+          "playerInPhotoCode": 220627,
+          "playerOutPhotoCode": 171314,
+          "playerInDraftRank": 459,
+          "playerOutDraftRank": 140,
+          "playerInPoints": 55,
+          "playerOutPoints": 30,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22827862,
+          "teamId": 264049,
+          "gameweek": 12,
+          "playerInId": 222,
+          "playerOutId": 25,
+          "playerIn": "Strand Larsen",
+          "playerOut": "Gyökeres",
+          "playerInPhotoCode": 247412,
+          "playerOutPhotoCode": 224117,
+          "playerInDraftRank": 97,
+          "playerOutDraftRank": 18,
+          "playerInPoints": 33,
+          "playerOutPoints": 11,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22827861,
+          "teamId": 264049,
+          "gameweek": 12,
+          "playerInId": 70,
+          "playerOutId": 12,
+          "playerIn": "Kluivert",
+          "playerOut": "Saka",
+          "playerInPhotoCode": 222683,
+          "playerOutPhotoCode": 223340,
+          "playerInDraftRank": 105,
+          "playerOutDraftRank": 3,
+          "playerInPoints": 40,
+          "playerOutPoints": 37,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22827860,
+          "teamId": 264049,
+          "gameweek": 12,
+          "playerInId": 336,
+          "playerOutId": 428,
+          "playerIn": "Okafor",
+          "playerOut": "Cunha",
+          "playerInPhotoCode": 435997,
+          "playerOutPhotoCode": 430871,
+          "playerInDraftRank": 82,
+          "playerOutDraftRank": 13,
+          "playerInPoints": 43,
+          "playerOutPoints": 46,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22827859,
+          "teamId": 264049,
+          "gameweek": 12,
+          "playerInId": 52,
+          "playerOutId": 156,
+          "playerIn": "Alysson",
+          "playerOut": "Neto",
+          "playerInPhotoCode": 653481,
+          "playerOutPhotoCode": 247632,
+          "playerInDraftRank": 352,
+          "playerOutDraftRank": 39,
+          "playerInPoints": 31,
+          "playerOutPoints": 42,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22415495,
+          "teamId": 16076,
+          "gameweek": 12,
+          "playerInId": 542,
+          "playerOutId": 335,
+          "playerIn": "E.Le Fée",
+          "playerOut": "Stach",
+          "playerInPhotoCode": 484420,
+          "playerOutPhotoCode": 466525,
+          "playerInDraftRank": 67,
+          "playerOutDraftRank": 72,
+          "playerInPoints": 49,
+          "playerOutPoints": 34,
+          "kind": "Waiver"
+        },
         {
           "id": 22359716,
           "teamId": 16076,
@@ -4420,7 +4628,7 @@
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-26T16:57:55.354Z",
+      "updatedAt": "2026-11-27T04:18:09.969Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -5302,6 +5510,70 @@
       ],
       "transactions": [
         {
+          "id": 23055512,
+          "teamId": 323019,
+          "gameweek": 12,
+          "playerInId": 332,
+          "playerOutId": 502,
+          "playerIn": "Justin",
+          "playerOut": "Robertson",
+          "playerInPhotoCode": 220627,
+          "playerOutPhotoCode": 122798,
+          "playerInDraftRank": 459,
+          "playerOutDraftRank": 473,
+          "playerInPoints": 55,
+          "playerOutPoints": 39,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22663240,
+          "teamId": 38169,
+          "gameweek": 12,
+          "playerInId": 380,
+          "playerOutId": 316,
+          "playerIn": "Ekitiké",
+          "playerOut": "Emersonn",
+          "playerInPhotoCode": 510663,
+          "playerOutPhotoCode": 543968,
+          "playerInDraftRank": 20,
+          "playerOutDraftRank": 226,
+          "playerInPoints": 0,
+          "playerOutPoints": 35,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22663239,
+          "teamId": 38169,
+          "gameweek": 12,
+          "playerInId": 295,
+          "playerOutId": 464,
+          "playerIn": "McBurnie",
+          "playerOut": "Wissa",
+          "playerInPhotoCode": 169432,
+          "playerOutPhotoCode": 216646,
+          "playerInDraftRank": 223,
+          "playerOutDraftRank": 108,
+          "playerInPoints": 51,
+          "playerOutPoints": 23,
+          "kind": "Waiver"
+        },
+        {
+          "id": 22523207,
+          "teamId": 334163,
+          "gameweek": 12,
+          "playerInId": 222,
+          "playerOutId": 552,
+          "playerIn": "Strand Larsen",
+          "playerOut": "Brobbey",
+          "playerInPhotoCode": 247412,
+          "playerOutPhotoCode": 441264,
+          "playerInDraftRank": 97,
+          "playerOutDraftRank": 88,
+          "playerInPoints": 33,
+          "playerOutPoints": 32,
+          "kind": "Waiver"
+        },
+        {
           "id": 22379047,
           "teamId": 38169,
           "gameweek": 11,
@@ -6150,7 +6422,7 @@
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-26T16:57:55.354Z",
+      "updatedAt": "2026-11-27T04:18:09.969Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -6852,6 +7124,38 @@
         }
       ],
       "transactions": [
+        {
+          "id": 23151160,
+          "teamId": 50027,
+          "gameweek": 12,
+          "playerInId": 271,
+          "playerOutId": 401,
+          "playerIn": "Muniz",
+          "playerOut": "Marmoush",
+          "playerInPhotoCode": 244042,
+          "playerOutPhotoCode": 438234,
+          "playerInDraftRank": 193,
+          "playerOutDraftRank": 30,
+          "playerInPoints": 21,
+          "playerOutPoints": 25,
+          "kind": "Waiver"
+        },
+        {
+          "id": 23151159,
+          "teamId": 50027,
+          "gameweek": 12,
+          "playerInId": 295,
+          "playerOutId": 464,
+          "playerIn": "McBurnie",
+          "playerOut": "Wissa",
+          "playerInPhotoCode": 169432,
+          "playerOutPhotoCode": 216646,
+          "playerInDraftRank": 223,
+          "playerOutDraftRank": 108,
+          "playerInPoints": 51,
+          "playerOutPoints": 23,
+          "kind": "Waiver"
+        },
         {
           "id": 21976041,
           "teamId": 130177,
@@ -7605,7 +7909,7 @@
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-26T16:57:55.354Z",
+      "updatedAt": "2026-11-27T04:18:09.969Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -7613,6 +7917,7 @@
     }
   },
   "history": [
+    "2026-11-27",
     "2026-11-26",
     "2026-11-25",
     "2026-11-24",
@@ -7820,7 +8125,7 @@
     },
     "11": {
       "A": {
-        "updatedAt": "2026-11-26T16:57:55.354Z",
+        "updatedAt": "2026-11-27T04:18:09.969Z",
         "teams": [
           {
             "id": 157661,
@@ -7870,7 +8175,7 @@
         ]
       },
       "B": {
-        "updatedAt": "2026-11-26T16:57:55.354Z",
+        "updatedAt": "2026-11-27T04:18:09.969Z",
         "teams": [
           {
             "id": 16602,
@@ -7920,7 +8225,7 @@
         ]
       },
       "C": {
-        "updatedAt": "2026-11-26T16:57:55.354Z",
+        "updatedAt": "2026-11-27T04:18:09.969Z",
         "teams": [
           {
             "id": 313847,
@@ -7970,7 +8275,7 @@
         ]
       },
       "D": {
-        "updatedAt": "2026-11-26T16:57:55.354Z",
+        "updatedAt": "2026-11-27T04:18:09.969Z",
         "teams": [
           {
             "id": 130177,
