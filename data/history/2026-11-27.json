@@ -1,6 +1,6 @@
 {
   "season": "2026/27",
-  "lastAttemptAt": "2026-11-27T04:18:09.969Z",
+  "lastAttemptAt": "2026-11-27T16:43:53.640Z",
   "divisions": {
     "A": {
       "leagueId": 3887,
@@ -2723,7 +2723,7 @@
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-27T04:18:09.969Z",
+      "updatedAt": "2026-11-27T16:43:53.640Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -3603,6 +3603,38 @@
         }
       ],
       "transactions": [
+        {
+          "id": 23485551,
+          "teamId": 16602,
+          "gameweek": 12,
+          "playerInId": 116,
+          "playerOutId": 277,
+          "playerIn": "Dunk",
+          "playerOut": "Egan",
+          "playerInPhotoCode": 83299,
+          "playerOutPhotoCode": 108416,
+          "playerInDraftRank": 454,
+          "playerOutDraftRank": 628,
+          "playerInPoints": 42,
+          "playerOutPoints": 38,
+          "kind": "Free agent"
+        },
+        {
+          "id": 23485523,
+          "teamId": 16602,
+          "gameweek": 12,
+          "playerInId": 86,
+          "playerOutId": 237,
+          "playerIn": "Lewis-Potter",
+          "playerOut": "Ndiaye",
+          "playerInPhotoCode": 249231,
+          "playerOutPhotoCode": 440993,
+          "playerInDraftRank": 137,
+          "playerOutDraftRank": 75,
+          "playerInPoints": 55,
+          "playerOutPoints": 39,
+          "kind": "Free agent"
+        },
         {
           "id": 22827863,
           "teamId": 264049,
@@ -4628,7 +4660,7 @@
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-27T04:18:09.969Z",
+      "updatedAt": "2026-11-27T16:43:53.640Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -5509,6 +5541,54 @@
         }
       ],
       "transactions": [
+        {
+          "id": 23501326,
+          "teamId": 259085,
+          "gameweek": 12,
+          "playerInId": 368,
+          "playerOutId": 400,
+          "playerIn": "Szoboszlai",
+          "playerOut": "Doku",
+          "playerInPhotoCode": 424876,
+          "playerOutPhotoCode": 248875,
+          "playerInDraftRank": 24,
+          "playerOutDraftRank": 21,
+          "playerInPoints": 38,
+          "playerOutPoints": 27,
+          "kind": "Free agent"
+        },
+        {
+          "id": 23487676,
+          "teamId": 323019,
+          "gameweek": 12,
+          "playerInId": 28,
+          "playerOutId": 226,
+          "playerIn": "Martinez",
+          "playerOut": "Pickford",
+          "playerInPhotoCode": 98980,
+          "playerOutPhotoCode": 111234,
+          "playerInDraftRank": 256,
+          "playerOutDraftRank": 128,
+          "playerInPoints": 21,
+          "playerOutPoints": 40,
+          "kind": "Free agent"
+        },
+        {
+          "id": 23487484,
+          "teamId": 323019,
+          "gameweek": 12,
+          "playerInId": 156,
+          "playerOutId": 398,
+          "playerIn": "Neto",
+          "playerOut": "Foden",
+          "playerInPhotoCode": 247632,
+          "playerOutPhotoCode": 209244,
+          "playerInDraftRank": 39,
+          "playerOutDraftRank": 28,
+          "playerInPoints": 42,
+          "playerOutPoints": 23,
+          "kind": "Free agent"
+        },
         {
           "id": 23055512,
           "teamId": 323019,
@@ -6422,7 +6502,7 @@
           "kind": "Waiver"
         }
       ],
-      "updatedAt": "2026-11-27T04:18:09.969Z",
+      "updatedAt": "2026-11-27T16:43:53.640Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -7909,7 +7989,7 @@
           "kind": "Free agent"
         }
       ],
-      "updatedAt": "2026-11-27T04:18:09.969Z",
+      "updatedAt": "2026-11-27T16:43:53.640Z",
       "source": "api",
       "stale": false,
       "gameweek": 11,
@@ -8113,7 +8193,7 @@
     },
     "11": {
       "A": {
-        "updatedAt": "2026-11-27T04:18:09.969Z",
+        "updatedAt": "2026-11-27T16:43:53.640Z",
         "teams": [
           {
             "id": 157661,
@@ -8163,7 +8243,7 @@
         ]
       },
       "B": {
-        "updatedAt": "2026-11-27T04:18:09.969Z",
+        "updatedAt": "2026-11-27T16:43:53.640Z",
         "teams": [
           {
             "id": 16602,
@@ -8213,7 +8293,7 @@
         ]
       },
       "C": {
-        "updatedAt": "2026-11-27T04:18:09.969Z",
+        "updatedAt": "2026-11-27T16:43:53.640Z",
         "teams": [
           {
             "id": 313847,
@@ -8263,7 +8343,7 @@
         ]
       },
       "D": {
-        "updatedAt": "2026-11-27T04:18:09.969Z",
+        "updatedAt": "2026-11-27T16:43:53.640Z",
         "teams": [
           {
             "id": 130177,
